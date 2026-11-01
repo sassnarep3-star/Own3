@@ -136,6 +136,19 @@ Operator pages opened and read during this audit:
 - <https://www.squarespool.com/>
 - <https://aflwfantasy.afl/>
 
+## Previous build (archived)
+
+An earlier session (`arena/ca773c6b-own3`) shipped a **Prize Scout** site from the same upstream
+data. It carried over the 206 names and categories but deliberately left every prize, eligibility,
+status and payout field blank, reporting **0 independently verified rows**. It is preserved intact
+and still validating at [`archive/prize-scout/`](archive/prize-scout/index.html) rather than deleted,
+because it is the most conservative reading of the source and a useful cross-check.
+
+`scripts/validate-catalog.mjs` points at that folder, so the archived catalogue and its nine
+category pages keep being checked on every CI run. See
+[COORDINATION.md](COORDINATION.md#2026-11-01--integration-two-sessions-one-repository) for the
+full integration record.
+
 ## Licence and disclaimer
 
 Independent compilation. Not affiliated with, endorsed by or sponsored by any listed operator. No
