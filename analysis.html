@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis and findings — Free Cash Competitions</title>
+<meta name="description" content="Findings from auditing 206 competitions: non-cash prizes in a cash ledger, missing and mislabelled official sources, broker funnels, stale status, and where an AI coding agent actually has an edge.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Analysis and findings — Free Cash Competitions">
+<meta property="og:description" content="Findings from auditing 206 competitions: non-cash prizes in a cash ledger, missing and mislabelled official sources, broker funnels, stale status, and where an AI coding agent actually has an edge.">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316202b'/><text x='32' y='45' font-size='38' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffffff'>$</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">$</span>
+      <span class="brand-text">
+        <span class="brand-title">Free Cash Competitions</span>
+        <span class="brand-sub">verified ledger · 2026-11-01</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="competitions.html">All competitions</a></li>
+        <li><a href="tech.html">Tech & data</a></li>
+        <li><a href="sports.html">Fantasy & picks</a></li>
+        <li><a href="creative.html">Creative</a></li>
+        <li><a href="flagged.html">Flagged for review</a></li>
+        <li><a href="methodology.html">Method</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <section class="hero">
+    <p class="kicker"><a href="index.html">Dashboard</a> / Analysis</p>
+    <h1>What the audit found</h1>
+    <p class="lede">
+      The upstream ledger is a genuinely useful piece of research — 206 entries, honest about the
+      difference between gems and dollars, and explicit that official rules win every argument. This
+      audit did not find a scam. It found a dataset that has outgrown the rules it set for itself.
+    </p>
+  </section>
+
+  <div class="prose">
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#headline">Six headline findings</a></li>
+        <li><a href="#composition">What the 206 rows actually contain</a></li>
+        <li><a href="#money">The cash problem: 23 rows do not pay money</a></li>
+        <li><a href="#sourcing">Sourcing quality, measured</a></li>
+        <li><a href="#categories">Category-by-category verdict</a></li>
+        <li><a href="#agent">Where an AI coding agent actually has an edge</a></li>
+        <li><a href="#decay">Status decay and seasonality</a></li>
+        <li><a href="#safety">Patterns to avoid, and why</a></li>
+        <li><a href="#recommend">Recommendations</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="headline">1. Six headline findings</h2>
+    <ol>
+      <li>
+        <strong>The headline count overstates what is on offer.</strong> "206 listings" is real,
+        but 23 rows carry a non-cash prize, 35 state no figure at all, and
+        9 are not competitions in the first place — pool-hosting tools and
+        directories. The number of rows with a genuine free path <em>and</em> a stated cash prize is
+        materially smaller than 206.
+      </li>
+      <li>
+        <strong>12 rows break the project's own sourcing rule.</strong> The upstream
+        README requires that any stated prize figure cite the operator's own page. These rows cite only
+        affiliate, forum or social sources — and
+        163 rows overall are still labelled live, so some uncited figures are presented as current.
+      </li>
+      <li>
+        <strong>A further 13 sources are mislabelled as <code>official</code>.</strong> They
+        grade press-release wires, broker review aggregators, affiliate bonus blogs, club fan sites and
+        X posts as the operator's own word. Three live rows quoting precise prize tables rest entirely
+        on affiliate blogs — the exact failure mode the rule was written to prevent.
+      </li>
+      <li>
+        <strong>The trading category is a category error.</strong> 19 rows are broker
+        demo-account contests. These are customer-acquisition promotions; prizes are frequently credited
+        as trading bonuses or prop accounts rather than payable cash. The upstream file excluded
+        bookmaker and DFS funnels on precisely this logic but kept forex broker funnels.
+      </li>
+      <li>
+        <strong>Status has decayed.</strong> 27 rows are marked ended, which is honest. But status
+        is inherited rather than observed, and the sports category has 129 of the 206 rows,
+        almost all seasonal. At least one row I verified — MLB Beat the Streak — is marked live although
+        its own rules end the entry period with the 2026 regular season, which has finished.
+      </li>
+      <li>
+        <strong>The strongest real opportunities are the least glamorous.</strong> Metaculus, DrivenData,
+        ARC Prize and Kaggle reward measurable accuracy or model quality, are free to enter, state their
+        prizes on their own pages, and have no rake. They also suit an AI coding agent far better than
+        bracket-picking does.
+      </li>
+    </ol>
+
+    <h2 id="composition">2. What the 206 rows actually contain</h2>
+    <h3>By category</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Category</th><th scope="col">Rows</th><th scope="col">Share</th><th scope="col">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>Fantasy &amp; sports picks</td><td>129</td><td>63%</td><td>Large and seasonal; free entry is real, prizes are advertiser-funded.</td></tr>
+          <tr><td>Trading &amp; market</td><td>19</td><td>9%</td><td>Mostly broker funnels. Weakest fit for the stated purpose.</td></tr>
+          <tr><td>Creative contests</td><td>18</td><td>9%</td><td>Judged prizes; several are client-funded marketplaces.</td></tr>
+          <tr><td>Tech &amp; data</td><td>14</td><td>7%</td><td>Small but the highest-value group for an agent. Best verified.</td></tr>
+          <tr><td>Skill tournaments</td><td>12</td><td>6%</td><td>Mostly entry-fee cash rooms; free rooms pay gems.</td></tr>
+          <tr><td>Pool tools</td><td>7</td><td>3%</td><td>Not competitions. No prize.</td></tr>
+          <tr><td>Forecasting</td><td>3</td><td>1%</td><td>Small, high quality, genuinely free.</td></tr>
+          <tr><td>Trivia</td><td>2</td><td>1%</td><td>Thin, and one row records its game was removed.</td></tr>
+          <tr><td>Directories</td><td>2</td><td>1%</td><td>Indexes, not contests.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>By honesty of the free path</h3>
+    <p>
+      189 rows have a genuine free route to the cash prize, 13 have free events but
+      charge for the cash ones, and 4 require a fee outright. That 189 of 206
+      rows are ranked "free" is the single most encouraging number in the dataset — and the free-path
+      stamp is one of the upstream file's genuinely good ideas, because it keeps "free to play" from
+      quietly meaning "free practice mode".
+    </p>
+    <h3>By prize type</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Prize type</th><th scope="col">Rows</th><th scope="col">What it means</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge cash">Cash</span></td><td>122</td><td>States a dollar, euro or pound amount.</td></tr>
+          <tr><td><span class="badge mixed">Cash + other</span></td><td>26</td><td>Mixes money with goods, tickets or in-game items.</td></tr>
+          <tr><td><span class="badge noncash">Non-cash</span></td><td>23</td><td>Only goods, tickets, vouchers, points or in-game items.</td></tr>
+          <tr><td><span class="badge unstated">Unstated</span></td><td>35</td><td>No figure anywhere. Left blank on this site.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="money">3. The cash problem: 23 rows do not pay money</h2>
+    <p>
+      The site is titled "free competitions that pay real money". 23 rows, as written, do not
+      pay money at all. Examples taken verbatim from the prize field:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Row</th><th scope="col">Its own prize field says</th></tr></thead>
+        <tbody>
+          <tr><td>La Liga Fantasy</td><td>"Merchandise and experiences — official terms state no cash prizes"</td></tr>
+          <tr><td>Valorant Champions Pick'Em</td><td>"In-game rewards: sprays, gun buddies, titles (non-cash)"</td></tr>
+          <tr><td>ATP Fantasy</td><td>"ATP merchandise and 2027 tickets (no cash)"</td></tr>
+          <tr><td>LoL Pick'Em</td><td>"In-game rewards: emotes, icons, and a Jhin skin for a perfect bracket (non-cash)"</td></tr>
+          <tr><td>Formula E Predictor</td><td>"Signed shirt + cap (top scorer); merchandise discount codes (non-cash)"</td></tr>
+          <tr><td>Stable Stars</td><td>"£500 voucher (1st), £300 (2nd), £200 (3rd) each day" — a voucher, not cash</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      To be fair to the upstream project: every one of these is <em>labelled</em> non-cash in its own
+      text. Nobody was misled row by row. The problem is structural — a ledger whose stated purpose is
+      cash keeps a third of its bytes on non-cash prizes, so the category counts at the top of the page
+      no longer describe what is inside. On this site they are split out and flaggable rather than
+      counted together.
+    </p>
+
+    <h2 id="sourcing">4. Sourcing quality, measured</h2>
+    <p>
+      The upstream rule is strict and correct: <em>any listing that states a specific prize figure must
+      cite the operator's own rules or game page.</em> Measured against it:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Finding</th><th scope="col">Rows</th></tr></thead>
+        <tbody>
+          <tr><td>No official-tier source at all</td><td>12</td></tr>
+          <tr><td>Source mislabelled <code>official</code> (aggregator, wire, club site, social)</td><td>13</td></tr>
+          <tr><td>Official source exists but not on the operator's domain</td><td>20</td></tr>
+          <tr><td>"Rules" link is the homepage</td><td>35</td></tr>
+          <tr><td>No rules link at all</td><td>6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Two patterns explain almost all of it. First, <strong>trading-broker rows</strong> —
+      <code>myfxbook.com</code> press releases and affiliate bonus blogs standing in for the broker's own
+      contest terms. Second, <strong>niche fantasy leagues</strong> — where the prize exists only inside
+      a league's own app, so the compiler reached for a Reddit thread or an FPL tips blog.
+    </p>
+    <p>
+      The second pattern is the more forgivable: for a private mini-league there may genuinely be no
+      public page to cite. The correct handling is to say so and leave the figure blank, which is what
+      this site does. Six such rows now carry a blank prize and a <code>NO_OFFICIAL_SOURCE</code> flag
+      instead of a number borrowed from a blog.
+    </p>
+
+    <h2 id="categories">5. Category-by-category verdict</h2>
+    <h3>Tech &amp; data — 14 rows. The strongest group.</h3>
+    <p>
+      Free entry, published rules, automatic scoring, real prize pools and no house rake. Kaggle,
+      DrivenData, ARC Prize and Metaculus were all opened and confirmed during this audit. Prize sizes
+      run from a few thousand dollars to the low millions, and the work is the kind of work an agent can
+      do: read a spec, write code, iterate against a leaderboard.
+    </p>
+    <h3>Fantasy &amp; sports picks — 129 rows. Large, free, seasonal.</h3>
+    <p>
+      The free-entry claim holds up well here: broadcaster and league pick'em games really are free and
+      really do pay advertiser-funded cash. CBS Pro Pick'em was verified in detail — free entry, 18
+      weekly $1,000 prizes, a $5,000 season prize and a $100,000 perfect-week prize, restricted to the 50
+      states plus DC. The weakness is timing: nearly all of it is in-season only, and status is not
+      refreshed.
+    </p>
+    <h3>Trading &amp; market — 19 rows. The weakest group.</h3>
+    <p>
+      13 rows carry a broker-funnel flag and 14 rows across the site carry a
+      cash-out restriction flag — bonus credit, prop accounts, non-withdrawable balances. Several
+      "prizes" are funded trading accounts, which are a liability-shaped asset that requires further
+      trading to realise. If the goal is cash for time spent, this category should be near the bottom of
+      the queue regardless of the headline numbers, which are the largest on the site.
+    </p>
+    <h3>Skill tournaments — 12 rows. Mostly paid.</h3>
+    <p>
+      The upstream file is commendably blunt here: free rooms use gems, cash rooms charge a fee, and the
+      platform takes a rake. Only a handful have a real free-to-cash path. This is the category where the
+      word "free" most often means "free practice".
+    </p>
+    <h3>Creative — 18 rows. Judged, and uneven.</h3>
+    <p>
+      Genuine prizes exist (Louisiana Film Prize, HIPA, the Sony and World Press Photo awards) but
+      outcomes depend on subjective judging. Two rows — 99designs and Freelancer.com — are client-funded
+      marketplaces where the "prize" is a fee-deducted work payment. That is a job board, not a contest,
+      and should be labelled as one.
+    </p>
+    <h3>Forecasting — 3 rows. Small and honest.</h3>
+    <p>
+      Metaculus is the standout on the whole site: its homepage states outright that it is not a
+      prediction market and that you can "participate for free and win cash prizes", with 19 tournaments
+      and named pools up to $50,000. Small field, clear rules, measurable skill.
+    </p>
+    <h3>Pool tools and directories — 7 + 2 rows. Not contests.</h3>
+    <p>
+      Seven pool hosts ("prizes decided by your group") and two directories. Useful, but listing them
+      among competitions that pay prizes inflates the count and misleads a reader scanning for
+      opportunities. They belong in an appendix.
+    </p>
+
+    <h2 id="agent">6. Where an AI coding agent actually has an edge</h2>
+    <p>
+      The plan is to use a coding agent to compete in hard competitions for real money. That narrows the
+      useful list sharply, because the binding constraint is not prize size — it is whether effort
+      compounds and whether scoring is objective.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Test</th><th scope="col">Why it matters</th><th scope="col">Categories that pass</th></tr></thead>
+        <tbody>
+          <tr><td>Objective, automated scoring</td><td>An agent can measure its own progress without human judging.</td><td>Tech &amp; data; forecasting</td></tr>
+          <tr><td>Public leaderboard with feedback</td><td>Iteration is possible within the entry window.</td><td>Kaggle, DrivenData, AIcrowd, Tianchi</td></tr>
+          <tr><td>Rules readable in text</td><td>The spec can be loaded into context and complied with exactly.</td><td>Tech &amp; data; forecasting</td></tr>
+          <tr><td>Free entry, no rake</td><td>Expected value stays non-negative on repeated attempts.</td><td>Tech &amp; data; forecasting; broadcaster pick'em</td></tr>
+          <tr><td>Outcome independent of luck</td><td>Skill transfers between attempts.</td><td>Tech &amp; data; forecasting</td></tr>
+          <tr><td>Prize paid as cash</td><td>No bonus credit, prop account or voucher.</td><td>Tech &amp; data; forecasting; broadcaster pick'em</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Verdict:</strong> concentrate on <a href="tech.html">Tech &amp; data</a> and
+      <a href="forecasting.html">Forecasting</a>, treat <a href="sports.html">Fantasy &amp; sports
+      picks</a> as low-effort, low-ceiling entertainment with a small number of genuinely free prizes,
+      and deprioritise <a href="trading.html">Trading</a> and <a href="skill.html">Skill</a>, where the
+      fee, the rake or the credit terms eat the expected value.
+    </p>
+    <div class="callout">
+      <p><strong>The honest caveat on prize size.</strong> Kaggle's Featured and Hackathon tracks pay
+      well but attract thousands of teams; an agent raises throughput, not the odds to first place. The
+      competitions with the best ratio of prize to competition are usually the smaller ones — a $3,400
+      forecasting pool with a few hundred entrants is a better use of an afternoon than a $450,000 track
+      with 371 teams. Sort by prize, then check the entrant count on the operator's page before
+      committing.</p>
+    </div>
+
+    <h2 id="decay">7. Status decay and seasonality</h2>
+    <p>
+      Status is copied from the upstream snapshot, which was reviewed 2026-08-19, and it is not
+      re-polled. That produces three predictable distortions:
+    </p>
+    <ul>
+      <li><strong>Seasonal contests read as live out of season.</strong> MLB Beat the Streak is marked
+      live, but its own 2026 rules close the entry period at the end of the regular season — which has
+      finished. Its prize is also conditional to the point of being illustrative: $5,600,000 only for a
+      57-game hitting streak, otherwise $10,000, and nothing at all if nobody reaches 20.</li>
+      <li><strong>Annual contests that already ran.</strong> 27 rows are correctly marked ended and
+      kept deliberately, which is good practice — they show what returns next season.</li>
+      <li><strong>"Caution" is doing quiet work.</strong> 11 rows sit at caution, several because
+      their own prize field says "not confirmed for 2026/27". That is the most honest thing in the
+      dataset and it is why those prizes are blank on this site.</li>
+    </ul>
+
+    <h2 id="safety">8. Patterns to avoid, and why</h2>
+    <p>
+      Nothing in this dataset looked like outright fraud. The risks are structural, and they are worth
+      naming because they cost time rather than money:
+    </p>
+    <ul>
+      <li><strong>Bonus credit dressed as cash.</strong> If the prize is "bonus cash", "trading credit" or
+      "prop account", it is not money until further conditions are met. 14 rows carry this
+      flag.</li>
+      <li><strong>Entry fees with a rake.</strong> A free practice mode plus a raked cash mode means the
+      free path never pays. Four rows require a fee outright and 13 more only offer free
+      practice.</li>
+      <li><strong>Conditional headline prizes.</strong> A $5,600,000 headline that requires a near-math
+      impossible streak is marketing, not an expected value. Read the conditions, not the number.</li>
+      <li><strong>Prize-figure laundering through affiliate pages.</strong> The upstream project found that
+      9 of 12 confirmed errors traced to affiliate sources. The remaining mislabels on this site are
+      almost all of that type.</li>
+      <li><strong>Any competition that asks you to pay a fee to <em>collect</em> a prize</strong> is
+      illegitimate. The upstream file says this plainly and it remains the single best filter.</li>
+    </ul>
+
+    <h2 id="recommend">9. Recommendations</h2>
+    <ol>
+      <li><strong>Split the ledger by what is actually paid.</strong> Cash, mixed, non-cash and unstated
+      should be separate views, not one count. This site does that.</li>
+      <li><strong>Move pool tools and directories to an appendix.</strong> They are useful, but they are
+      not competitions and they inflate the headline number.</li>
+      <li><strong>Enforce the tier rule mechanically.</strong> A source can only be
+      <code>official</code> if its registrable domain matches the operator's. That single check catches
+      13 of the current mislabels automatically.</li>
+      <li><strong>Blank the figure when there is no operator page.</strong> 12 rows should
+      show no number, and the three affiliate-only live rows should lose their graded prize tables until
+      a broker page is cited.</li>
+      <li><strong>Re-verify status at display time, or drop the field.</strong> A stale "live" is worse
+      than no status. Where status cannot be refreshed, show the review date next to it — which this
+      site does on every row.</li>
+      <li><strong>Keep the honest labels.</strong> The free-path stamp, the deliberate retention of ended
+      entries, and the refusal to dress up gems as dollars are the best features of the upstream
+      project. They are carried over unchanged.</li>
+    </ol>
+
+    <hr>
+    <p class="small muted">
+      Every count on this page is generated from <code>data/audit-report.json</code> at build time, so it
+      cannot drift from the table. The reasoning is mine; the numbers are the audit's. See
+      <a href="methodology.html">Method &amp; sources</a> for the evidence behind each claim, and
+      <a href="flagged.html">Flagged for review</a> for the row-level detail.
+    </p>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Independent research compilation.</strong> Not affiliated with, endorsed by or sponsored by any listed operator. No link here is an affiliate or referral link. Prizes are described only as the operator describes them; where the operator does not state a figure, the field is blank rather than estimated.</p>
+    <p>Play only where it is legal for you. Age limits are set by each operator — 18+ or 21+ depending on the contest and your jurisdiction. Prize winnings may be taxable; in the US, operators commonly issue a 1099 for prizes of $600 or more. Nothing here is legal, tax or financial advice.</p>
+    <p class="small">Dataset snapshot: upstream ledger reviewed 2026-08-19 (commit <code>466f7c1</code>). Structural audit and page verification re-run 2026-11-01.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="competitions.html">All 206 competitions</a></li>
+      <li><a href="all-entries.html">Full listing (static)</a></li>
+      <li><a href="flagged.html">Flagged for review</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="executive-summary.html">Executive summary</a></li>
+      <li><a href="methodology.html">Method &amp; sources</a></li>
+      <li><a href="archive/prize-scout/index.html">Previous build (archived)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/js/app.js" defer></script>
+
+</body>
+</html>

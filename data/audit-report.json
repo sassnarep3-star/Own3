@@ -1,0 +1,143 @@
+{
+  "generated": "2026-11-01",
+  "upstream": {
+    "repo": "karagemop466-tech/FreeMoneyApps",
+    "file": "assets/data.js",
+    "commit": "466f7c1",
+    "reviewed": "2026-08-19",
+    "pass": "S"
+  },
+  "totals": {
+    "listings": 206,
+    "verifiedThisSession": 9,
+    "officialLinked": 151,
+    "flagged": 46,
+    "rowsWithAnyFlag": 118,
+    "totalFlagInstances": 208
+  },
+  "prizeType": {
+    "cash": 122,
+    "mixed": 26,
+    "non-cash": 23,
+    "unstated": 35
+  },
+  "byType": {
+    "skill": 12,
+    "trivia": 2,
+    "sports": 129,
+    "creative": 18,
+    "forecasting": 3,
+    "market": 19,
+    "tech": 14,
+    "directory": 2,
+    "pools": 7
+  },
+  "byStatus": {
+    "live": 163,
+    "mixed": 5,
+    "caution": 11,
+    "ended": 27
+  },
+  "freePath": {
+    "full": 189,
+    "partial": 13,
+    "paid-cash": 4
+  },
+  "flagCounts": {
+    "PRIZE_NOT_QUANTIFIED": 35,
+    "CASHOUT_RESTRICTED": 14,
+    "RULES_IS_HOMEPAGE": 35,
+    "MARKED_UNCONFIRMED": 21,
+    "NOT_A_COMPETITION": 9,
+    "UNDER_TIERED": 2,
+    "SOURCE_OFF_DOMAIN": 20,
+    "GAMBLING_OPERATOR": 2,
+    "NO_OFFICIAL_SOURCE": 12,
+    "NO_CASH_PRIZE": 23,
+    "HTTP_ONLY": 1,
+    "STATUS_STALE": 1,
+    "NO_RULES_URL": 6,
+    "BROKER_FUNNEL": 13,
+    "TIER_MISLABEL": 13,
+    "UNSTABLE_URL": 1
+  },
+  "fieldCoverage": {
+    "rulesUrl": 200,
+    "tosUrl": 14,
+    "iosUrl": 18,
+    "signupSteps": 0,
+    "howToWin": 0,
+    "howToGetMoney": 0,
+    "tosNotes": 0,
+    "redFlags": 116
+  },
+  "types": [
+    {
+      "id": "skill",
+      "name": "Skill tournaments",
+      "blurb": "Head-to-head or multiplayer skill games. Free rooms usually pay gems, not cash. Real USD almost always requires an entry fee."
+    },
+    {
+      "id": "trivia",
+      "name": "Trivia competitions",
+      "blurb": "Live or async quiz contests. Free daily plays exist on some apps. Prize pools are split among remaining winners."
+    },
+    {
+      "id": "sports",
+      "name": "Fantasy & sports picks",
+      "blurb": "Daily fantasy freerolls and sweepstakes sportsbooks. Free tickets or free coins can win USD; most large pools are paid-entry."
+    },
+    {
+      "id": "creative",
+      "name": "Creative contests",
+      "blurb": "Writing, photo, and brand challenges judged on a submission. Some are free; some lock cash prizes behind a membership."
+    },
+    {
+      "id": "forecasting",
+      "name": "Forecasting tournaments",
+      "blurb": "Judgement competitions scored on calibrated accuracy. You submit probability estimates, not wagers — nothing is staked and prizes come from sponsors."
+    },
+    {
+      "id": "market",
+      "name": "Market competitions",
+      "blurb": "Paper-trading and simulated-investing contests scored on portfolio return. Free to enter; prizes are funded by the operator, not your own stake."
+    },
+    {
+      "id": "tech",
+      "name": "Tech & data competitions",
+      "blurb": "Hackathons and machine-learning contests with published USD prize pools. Free to enter; winners complete tax and identity checks."
+    },
+    {
+      "id": "directory",
+      "name": "Directories & forums",
+      "blurb": "Places that list many current contests. Use them to find new promotions, then verify each contest’s own official rules."
+    },
+    {
+      "id": "pools",
+      "name": "Free pool & league platforms",
+      "blurb": "Free tools for running your own pick’em, survivor, squares, or fantasy league. The platform is free; the prize pot is funded by your group."
+    }
+  ],
+  "verificationLevels": [
+    {
+      "id": "account",
+      "name": "Account only",
+      "meaning": "Email or social login is enough to play. Prize claims usually still require a matching name and contact info."
+    },
+    {
+      "id": "eligibility",
+      "name": "Eligibility check",
+      "meaning": "Age, residency, and one-account rules are enforced. Winners sign an affidavit or confirm identity before payment."
+    },
+    {
+      "id": "kyc",
+      "name": "Full KYC",
+      "meaning": "Government photo ID, proof of address, and sometimes a selfie or source-of-funds check before any USD redemption."
+    },
+    {
+      "id": "tax",
+      "name": "Tax paperwork",
+      "meaning": "US prizes of $600+ typically require a W-9. Non-US winners may need a W-8BEN. Taxes are the winner’s responsibility."
+    }
+  ]
+}

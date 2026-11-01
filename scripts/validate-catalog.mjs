@@ -1,7 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = process.cwd();
+/* The Prize Scout build from session arena/ca773c6b now lives in archive/prize-scout/
+ * so that the audited ledger can occupy the repo root. This validator is kept as it
+ * was written — only its root moved — so the archived build stays continuously
+ * validated instead of rotting. */
+const root = path.join(process.cwd(), 'archive/prize-scout');
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/competitions.json'), 'utf8'));
 const failures = [];
 const assert = (ok, message) => { if (!ok) failures.push(message); };
@@ -39,7 +43,7 @@ for (const category of catalog.categories) {
 }
 
 // Check every local href and script/stylesheet reference in published HTML.
-const htmlFiles = ['index.html', 'executive-summary.html', 'flagged-for-review.html', 'COORDINATION.md', ...catalog.categories.map(c => `categories/${c.id}.html`)];
+const htmlFiles = ['index.html', 'executive-summary.html', 'flagged-for-review.html', ...catalog.categories.map(c => `categories/${c.id}.html`)];
 const linkPattern = /\b(?:href|src)="([^"]+)"/g;
 for (const file of htmlFiles.filter(file => file.endsWith('.html'))) {
   const text = fs.readFileSync(path.join(root, file), 'utf8');

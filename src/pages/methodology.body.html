@@ -1,0 +1,275 @@
+<div class="wrap">
+  <section class="hero">
+    <p class="kicker"><a href="index.html">Dashboard</a> / Method</p>
+    <h1>Method, sources and what "verified" means here</h1>
+    <p class="lede">
+      This site is a re-audit of an existing public ledger, not a fresh scrape. Everything below
+      describes exactly what was checked, what was not, and why some cells are deliberately blank.
+    </p>
+  </section>
+
+  <div class="prose">
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#provenance">Where the data came from</a></li>
+        <li><a href="#levels">The three verification levels</a></li>
+        <li><a href="#tiers">Source tiers, and the mislabelling problem</a></li>
+        <li><a href="#checks">The checks that were run on all {{total}} rows</a></li>
+        <li><a href="#live">Pages opened during this audit</a></li>
+        <li><a href="#limits">Limits of this audit — read this</a></li>
+        <li><a href="#scoring">The "best use of time" order</a></li>
+        <li><a href="#repro">Reproducing this</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="provenance">1. Where the data came from</h2>
+    <p>
+      The upstream project is <a href="https://karagemop466-tech.github.io/FreeMoneyApps/" target="_blank" rel="noopener">Free Money &amp; Contest Ledger</a>,
+      source repo <a href="https://github.com/karagemop466-tech/FreeMoneyApps" target="_blank" rel="noopener">karagemop466-tech/FreeMoneyApps</a>.
+      Its canonical dataset is <code>assets/data.js</code>, which defines <code>window.LEDGER</code>.
+      The upstream file records its own review date as <strong>{{upstreamdate}}</strong> and its internal pass as <strong>S</strong>.
+    </p>
+    <p>
+      At commit <code>{{upstreamcommit}}</code> that file contains <strong>{{total}} listings</strong>. It is
+      copied verbatim to <code>data/source-ledger.json</code> in this repo, with no edits. Every derived
+      field on this site — prize type, verification level, flags, triage score — is computed from that
+      copy by <code>tools/audit.mjs</code>, so any claim here can be traced back to the upstream text.
+    </p>
+    <div class="callout">
+      <p><strong>Nothing was invented to fill a gap.</strong> Where the upstream file has no value, the
+      site shows "Not stated" and raises a flag. There is no inference, no averaging, no
+      "approximately" and no placeholder figure anywhere in the table.</p>
+    </div>
+
+    <h2 id="levels">2. The three verification levels</h2>
+    <p>Only three labels appear on a row. They mean precisely this:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Badge</th><th scope="col">What I did</th><th scope="col">Count</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="badge verified">Verified here</span></td>
+            <td>I fetched the operator's own page on {{date}} and read the claim on it. The quoted
+            sentence is printed on the row, with the URL, so you can re-check it in one click.</td>
+            <td>{{verified}}</td>
+          </tr>
+          <tr>
+            <td><span class="badge official">Official source</span></td>
+            <td>The row cites a source hosted on the operator's own domain, and it passed every
+            structural check. I did <em>not</em> re-open the page this session, so the figure is the
+            upstream file's claim — plausible and sourced, but not freshly confirmed.</td>
+            <td>{{official}}</td>
+          </tr>
+          <tr>
+            <td><span class="badge flagged">Flagged</span></td>
+            <td>At least one high-severity defect: a non-cash prize, no official source, a mislabelled
+            source, or a row that is not a competition. The reason is printed on the row and repeated
+            on <a href="flagged.html">Flagged for review</a>.</td>
+            <td>{{flagged}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">
+      Do not read "Official source" as "confirmed". It means the sourcing rule was satisfied, not that
+      a human opened the page today. Only {{verified}} rows reached the stronger level.
+    </p>
+
+    <h2 id="tiers">3. Source tiers, and the mislabelling problem</h2>
+    <p>The upstream project defines three tiers and a rule that goes with them:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Tier</th><th scope="col">Upstream meaning</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tier official">official</span></td><td>The operator's own domain — rules page, game page, or press release.</td></tr>
+          <tr><td><span class="tier affiliate">affiliate</span></td><td>A review or SEO site. Allowed as secondary colour, <em>never</em> as the sole basis for a figure.</td></tr>
+          <tr><td><span class="tier forum">forum</span></td><td>Reddit, X. Context only.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The rule: <em>any listing that states a specific prize figure must cite the operator's own rules
+      or game page.</em> Upstream says this rule exists because it was tested — in their 19 Aug audit,
+      9 of 12 confirmed factual errors traced to an affiliate source.
+    </p>
+    <p>
+      The audit found the rule is not consistently applied in the data:
+    </p>
+    <ul>
+      <li><strong>{{f_noofficial}} rows cite no official source at all.</strong>
+      <code>NO_OFFICIAL_SOURCE</code>. Several are still marked live.</li>
+      <li><strong>{{f_tier}} sources are graded <code>official</code> but are not the operator.</strong>
+      <code>TIER_MISLABEL</code>. Examples: a press-release wire
+      (<code>prnewswire.com</code>), a broker review aggregator (<code>myfxbook.com</code>,
+      <code>tradingbrokers.com</code>), an affiliate bonus blog (<code>ndfxbonus.com</code>), club and
+      league fan sites (<code>tottenhamhotspur.com</code>, <code>leicestertigers.com</code>), a golf
+      blog (<code>thegolfwire.com</code>) and X posts.</li>
+      <li><strong>{{f_offdomain}} rows have an official source, but not on the operator's domain</strong>
+      — so the prize figure still comes from a third party.</li>
+    </ul>
+    <div class="callout bad">
+      <p><strong>The three worst cases.</strong> <code>roboforex-demo</code>, <code>fbs-pro-demo</code>
+      and <code>npbfx-demo</code> are marked <em>live</em> and quote precise graded prize tables
+      ($700/$550/$420…, $450/$250/$150…, $1,000/$500/$250…) while their only sources are affiliate
+      bonus blogs. Those are exactly the figures the sourcing rule exists to stop. They appear on the
+      site with blank confirmation and a flag, not as verified numbers.</p>
+    </div>
+
+    <h2 id="checks">4. The checks that were run on all {{total}} rows</h2>
+    <p>These are mechanical and re-runnable. Each produces a flag code you can filter on.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Check</th><th scope="col">Code</th><th scope="col">Rows</th></tr></thead>
+        <tbody>
+          <tr><td>No source at tier <code>official</code></td><td><code>NO_OFFICIAL_SOURCE</code></td><td>{{f_noofficial}}</td></tr>
+          <tr><td>Source tiered <code>official</code> is an aggregator, wire or social host</td><td><code>TIER_MISLABEL</code></td><td>{{f_tier}}</td></tr>
+          <tr><td>No official source on the operator's own registrable domain</td><td><code>SOURCE_OFF_DOMAIN</code></td><td>{{f_offdomain}}</td></tr>
+          <tr><td>Prize text states goods, tickets, vouchers, points or in-game items and no cash</td><td><code>NO_CASH_PRIZE</code></td><td>{{f_nocash}}</td></tr>
+          <tr><td>No dollar figure anywhere in the prize field</td><td><code>PRIZE_NOT_QUANTIFIED</code></td><td>{{f_unquantified}}</td></tr>
+          <tr><td>Row text itself says unconfirmed, paused, not running or complete</td><td><code>MARKED_UNCONFIRMED</code></td><td>{{f_unconfirmed}}</td></tr>
+          <tr><td>Type is a pool-hosting tool or a directory</td><td><code>NOT_A_COMPETITION</code></td><td>{{f_notcompetition}}</td></tr>
+          <tr><td>Prize or cash-out terms mention bonus credit, prop account or non-withdrawable balance</td><td><code>CASHOUT_RESTRICTED</code></td><td>{{f_cashout}}</td></tr>
+          <tr><td>Broker demo/promo contest in the trading category</td><td><code>BROKER_FUNNEL</code></td><td>{{f_broker}}</td></tr>
+          <tr><td>No rules URL recorded</td><td><code>NO_RULES_URL</code></td><td>{{f_norules}}</td></tr>
+          <tr><td>"Rules" URL resolves to the site homepage</td><td><code>RULES_IS_HOMEPAGE</code></td><td>{{f_homepage}}</td></tr>
+          <tr><td>At least one link uses plain <code>http://</code></td><td><code>HTTP_ONLY</code></td><td>{{f_http}}</td></tr>
+          <tr><td>Contest hosted on a bookmaker or betting-affiliate domain, against the upstream policy</td><td><code>GAMBLING_OPERATOR</code></td><td>{{f_gambling}}</td></tr>
+          <tr><td>Recorded status contradicted by the operator's own rules (only where the rules were read)</td><td><code>STATUS_STALE</code></td><td>{{f_statusstale}}</td></tr>
+          <tr><td>Signup link is a login/OAuth redirect rather than a public page</td><td><code>UNSTABLE_URL</code></td><td>{{f_unstable}}</td></tr>
+          <tr><td>Source on the operator's own domain graded below <code>official</code></td><td><code>UNDER_TIERED</code></td><td>{{f_undertiered}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Also checked and clean: every URL in the dataset parses as an absolute <code>https</code> or
+      <code>http</code> URL (0 malformed); no listing is duplicated; all {{total}} rows carry a
+      <code>lastChecked</code> value and at least one source.
+    </p>
+
+    <h2 id="live">5. Pages opened during this audit</h2>
+    <p>
+      These are the operator pages I actually fetched on {{date}}, with what I read on them. This is
+      the entire evidence base for the "Verified here" badge.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Operator page</th><th scope="col">What the page said</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.metaculus.com/tournaments/" target="_blank" rel="noopener">metaculus.com/tournaments</a></td>
+            <td>"We are not a prediction market. You can participate for free and win cash prizes for being accurate." 19 tournaments listed with named prize pools from $3,400 (Animal Futures) to $50,000 (FutureEval Bot Fall 2026).</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.cbssports.com/fantasy/football/games/pickem/rules" target="_blank" rel="noopener">cbssports.com — 2026 Pro Football Pick'em rules</a></td>
+            <td>"The Challenge is FREE to play. No purchase, wireless device or entry fee necessary to enter or win." 18 weekly prizes of US$1,000; Season Long Prize US$5,000; Contingency Prize US$100,000. 50 US states + DC only; Puerto Rico and territories expressly excluded; 18+. Runs 9 Sep 2026 – 10 Jan 2027.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.mlb.com/apps/beat-the-streak/official-rules" target="_blank" rel="noopener">mlb.com — Beat the Streak 2026 official rules</a></td>
+            <td>"NO PURCHASE NECESSARY TO ENTER OR WIN." Grand Prize US$5,600,000, payable as a 30-year annuity of US$186,667/year or a US$3,000,000 lump sum (present value as of 12 Mar 2026), awarded only for a 57-game streak. Top Streak Prize US$10,000, and only if somebody reaches at least 20. Eligibility: US including territories and possessions, plus Canada excluding Quebec, 21+. Entry period 24 Mar 2026 to the end of the 2026 regular season.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.drivendata.org/competitions/" target="_blank" rel="noopener">drivendata.org/competitions</a></td>
+            <td>Live: Geologic Enhanced Mapping System (GEMS) Prize Challenge, "$300,000 in prizes", 4 weeks left. Completed: DaT Parkinson's Challenge €25,000; Children's Speech Recognition US$120,000.</td>
+          </tr>
+          <tr>
+            <td><a href="https://arcprize.org/" target="_blank" rel="noopener">arcprize.org</a></td>
+            <td>"Enter ARC Prize 2026 — Now $2,000,000 in prizes!"; "In partnership with Kaggle, over $2M is up for grabs." Three tracks.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.kaggle.com/competitions" target="_blank" rel="noopener">kaggle.com/competitions</a></td>
+            <td>Open prize events: ARC Prize 2026 Paper Track $450,000; NFL Big Data Bowl 2027 $100,000; Gemma 4 Developer Agent Paper Track $35,000. The "Getting Started" competitions carry no prize money.</td>
+          </tr>
+          <tr>
+            <td><a href="https://zindi.world/competitions" target="_blank" rel="noopener">zindi.world/competitions</a></td>
+            <td>Challenges board is live at <code>zindi.world</code>; the older <code>zindi.africa</code> domain redirects here. Upstream already uses the current domain — recorded so it is not "corrected" by mistake.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.squarespool.com/" target="_blank" rel="noopener">squarespool.com</a></td>
+            <td>"Get your own pool page in minutes — completely free." A squares-pool host. It offers no prize; the person running the pool sets any stake. Confirms the pool tools are mis-filed as prize competitions.</td>
+          </tr>
+          <tr>
+            <td><a href="https://aflwfantasy.afl/" target="_blank" rel="noopener">aflwfantasy.afl</a></td>
+            <td>Redirects into the AFL iD OAuth sign-in at <code>login.id.afl</code>. A genuine AFL property, but the URL is a login redirect rather than a public entry page, and it rendered "The page has timed out".</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="limits">6. Limits of this audit — read this</h2>
+    <p>Being precise about what this is <em>not</em> is the point of the exercise.</p>
+    <ul>
+      <li><strong>Only {{verified}} of {{total}} rows were opened at the operator.</strong> The other
+      {{official}} "Official source" rows carry the upstream file's claim plus a working-looking source
+      link. That is a sourcing check, not a fresh confirmation. Treat the prize figures as
+      <em>as-reported</em> until you click through.</li>
+      <li><strong>Status is inherited, not observed.</strong> {{live}} rows say live, but I did not poll
+      each operator today. Sports and fantasy contests are seasonal, and several are certainly out of
+      season on {{date}} — MLB Beat the Streak's own rules end the entry period with the 2026 regular
+      season, and its row still reads live. This is recorded on the row and on
+      <a href="flagged.html">Flagged for review</a>.</li>
+      <li><strong>Links were not all fetched.</strong> Checking several hundred live links from this
+      environment was not possible — outbound access from the build shell is restricted to a host
+      allowlist, and every operator domain is outside it. Link rot is therefore possible on any row.
+      The structural checks confirm every URL is well-formed and points where the row says it does.</li>
+      <li><strong>Eligibility is copied, not re-verified.</strong> Age floors, state exclusions and
+      jurisdiction blocks are the most volatile fields in the dataset and the most consequential. Where
+      the rules page stated them, the values matched exactly — CBS Pro Pick'em (50 states + DC, 18+,
+      Puerto Rico excluded), MLB Beat the Streak (US incl. territories + Canada excl. Quebec, 21+),
+      Metaculus (free, cash prizes). Every other row is as-reported.</li>
+      <li><strong>Prizes change.</strong> A "largest stated prize" is the biggest number written in the
+      prize field, not a guaranteed payout. Most of these pay only to the top of a large field, and
+      several only pay if a near-impossible condition is met — MLB's $5,600,000 requires a 57-game hit
+      streak and pays nothing at all if nobody reaches 20.</li>
+    </ul>
+
+    <h2 id="scoring">7. The "best use of time" order</h2>
+    <p>
+      The default sort on <a href="competitions.html">All competitions</a> is a triage score out of 100.
+      It is an editorial aid built only from fields already recorded, and it is not a fact about any
+      competition. The weights:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Component</th><th scope="col">Points</th></tr></thead>
+        <tbody>
+          <tr><td>Genuine free path to the cash prize</td><td>+25 (partial +10, fee required 0)</td></tr>
+          <tr><td>Prize is cash (cash + other +20, unstated +5, non-cash 0)</td><td>+25</td></tr>
+          <tr><td>Largest stated dollar figure, on a log scale, capped</td><td>up to +20</td></tr>
+          <tr><td>At least one official source on the operator's own domain, with no mislabelled source</td><td>+15</td></tr>
+          <tr><td>Status live (caution +4)</td><td>+10</td></tr>
+          <tr><td>No flags at all</td><td>+5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Because a big headline number earns points, the score rewards exactly the thing worth being
+      suspicious of. Always take the second step: read the cash-out field and the rules link on the
+      row before committing time.
+    </p>
+
+    <h2 id="repro">8. Reproducing this</h2>
+    <p>The pipeline is two scripts and needs nothing but Node:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">File</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+          <tr><td><code>data/source-ledger.json</code></td><td>Verbatim copy of upstream <code>assets/data.js</code> → <code>window.LEDGER</code>.</td></tr>
+          <tr><td><code>tools/audit.mjs</code></td><td>Classifies every row, raises flags, assigns verification levels and the triage score. Writes <code>data/audit-report.json</code> and <code>assets/data/competitions.json</code>.</td></tr>
+          <tr><td><code>tools/build-site.mjs</code></td><td>Wraps page bodies in one shared shell and injects audit counts into the prose, so no number on the site is hand-typed.</td></tr>
+          <tr><td><code>tools/check-links.mjs</code></td><td>Verifies that every internal link resolves to a file that exists and that every external URL on the static pages is well-formed and present in the dataset.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">
+      Build: <code>node tools/audit.mjs &amp;&amp; node tools/build-site.mjs &amp;&amp; node tools/check-links.mjs</code>
+    </p>
+
+    <hr>
+    <p class="small muted">
+      Upstream dataset reviewed {{upstreamdate}} at commit <code>{{upstreamcommit}}</code>.
+      This audit and every page build ran on {{date}}. If an operator changes its rules after that
+      date, the operator's rules win — as they did before.
+    </p>
+  </div>
+</div>
