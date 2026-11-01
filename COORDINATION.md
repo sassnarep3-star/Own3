@@ -42,3 +42,31 @@ This workspace is pinned to branch `arena/ca773c6b-own3`; Arena requires work an
 ## Pull request and publication record
 
 Pending: create the pull request from `arena/ca773c6b-own3` to `main`, merge after checks, and confirm the GitHub Pages deployment. Record the PR URL, merge result, Actions/deployment run and public site URL here after completion.
+
+---
+
+## Session 1151755f — follow-on task board (appended; session ca773c6b's section above is untouched)
+
+Rules (from the project brief): read this file first; claim a task by writing your session ID + file scope, commit and push
+immediately; never start a task claimed by another session; edit only files in your scope; `git pull --rebase` before every push;
+shared outputs (table data, site index/navigation) are changed only by the final integration session.
+
+**Session ID used in this log:** `1151755f` (Arena session; branch `arena/1151755f-own3`).
+
+> **Branch-naming note (logged deviation):** the brief asks for branches named `session-<id>/<task>`. This Arena session is bound to
+> one fixed branch, `arena/1151755f-own3`, and is not permitted to create or push other branches. All tasks below are therefore
+> done sequentially on that single branch, with scopes kept non-overlapping by directory. No other session branches existed on
+> `origin` when this board was created (checked 2026-11-01 with `git branch -r` and `gh pr list`).
+
+| # | Task | Status | Owner | Files touched (scope) |
+|---|------|--------|-------|-----------------------|
+| T0 | Create this board | done | 1151755f | `COORDINATION.md` |
+| T1 | Repo review + upstream data import + automated audit (irregularity detection) | in progress | 1151755f | `data/upstream/**`, `tools/import_upstream.js`, `tools/audit.js`, `data/audit.json` |
+| T2 | Official-source verification (line by line, per row) | unclaimed → claimed by 1151755f below | 1151755f | `data/verification.json`, `VERIFICATION_LOG.md` |
+| T3 | Site: landing page, category pages, assets | unclaimed → claimed by 1151755f below | 1151755f | `site-src/**`, `assets/**`, `*.html` (generated) |
+| T4 | Executive summary | unclaimed → claimed by 1151755f below | 1151755f | `EXECUTIVE_SUMMARY.md`, `summary.html` (generated) |
+| T5 | Final integration: merge, combined re-verification, link check, PR, merge, Pages deploy | unclaimed | — (1151755f once T1–T4 are done) | shared outputs: `data/ledger.json`, `index.html`, nav |
+
+## Log
+- 2026-11-01 — 1151755f created the board and claimed T1–T4 (single session available; no competing claims on origin).
+- 2026-11-01 — 1151755f: `git pull --rebase` found session `ca773c6b` had already merged PR #1 to `main` (conservative site, all rows unverified, `data/competitions.json`, `categories/*.html`, `executive-summary.html`, `flagged-for-review.html`, `scripts/validate-catalog.mjs`, `.github/workflows/pages.yml`). Their claim is `done`, so no overlap. Conflict in this file resolved by keeping their text verbatim and appending this section. 1151755f builds on their work: it ADDS official-source verification and keeps their file paths.
