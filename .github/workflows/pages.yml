@@ -24,6 +24,12 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version: 22
+      - name: Check generated files are up to date
+        run: |
+          node tools/build_data.js
+          node tools/build_log.js
+          node tools/build_site.js
+          git diff --exit-code || (echo "Generated files are stale: run the build tools and commit." && exit 1)
       - name: Validate catalog and local links
         run: node scripts/validate-catalog.mjs
 

@@ -21,7 +21,7 @@ const rows = U.listings.map(x => {
 
   // ---- official link selection (never inferred) ----
   const officialSrcs = x.sources.filter(s => s.tier === 'official');
-  const usable = officialSrcs.filter(s => !THIRD_PARTY.has(regDomain(s.url)));
+  const usable = officialSrcs.filter(s => !THIRD_PARTY.has(regDomain(s.url)) && /^https:\/\//.test(s.url));
   const rejected = officialSrcs.filter(s => THIRD_PARTY.has(regDomain(s.url)));
   rejected.forEach(s => add('THIRD_PARTY_OFFICIAL', `Upstream tags ${s.url} as "official" but ${regDomain(s.url)} is a third-party site (news / press release / social / aggregator), not the contest operator.`));
   let official = null;
@@ -30,14 +30,14 @@ const rows = U.listings.map(x => {
     const same = usable.find(s => regDomain(s.url) === regDomain(x.signupUrl));
     const pick = same || usable[0];
     if (pick) official = { url: pick.url, label: pick.title, checked: false, kind: 'official-source' };
-    else if (!THIRD_PARTY.has(regDomain(x.signupUrl)) && sharedUrl[x.signupUrl.replace(/\/$/, '')].length === 1)
+    else if (/^https:\/\//.test(x.signupUrl) && !THIRD_PARTY.has(regDomain(x.signupUrl)) && sharedUrl[x.signupUrl.replace(/\/$/, '')].length === 1)
       // Fallback: the row's own signup link is on a domain that is not third-party and not shared with other rows.
       // It is shown as the operator's site, clearly labelled as "contest page not confirmed".
       official = { url: x.signupUrl, label: 'Operator site (upstream signup link; contest page not confirmed)', checked: false, kind: 'operator-site' };
   }
   if (official && !official.kind) official.kind = 'verified-page';
   const quarantined = !official;
-  if (quarantined) add('NO_OFFICIAL_SOURCE', 'No official-tier source on an operator domain and no unshared operator signup link. Row is excluded from the category tables (rule: every table row needs an official source link).');
+  if (quarantined) add('NO_OFFICIAL_SOURCE', 'No official-tier source on an operator domain and no unshared operator signup link. Row is excluded from the category tables (rule: every table row needs an official source link; HTTP-only links are not accepted).');
   if (THIRD_PARTY.has(regDomain(x.signupUrl))) add('SIGNUP_THIRD_PARTY', `Upstream "Official site" button points to ${x.signupUrl}, a third-party domain.`);
   if (usable.length && !usable.some(s => regDomain(s.url) === regDomain(x.signupUrl)) && !THIRD_PARTY.has(regDomain(x.signupUrl)))
     add('SIGNUP_DOMAIN_MISMATCH', `Upstream "Official site" button (${regDomain(x.signupUrl)}) differs from the official source domain(s) (${[...new Set(usable.map(s => regDomain(s.url)))].join(', ')}).`);
@@ -101,6 +101,33 @@ const stats = {
   rowsWithOfficialLink: rows.filter(r => r.official).length
 };
 
-fs.writeFileSync(path.join(ROOT, 'data/ledger.json'), JSON.stringify({ generatedOn: TODAY, types: U.types, rows }, null, 1));
-fs.writeFileSync(path.join(ROOT, 'data/stats.json'), JSON.stringify(stats, null, 1));
-console.log(JSON.stringify(stats, null, 1));
+const LEVEL_LABEL = { verified: 'Verified', partial: 'Partially verified', contradicted: 'Contradicted by official source', unverified: 'Unverified' };
+const listings = rows.map(r => ({
+  id: r.id, name: r.name, category: r.type, categoryName: r.typeName, platforms: r.platforms,
+  verificationStatus: LEVEL_LABEL[r.verification.level], verificationLevel: r.verification.level,
+  official: r.official, quarantined: r.quarantined,
+  checkedOn: r.verification.checkedOn,
+  freeEntry: r.verification.freeEntry, prize: r.verification.prize, eligibility: r.verification.eligibility,
+  dates: r.verification.dates, status: r.verification.status, notes: r.verification.notes,
+  unverifiedFields: r.unverifiedFields, flags: r.flags, upstream: r.upstream
+}));
+const out = {
+  provenance: {
+    referencePage: 'https://karagemop466-tech.github.io/FreeMoneyApps/',
+    referenceRepository: 'https://github.com/karagemop466-tech/FreeMoneyApps',
+    sourceFile: 'assets/data.js',
+    sourceCommit: stats.upstreamCommit,
+    sourceSha256: require('crypto').createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'data/upstream/data.js'))).digest('hex'),
+    leadCatalogReviewDate: U.reviewed,
+    extractedRecordCount: L.length,
+    verificationDate: V._meta.checkedOn,
+    verificationMethod: V._meta.method,
+    note: 'Fields freeEntry, prize, eligibility, dates and status are filled ONLY when read from the official page named in official.url on the verification date. Blank (null) means unverified. The "upstream" object keeps the lead catalog\'s own claims for audit comparison only; they are not facts and are never shown as facts on the site.'
+  },
+  categories: U.types.map(t => ({ id: t.id, name: t.name, description: t.blurb })),
+  listings
+};
+fs.writeFileSync(path.join(ROOT, 'data/competitions.json'), JSON.stringify(out, null, 1) + '\n');
+fs.writeFileSync(path.join(ROOT, 'data/stats.json'), JSON.stringify(stats, null, 1) + '\n');
+console.log('wrote data/competitions.json (' + listings.length + ' listings) and data/stats.json');
+console.log(JSON.stringify({ verifiedLevels: stats.verifiedLevels, quarantined: stats.quarantined, flags: stats.rowFlags }));

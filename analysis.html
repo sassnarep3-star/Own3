@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Findings from the official-source re-check and a review of the original ledger.">
+<title>Analysis &amp; findings — Prize Scout</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry cash competitions · verified from official sources</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="best-bets.html">Best bets</a><a href="all-entries.html">All entries</a><a href="analysis.html" aria-current="page">Analysis</a><a href="executive-summary.html">Executive summary</a><a href="flagged-for-review.html">Flagged for review <span class="nav-count">23+</span></a><a href="method.html">Method & sources</a></nav>
+</header>
+<main id="main" class="shell">
+
+<div class="eyebrow">Findings · data as of 2026-11-01</div>
+<h1>Analysis &amp; findings</h1>
+<p class="lead">What the official-source re-check found, and how the old ledger's headline numbers hold up. Counts of upstream claims are labelled as such — they are the old ledger's own labels, not verified facts.</p>
+
+<h2>1. Verification coverage</h2>
+<div class="kpis"><div class="kpi "><b>26 / 206</b><span>rows checked on an official page</span></div><div class="kpi good"><b>6</b><span>fully verified</span></div><div class="kpi "><b>11</b><span>partially verified</span></div><div class="kpi bad"><b>9</b><span>contradicted</span></div><div class="kpi warn"><b>180</b><span>unverified (blank)</span></div></div>
+<div class="bar"><span class="fill-ok" style="width:13%"></span></div>
+<p class="foot">13% of rows have been read against an official page. The checked rows are the most prominent entries (large prizes, widely shared platforms, headline examples); the remaining 180 stay blank until checked.</p>
+
+<h2>2. What the official pages said (vs. the old ledger)</h2>
+<p>Of 26 rows checked, <b>9</b> contradicted the old ledger on a material point (35%). All nine:</p>
+<div class="table-wrap"><table class="grid responsive"><thead><tr><th>Competition</th><th>Old ledger said</th><th>Official page says</th><th>Source</th></tr></thead><tbody>
+<tr><th scope="row" data-label="Competition">HeroX / Challenge.gov</th><td data-label="Old ledger said">rulesUrl https://www.challenge.gov/</td><td data-label="Official page says">Platform sunset 2026-03-30; the link no longer lists challenges. Upstream also tags HeroX's own link as 'forum', not official.</td><td data-label="Source" class="src"><a href="https://www.challenge.gov/" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">AIcrowd Challenges</th><td data-label="Old ledger said">Upstream notes the tag index carries SEO spam; prize 'up to $150,000+'</td><td data-label="Official page says">Spam and an injection-test string are visible on the official page; prize figure not confirmed. Treat with caution.</td><td data-label="Source" class="src"><a href="https://www.aicrowd.com/challenges" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">Zindi</th><td data-label="Old ledger said">rulesUrl https://zindi.world/rules</td><td data-label="Official page says">HTTP 404 on 2026-11-01 — broken link.</td><td data-label="Source" class="src"><a href="https://zindi.world/rules" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">Esports World Cup (EWC) Play — Fantasy &amp; Pick'em</th><td data-label="Old ledger said">status=live</td><td data-label="Official page says">Page shows &quot;Tournament Completed&quot;; all titles marked completed.</td><td data-label="Source" class="src"><a href="https://esportsworldcup.com/en/play/fantasy/cs2" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">TradingView — The Leap</th><td data-label="Old ledger said">status=live; $50,000 total prize table</td><td data-label="Official page says">The cited rules page covers a competition that ended 2026-08-14.</td><td data-label="Source" class="src"><a href="https://www.tradingview.com/the-leap/tradestation-july-2026/rules/" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">NRL Fantasy</th><td data-label="Old ledger said">1st overall: trip + $2,000; monthly 1st: $1,000 (upstream notes the table shown is 2025)</td><td data-label="Official page says">The cited page is the 2024 prize page; current-season prizes were not confirmed.</td><td data-label="Source" class="src"><a href="https://nrlfantasy.zendesk.com/hc/en-us/articles/15492067192861-Prizes" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">Tom Howard/Margaret Reid Poetry Contest</th><td data-label="Old ledger said">freePath=full (free USD path), status=live</td><td data-label="Official page says">Entry fee $27 per submission; contest currently closed until 2027-04-15.</td><td data-label="Source" class="src"><a href="https://winningwriters.com/our-contests/tom-howard-margaret-reid-poetry-contest" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">Checkmate Gaming (CMG) Free Tournaments</th><td data-label="Old ledger said">$10–$180 cash per tournament (free entry)</td><td data-label="Official page says">Page currently lists $40, $100 and $120 free-entry prizes (and a $1,500 Elite event). The $10–$180 range could not be confirmed.</td><td data-label="Source" class="src"><a href="https://www.checkmategaming.com/free-tournaments" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+<tr><th scope="row" data-label="Competition">FundedFast Open</th><td data-label="Old ledger said">1st $25, 2nd $20, 3rd $15 (cash) per two-week round</td><td data-label="Official page says">Monthly 30-day championship; $2,000 pool for top 20 (1st $400).</td><td data-label="Source" class="src"><a href="https://fundedfast.com/trading-competition" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a></td></tr>
+</tbody></table></div>
+
+<h2 id="headline-numbers">3. Do the old ledger's headline numbers hold up?</h2>
+<div class="table-wrap"><table class="grid responsive"><thead><tr><th>Old headline</th><th>What the data file shows</th><th>Issue</th></tr></thead><tbody>
+<tr><th scope="row" data-label="Old headline">"189 true free paths"</th><td data-label="Data file shows">189 rows stamped "full" free path; <b>26</b> of them are also marked ended and <b>10</b> marked caution.</td><td data-label="Issue">The headline counts ended and cautioned entries as "true free". The Tom Howard poetry contest (stamped "full") charges a $27 fee, so the stamp is not reliable.</td></tr>
+<tr><th scope="row" data-label="Old headline">Free "USD path"</th><td data-label="Data file shows">65 rows stamped "full" mention non-cash items (trips, vouchers, gift cards, equipment…) in their prize text; 30 rows use non-USD currency in a field named "prizeUsd".</td><td data-label="Issue">The "Free USD path" label overstates cash prizes. (Keyword match on the old text — a flag for review, not a verdict per row.)</td></tr>
+<tr><th scope="row" data-label="Old headline">"62 iOS options"</th><td data-label="Data file shows">62 rows list iOS and are not ended, but only 9 rows carry an App Store link.</td><td data-label="Issue">Most "iOS" labels are not backed by a store link. The old page's script also renders every non-iOS platform (including 48 that list Android) as "Browser".</td></tr>
+<tr><th scope="row" data-label="Old headline">"60 added this pass"</th><td data-label="Data file shows">The counter reads the length of the pass-C list (60); the data file's latest pass (S) lists 10 additions.</td><td data-label="Issue">The "added" counter is stale relative to the pass it names.</td></tr>
+<tr><th scope="row" data-label="Old headline">Last checked 2026-08-19</th><td data-label="Data file shows">All 206 rows carry the same date, 74 days before this review.</td><td data-label="Issue">Seasonal contests change quickly; several verified rows contradict a 2026-08-19 "live" status.</td></tr>
+</tbody></table></div>
+
+<h2>4. Source quality</h2>
+<ul>
+<li><b>20 rows</b> have a source the old ledger tags "official" that sits on a third-party domain (press-release wires, news sites, social posts, aggregators). These are not accepted as official links here.</li>
+<li><b>14 rows</b> have no usable official source and are held out of the tables (listed on the Flagged page). Another 11 rows are shown with the operator's own site as an <em>unchecked</em> link only.</li>
+<li><b>19 rows</b> share a signup URL with other rows (11 third-party FPL league listings all point to fantasy.premierleague.com), so that link is the platform, not the league.</li>
+<li>13 rows' "Official site" button is on a different domain than the row's own official source.</li>
+</ul>
+
+<h2>5. Where the ledger's weight sits</h2>
+<div class="table-wrap"><table class="grid responsive"><thead><tr><th>Category</th><th>Entries</th><th>Share</th><th>Checked</th><th>With verified prize</th></tr></thead><tbody><tr><th scope="row" data-label="Category"><a href="categories/skill.html">Skill tournaments</a></th><td data-label="Entries">12</td><td data-label="Share of ledger">6%</td><td data-label="Checked">1</td><td data-label="With verified prize">1</td></tr><tr><th scope="row" data-label="Category"><a href="categories/trivia.html">Trivia competitions</a></th><td data-label="Entries">2</td><td data-label="Share of ledger">1%</td><td data-label="Checked">0</td><td data-label="With verified prize">0</td></tr><tr><th scope="row" data-label="Category"><a href="categories/sports.html">Fantasy &amp; sports picks</a></th><td data-label="Entries">129</td><td data-label="Share of ledger">63%</td><td data-label="Checked">10</td><td data-label="With verified prize">6</td></tr><tr><th scope="row" data-label="Category"><a href="categories/creative.html">Creative contests</a></th><td data-label="Entries">18</td><td data-label="Share of ledger">9%</td><td data-label="Checked">4</td><td data-label="With verified prize">3</td></tr><tr><th scope="row" data-label="Category"><a href="categories/forecasting.html">Forecasting tournaments</a></th><td data-label="Entries">3</td><td data-label="Share of ledger">1%</td><td data-label="Checked">1</td><td data-label="With verified prize">1</td></tr><tr><th scope="row" data-label="Category"><a href="categories/market.html">Market competitions</a></th><td data-label="Entries">19</td><td data-label="Share of ledger">9%</td><td data-label="Checked">2</td><td data-label="With verified prize">1</td></tr><tr><th scope="row" data-label="Category"><a href="categories/tech.html">Tech &amp; data competitions</a></th><td data-label="Entries">14</td><td data-label="Share of ledger">7%</td><td data-label="Checked">8</td><td data-label="With verified prize">4</td></tr><tr><th scope="row" data-label="Category"><a href="categories/directory.html">Directories &amp; forums</a></th><td data-label="Entries">2</td><td data-label="Share of ledger">1%</td><td data-label="Checked">0</td><td data-label="With verified prize">0</td></tr><tr><th scope="row" data-label="Category"><a href="categories/pools.html">Free pool &amp; league platforms</a></th><td data-label="Entries">7</td><td data-label="Share of ledger">3%</td><td data-label="Checked">0</td><td data-label="With verified prize">0</td></tr></tbody></table></div>
+<p class="foot">Sports picks dominate the old ledger (129 of 206). Counts are of the ledger's own category labels.</p>
+
+<h2>6. Review of the source site and repository</h2>
+<ul>
+<li><b>Usability.</b> The old site's home page renders all 206 entries as expanded cards on one page and states "No search box, no filters". Our fetch of the page text spans 28 chunks. We did not test it on physical phones, so mobile defects are not itemised — the structural cause (very long single page, no filtering) is.</li>
+<li><b>Contradictory documents.</b> Its review page says the ledger "runs to 119 listings" while the data and README say 206; it also lists Reddit threads (r/beermoney, r/sweepstakes, r/FantasyPL, r/EarnExtraIncome) among its sources, although its own README source-tier table says forum/Reddit is "context only". (Older documents such as <code>100_VERIFIED_CONTESTS.md</code> are clearly labelled superseded upstream and are not counted as an irregularity.)</li>
+<li><b>Links.</b> Broken or dead links found: Zindi's rules link (HTTP 404) and Challenge.gov (platform sunset 2026-03-30). Reachability of the remaining external links could not be tested from this environment — see the method page.</li>
+<li><b>Source repo pinned at</b> <a href="https://github.com/karagemop466-tech/FreeMoneyApps/commit/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7">466f7c1</a>; a copy of its data file is in <code>data/upstream/data.js</code> (SHA-256 recorded in <code>data/competitions.json</code>).</li>
+</ul>
+
+<h2>7. Implications for an AI-assisted entrant</h2>
+<ul>
+<li>The largest <em>verified</em> prizes are in code/ML and hackathon competitions (Kaggle, ARC Prize, DrivenData, Devpost). Those are where an AI coding agent is most plausibly useful — but the AI-tool policy of each is <b>unverified</b>.</li>
+<li>Judged creative contests may forbid AI: Winning Writers' official rules prohibit AI-generated text.</li>
+<li>Pick'em contests (ESPN, CBS) have large verified prize pools but also large public fields; no odds were published on the pages read, so their expected value is unknown.</li>
+</ul>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+<span>Independent research · not affiliated with any listed operator · data as of 2026-11-01</span>
+<span><a href="flagged-for-review.html">Flagged for review</a> · <a href="method.html">Method</a> · <a href="data/competitions.json">Data (JSON)</a> · <a href="https://github.com/sassnarep3-star/Own3">Repo</a></span>
+</div></footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

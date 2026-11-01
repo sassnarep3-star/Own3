@@ -2,27 +2,31 @@
 
 A mobile-friendly GitHub Pages research dashboard for free-entry cash-prize competition candidates. It is intentionally evidence-first: a listing is not a recommendation, and unverified facts are left blank rather than guessed.
 
-## Current catalog status
+## Current catalog status (2026-11-01)
 
-- 206 candidate records grouped into nine category pages.
-- **0 independently verified contest rows** in this build.
-- Every row is flagged `Unverified`. Prize, entry cost, eligibility, availability, payout, effort and expected-value fields are blank by design.
-- Each candidate links to an operator/source URL present in the lead data. The lead catalog's "official" label and the destination itself have not been independently confirmed in this pass.
-- The source snapshot and its commit are recorded in [`data/competitions.json`](data/competitions.json).
+- 206 candidate records from the reference ledger; 192 have an official-source link and appear in the nine category pages and the all-entries table. 14 have no usable official source and are held out on the [Flagged for Review](flagged-for-review.html) page.
+- **26 rows were read on an official page on 2026-11-01**: 6 fully verified, 11 partially verified, 9 contradicted by the operator's own page. **180 rows remain unverified**, with prize, entry, dates and eligibility left blank by design.
+- A value appears in a table only if it was read on the official page named in the row. Nothing is inferred. The reference ledger's own claims are kept in `data/competitions.json` under `upstream` for audit only.
+- Pages: [Dashboard](index.html), [Best bets](best-bets.html), [All entries](all-entries.html), nine category pages, [Analysis](analysis.html), [Executive summary](executive-summary.html), [Flagged for Review](flagged-for-review.html), [Method & sources](method.html). Full log of pages read: [VERIFICATION_LOG.md](VERIFICATION_LOG.md).
 
 The live reference catalog is [Free Money & Contest Ledger](https://karagemop466-tech.github.io/FreeMoneyApps/). Its public repository is [karagemop466-tech/FreeMoneyApps](https://github.com/karagemop466-tech/FreeMoneyApps), pinned for this extraction to commit [`466f7c1e7a14b52b4a0d36beb84a00d68fd409b7`](https://github.com/karagemop466-tech/FreeMoneyApps/commit/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7). The source includes an [audit dated 2026-08-19](https://github.com/karagemop466-tech/FreeMoneyApps/blob/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7/AUDIT_2026-08-19.md) and a separate [document explicitly marked superseded](https://github.com/karagemop466-tech/FreeMoneyApps/blob/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7/100_VERIFIED_CONTESTS.md). See the site's [executive summary](executive-summary.html) and [Flagged for Review](flagged-for-review.html) for the scope and reported irregularities.
 
 ## Run and verify locally
 
-This is a static site and needs no package installation. Serve the repository root with any static HTTP server (for example, `python3 -m http.server 8000`) and open `http://localhost:8000/`.
+The published site is static HTML. Serve the repository root with any static HTTP server (for example, `python3 -m http.server 8000`).
 
-Run the catalog and internal-link checks with:
+Rebuild from source data (Node 18+, no dependencies):
 
 ```sh
+node tools/build_data.js      # data/verification.json + data/upstream/data.js -> data/competitions.json, data/stats.json
+node tools/build_log.js       # -> VERIFICATION_LOG.md
+node tools/build_site.js      # -> all HTML pages and EXECUTIVE_SUMMARY.md
 node scripts/validate-catalog.mjs
 ```
 
-The check validates catalog shape, IDs, categories, blank unverified fields, HTTPS source URLs, category subpages and local page links. It does **not** establish that outside websites still work, that a source link is truly official, or that a prize/entry claim is true. Every external contest needs a fresh, manual check against the operator's own current rules before any financial field can be populated.
+The validator enforces: an https official link on every table row (never a known news/affiliate/social domain); no value filled in unless the row was read on its official page and matches `data/verification.json`; quarantined rows never in a table; all internal links and anchors resolve; best-bets rows are verified, open and carry a verified prize. It does **not** test whether external websites are reachable (the build environment cannot reach them) — see the Method page.
+
+To verify more rows: read the operator's official page, add an entry to `data/verification.json` with only the values actually seen, then rebuild.
 
 ## Deployment
 

@@ -1,36 +1,108 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A source-conscious directory of free-to-enter cash-prize competition candidates, with every unverified claim clearly flagged.">
-  <title>Prize Scout — Competition dashboard</title>
-  <link rel="stylesheet" href="assets/css/site.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free-entry cash-prize competitions, verified against official sources; unverified values left blank.">
+<title>Dashboard — Prize Scout</title>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body data-data="data/competitions.json" data-page="home">
-  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry competition research</small></span></a>
-    <nav aria-label="Main navigation"><a aria-current="page" href="index.html">Dashboard</a><a href="executive-summary.html">Executive summary</a><a href="flagged-for-review.html">Flagged for review <span class="nav-count">206</span></a></nav>
-  </header>
-  <main class="shell">
-    <section class="hero">
-      <div class="eyebrow">Research dashboard · evidence before effort</div>
-      <h1>Find competitions worth your time.</h1>
-      <p class="hero-copy">A mobile-friendly working catalog of cash-prize competition candidates. Prize amounts, entry costs, eligibility, current status, payout and effort are left blank until checked against current official rules.</p>
-      <div class="notice notice-warning"><span class="notice-icon">!</span><div><strong>Evidence status: not yet verified</strong><p>The source catalog is a discovery lead, not proof. Every candidate below is flagged pending an independent check of its official operator rules. Do not pay, deposit or submit personal data based on this catalog.</p></div></div>
-      <div class="stats" id="stats" aria-label="Catalog status"></div>
-    </section>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry cash competitions · verified from official sources</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Dashboard</a><a href="best-bets.html">Best bets</a><a href="all-entries.html">All entries</a><a href="analysis.html">Analysis</a><a href="executive-summary.html">Executive summary</a><a href="flagged-for-review.html">Flagged for review <span class="nav-count">23+</span></a><a href="method.html">Method & sources</a></nav>
+</header>
+<main id="main" class="shell">
 
-    <section class="section-head"><div><div class="eyebrow">Browse the catalog</div><h2>By competition type</h2></div><p>All 206 names are carried over as candidates only.</p></section>
-    <section class="category-grid" id="category-grid" aria-label="Competition categories"></section>
+<section class="hero">
+  <div class="eyebrow">Dashboard · data as of 2026-11-01</div>
+  <h1>Find free-entry cash competitions worth your time.</h1>
+  <p class="hero-copy">206 competitions collected from the Free Money &amp; Contest Ledger, re-checked against each operator's <b>own</b> page. Where a value could not be confirmed on an official page it is left <b>blank and flagged unverified</b> — never guessed.</p>
+  <div class="cta"><a class="btn primary" href="best-bets.html">See best bets</a><a class="btn" href="all-entries.html">Browse all entries</a><a class="btn" href="flagged-for-review.html">Flagged for review</a></div>
+  <div class="kpis">
+    <div class="kpi "><b>206</b><span>competitions collected</span></div>
+    <div class="kpi "><b>26</b><span>checked on official pages</span></div>
+    <div class="kpi good"><b>6</b><span>fully verified</span></div>
+    <div class="kpi bad"><b>9</b><span>contradicted by their own site</span></div>
+    <div class="kpi warn"><b>180</b><span>still unverified (blank)</span></div>
+  </div>
+</section>
 
-    <section class="section-head section-head-table"><div><div class="eyebrow">Candidate register</div><h2>All listings</h2></div><span class="small-note">No ranking until the source evidence is checked.</span></section>
-    <div class="filters"><label class="search-label">Search candidates<input id="search" type="search" placeholder="Name or category" autocomplete="off"></label><label>Category<select id="category-filter"><option value="">All categories</option></select></label><span class="filter-count" id="result-count" aria-live="polite"></span></div>
-    <div class="table-wrap" id="table-mount"></div>
-    <p class="table-footnote">A dash means the value is deliberately blank—not zero, free, or unavailable. Use the source link as a research starting point, then inspect the current official rules.</p>
+<section>
+  <div class="sec-head"><div><div class="eyebrow">Start here</div><h2>Best bets right now</h2></div><a class="back" href="best-bets.html">All best bets →</a></div>
+  <p class="lead">Open now, cash prize read from the official page, and free entry stated on that page. Headline prize is not expected value — odds were not published.</p>
+  <div class="table-wrap"><table class="grid responsive"><thead><tr><th scope="col">Competition</th><th scope="col">Prize <small>(verified)</small></th><th scope="col">Free entry <small>(official page)</small></th><th scope="col">When <small>(official page)</small></th><th scope="col">Analyst note <small>(judgment)</small></th><th scope="col">Official source</th></tr></thead><tbody>
+<tr data-search="espn nfl pick'em">
+<th scope="row" data-label="Competition"><span class="nm">ESPN NFL Pick'em</span><small class="cat"><a href="categories/sports.html">Fantasy &amp; sports picks</a></small></th>
+<td data-label="Prize (verified)" class="prize">$102,000 total (58 prizes)</td>
+<td data-label="Free entry">Yes — page says &quot;FREE to play&quot;</td>
+<td data-label="When (official page)">Runs 09/09/2026 – 01/10/2027</td>
+<td data-label="Analyst note"><span class="note">Pick'em with 4 game modes and up to 10 entries. Large public field; odds not published on the page.</span></td>
+<td data-label="Official source" class="src"><a href="https://fantasy.espn.com/games/nfl-pickem-2026/picks" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a><small>ESPN NFL Pick'em 2026 (official game page)</small></td>
+</tr>
+<tr data-search="streak contest (moblab)">
+<th scope="row" data-label="Competition"><span class="nm">Streak Contest (MobLab)</span><small class="cat"><a href="categories/sports.html">Fantasy &amp; sports picks</a></small></th>
+<td data-label="Prize (verified)" class="prize">Ladder $5 → $100,000 (5 to 25 correct picks)</td>
+<td data-label="Free entry">Yes — listing says &quot;no entry fees&quot; and &quot;No purchase or deposit required&quot;; app is free.</td>
+<td data-label="When (official page)">Ongoing (no end date on listing)</td>
+<td data-label="Analyst note"><span class="note">Pays above $5 only after 10+ correct picks. NY and FL excluded per listing; the same listing also says 'all 50 states'.</span></td>
+<td data-label="Official source" class="src"><a href="https://apps.apple.com/us/app/streak-contest/id1623816920" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a><small>Apple App Store — Streak Contest (MobLab Limited)</small></td>
+</tr>
+<tr data-search="cbs sports pro football pick'em">
+<th scope="row" data-label="Competition"><span class="nm">CBS Sports Pro Football Pick'em</span><small class="cat"><a href="categories/sports.html">Fantasy &amp; sports picks</a></small></th>
+<td data-label="Prize (verified)" class="prize">$1,000 weekly × 18; $5,000 season; $100,000 (perfect week + exact tiebreaker scores)</td>
+<td data-label="Free entry">Yes — &quot;The Challenge is FREE to play. No purchase, wireless device or entry fee necessary.&quot;</td>
+<td data-label="When (official page)">Runs 2026-09-09 – 2027-01-10</td>
+<td data-label="Analyst note"><span class="note">Weekly $1,000 prizes are the realistic target; the $100,000 needs a perfect week and exact scores.</span></td>
+<td data-label="Official source" class="src"><a href="https://www.cbssports.com/fantasy/football/games/pickem/rules" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a><small>CBSSports.com 2026 Pro Football Pick'em Official Rules</small></td>
+</tr>
+<tr data-search="espn college football pick'em">
+<th scope="row" data-label="Competition"><span class="nm">ESPN College Football Pick'em</span><small class="cat"><a href="categories/sports.html">Fantasy &amp; sports picks</a></small></th>
+<td data-label="Prize (verified)" class="prize">$86,000 total (46 prizes)</td>
+<td data-label="Free entry">Yes — page says &quot;FREE to play&quot;</td>
+<td data-label="When (official page)">Runs 09/05/2026 – 12/06/2026</td>
+<td data-label="Analyst note"><span class="note">Ends first of the ESPN pick'em games. Up to 5 entries.</span></td>
+<td data-label="Official source" class="src"><a href="https://fantasy.espn.com/games/college-football-pickem-2026/picks" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a><small>ESPN College Pick'em 2026 (official game page)</small></td>
+</tr>
+<tr data-search="metaculus tournaments">
+<th scope="row" data-label="Competition"><span class="nm">Metaculus Tournaments</span><small class="cat"><a href="categories/forecasting.html">Forecasting tournaments</a></small></th>
+<td data-label="Prize (verified)" class="prize">$3,400 – $50,000 prize pools across tournaments</td>
+<td data-label="Free entry">Yes — &quot;You can participate for free and win cash prizes for being accurate.&quot;</td>
+<td data-label="When (official page)">Per tournament (e.g. US Midterms 2026 ends in 3 days)</td>
+<td data-label="Analyst note"><span class="note">Forecasting scored on accuracy. One listed tournament (Fall 2026 FutureEval, $50,000) is a bot tournament. Per-tournament rules on AI/bots not read.</span></td>
+<td data-label="Official source" class="src"><a href="https://www.metaculus.com/tournaments/" target="_blank" rel="noopener noreferrer">Official page <span aria-hidden="true">↗</span></a><small>Metaculus — Tournaments</small></td>
+</tr>
+</tbody></table></div>
+</section>
 
-    <section class="how-section"><div><div class="eyebrow">How to choose wisely</div><h2>We won’t rank what we can’t substantiate.</h2></div><p>Before recommending a competition, we need official confirmation of a genuinely free entry path, prize terms, active dates, geographic and age eligibility, payout mechanics, and time/skill demands. Expected value also requires odds or field size. Those inputs are currently unverified, so the dashboard makes no “best bet” or earnings promise.</p></section>
-  </main>
-  <footer class="site-footer"><div class="shell footer-inner"><span>Independent research project · not affiliated with listed operators.</span><span><a href="executive-summary.html">Summary</a> · <a href="flagged-for-review.html">Review log</a> · <a href="COORDINATION.md">Sources &amp; coordination</a></span></div></footer>
-  <script src="assets/js/app.js" defer></script>
+<section>
+  <div class="sec-head"><div><div class="eyebrow">Time-sensitive</div><h2>Dates to watch</h2></div></div>
+  <ul class="watch"><li><b>NASCAR Fantasy Live</b> — Registration closes 2026-11-08, 5 min before the last race <a href="https://fantasygames.nascar.com/live/page/rules" target="_blank" rel="noopener noreferrer">official page ↗</a></li><li><b>FundedFast Open</b> — Joining 2026-11-04 21:00 UTC – 2026-11-09 21:00 UTC <a href="https://fundedfast.com/trading-competition" target="_blank" rel="noopener noreferrer">official page ↗</a></li><li><b>Kaggle Competitions</b> — ARC Paper Track: 8 days to go; Gemma 4 paper track: 11 days; NFL BDB: 2 months (as of 2026-11-01) <a href="https://www.kaggle.com/competitions" target="_blank" rel="noopener noreferrer">official page ↗</a></li><li><b>Devpost Hackathons</b> — Meta VR: 17 days left; PayPal AI: 11 days left (as of 2026-11-01) <a href="https://devpost.com/hackathons" target="_blank" rel="noopener noreferrer">official page ↗</a></li><li><b>Sony World Photography Awards</b> — Student closes 2026-11-27; Single Image/Youth 2027-01-05; Series 2027-01-12 <a href="https://www.worldphoto.org/sony-world-photography-awards" target="_blank" rel="noopener noreferrer">official page ↗</a></li><li><b>DrivenData</b> — 4 weeks left (as of 2026-11-01) <a href="https://www.drivendata.org/competitions/" target="_blank" rel="noopener noreferrer">official page ↗</a></li></ul>
+</section>
+
+<section id="categories">
+  <div class="sec-head"><div><div class="eyebrow">Browse</div><h2>By category</h2></div></div>
+  <div class="cat-grid"><a class="cat-card" href="categories/skill.html"><h3>Skill tournaments</h3><p>Head-to-head or multiplayer skill games. Free rooms usually pay gems, not cash. Real USD almost always requires an entry fee.</p><div class="cat-meta"><span><b>12</b> entries</span><span><b>1</b> checked</span></div></a><a class="cat-card" href="categories/trivia.html"><h3>Trivia competitions</h3><p>Live or async quiz contests. Free daily plays exist on some apps. Prize pools are split among remaining winners.</p><div class="cat-meta"><span><b>2</b> entries</span><span><b>0</b> checked</span></div></a><a class="cat-card" href="categories/sports.html"><h3>Fantasy &amp; sports picks</h3><p>Daily fantasy freerolls and sweepstakes sportsbooks. Free tickets or free coins can win USD; most large pools are paid-entry.</p><div class="cat-meta"><span><b>129</b> entries</span><span><b>10</b> checked</span></div></a><a class="cat-card" href="categories/creative.html"><h3>Creative contests</h3><p>Writing, photo, and brand challenges judged on a submission. Some are free; some lock cash prizes behind a membership.</p><div class="cat-meta"><span><b>18</b> entries</span><span><b>4</b> checked</span></div></a><a class="cat-card" href="categories/forecasting.html"><h3>Forecasting tournaments</h3><p>Judgement competitions scored on calibrated accuracy. You submit probability estimates, not wagers — nothing is staked and prizes come from sponsors.</p><div class="cat-meta"><span><b>3</b> entries</span><span><b>1</b> checked</span></div></a><a class="cat-card" href="categories/market.html"><h3>Market competitions</h3><p>Paper-trading and simulated-investing contests scored on portfolio return. Free to enter; prizes are funded by the operator, not your own stake.</p><div class="cat-meta"><span><b>19</b> entries</span><span><b>2</b> checked</span></div></a><a class="cat-card" href="categories/tech.html"><h3>Tech &amp; data competitions</h3><p>Hackathons and machine-learning contests with published USD prize pools. Free to enter; winners complete tax and identity checks.</p><div class="cat-meta"><span><b>14</b> entries</span><span><b>8</b> checked</span></div></a><a class="cat-card" href="categories/directory.html"><h3>Directories &amp; forums</h3><p>Places that list many current contests. Use them to find new promotions, then verify each contest’s own official rules.</p><div class="cat-meta"><span><b>2</b> entries</span><span><b>0</b> checked</span></div></a><a class="cat-card" href="categories/pools.html"><h3>Free pool &amp; league platforms</h3><p>Free tools for running your own pick’em, survivor, squares, or fantasy league. The platform is free; the prize pot is funded by your group.</p><div class="cat-meta"><span><b>7</b> entries</span><span><b>0</b> checked</span></div></a></div>
+</section>
+
+<section class="two">
+  <div class="panel"><h2>How to read this site</h2>
+  <ul>
+  <li><span class="badge lvl-verified">Verified</span> free entry, prize and open status were all read on the official page.</li>
+  <li><span class="badge lvl-partial">Partial</span> some fields read; the rest are blank.</li>
+  <li><span class="badge lvl-contradicted">Contradicted</span> the official page disagrees with the old ledger (fee, ended, wrong figure, dead link).</li>
+  <li><span class="badge lvl-unverified">Unverified</span> not checked yet — prize, entry, dates, eligibility are blank.</li>
+  </ul></div>
+  <div class="panel"><h2>What is flagged</h2>
+  <p>9 rows contradict their own official page, 14 rows have no usable official source and are held out of the tables, and 27 rows were already marked ended by the old ledger.</p>
+  <p><a class="btn small" href="flagged-for-review.html">Open the Flagged for Review page</a></p></div>
+</section>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+<span>Independent research · not affiliated with any listed operator · data as of 2026-11-01</span>
+<span><a href="flagged-for-review.html">Flagged for review</a> · <a href="method.html">Method</a> · <a href="data/competitions.json">Data (JSON)</a> · <a href="https://github.com/sassnarep3-star/Own3">Repo</a></span>
+</div></footer>
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>
