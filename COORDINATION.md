@@ -35,7 +35,7 @@ until the integration merge; the merge itself is recorded at the bottom of this 
 | T5 | Site: dashboard, category subpages, static listing | done | `arena-6fc21fe0` | `index.html`, `competitions.html`, `<category>.html`, `all-entries.html`, `assets/**`, `src/**` | No external fonts, no runtime build |
 | T6 | Flagged for Review page | done | `arena-6fc21fe0` | `flagged.html` | 118 rows raising at least one issue |
 | T7 | Methodology + sources page | done | `arena-6fc21fe0` | `methodology.html` | Checks, levels, explicit limits |
-| T8 | Integration, PR and Pages publication | done | `arena-6fc21fe0` | repo root, `archive/**`, `.github/**` | See "Integration record" |
+| T8 | Integration, PR and Pages publication | needs review | `arena-6fc21fe0` | repo root, `archive/**`, `.github/**` | PR #4 merged, Pages built. Findings published on `flagged.html` → this item is `needs review` |
 | P1 | Prize Scout build (blank-candidates catalogue) | archived | `arena/ca773c6b-own3` | `archive/prize-scout/**`, `scripts/validate-catalog.mjs` | Preserved and still validating; superseded at the repo root |
 
 ---
@@ -204,3 +204,33 @@ This workspace is pinned to branch `arena/ca773c6b-own3`; Arena requires work an
 - Post-deploy QA found literal escape characters in two inserted review-table separators. Follow-up fix PR: <https://github.com/sassnarep3-star/Own3/pull/2> — merged on 2026-11-01 at merge commit `693671f9968499fca2c4c94f61161d05e23f726d` after validation passed.
 - Final Pages workflow run after the fix: <https://github.com/sassnarep3-star/Own3/actions/runs/41313342011> — validation and deploy jobs succeeded.
 - Public site: <https://sassnarep3-star.github.io/Own3/> — Pages API reports `built`; HTTPS enforced. The home page, sports category page, executive summary and corrected review page were fetched successfully after deployment; corrected review-page table now has proper row breaks.
+
+### 2026-11-01 — T8 published: PR, merge and deploy record
+
+| Step | Result |
+|---|---|
+| Integration pull request | **PR #4** — <https://github.com/sassnarep3-star/Own3/pull/4> |
+| Checks before merge | `build-check` PASS (audit + build + link check) · `validate` PASS (Prize Scout catalogue) · `deploy` skipped on PR as designed |
+| Merge state at merge time | `MERGEABLE` / `CLEAN` |
+| Merge | **merged** into `main` at merge commit `dd330ad` (`Merge pull request #4 from sassnarep3-star/arena/6fc21fe0-own3`) |
+| Pages build | `pages build and deployment` — success. Pages API: `build_type: legacy`, source `main` `/`, status `built`, HTTPS enforced |
+| Live URL | <https://sassnarep3-star.github.io/Own3/> |
+
+**Deploy verified by fetching the live pages**, not by trusting the build status alone:
+
+- `index.html` — dashboard, 206 audited / 9 verified / 151 official-sourced / 46 flagged
+- `competitions.html` — 206 rows rendered, filters and verification badges present
+- `methodology.html` — full check table and the list of pages opened
+- `archive/prize-scout/index.html` — the preserved Prize Scout build
+
+**One caveat worth recording.** Immediately after the merge, the bare root URL
+(`https://sassnarep3-star.github.io/Own3/`) still returned the previous Prize Scout page while
+`/methodology.html` and `/competitions.html` already served the new build. That is GitHub Pages
+edge caching of the root document, not a deploy failure: re-fetching the root with a query string
+returned the correct dashboard. The cache expires on its own. If the root ever appears stale again,
+check a sub-page before concluding that the deploy failed.
+
+**Final state.** All eight tasks are complete. Everything that could not be confirmed against an
+operator page is published on `flagged.html` with a reason and a source link, per the instruction
+that flagged and unverified items do not block publication. Nothing was marked verified without a
+link to the page I actually read.
