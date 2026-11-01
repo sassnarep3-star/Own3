@@ -10,16 +10,16 @@
   "totals": {
     "listings": 206,
     "verifiedThisSession": 9,
-    "officialLinked": 151,
-    "flagged": 46,
-    "rowsWithAnyFlag": 118,
-    "totalFlagInstances": 208
+    "officialLinked": 153,
+    "flagged": 44,
+    "rowsWithAnyFlag": 114,
+    "totalFlagInstances": 199
   },
   "prizeType": {
-    "cash": 122,
-    "mixed": 26,
-    "non-cash": 23,
-    "unstated": 35
+    "cash": 129,
+    "mixed": 28,
+    "non-cash": 21,
+    "unstated": 28
   },
   "byType": {
     "skill": 12,
@@ -44,16 +44,16 @@
     "paid-cash": 4
   },
   "flagCounts": {
-    "PRIZE_NOT_QUANTIFIED": 35,
     "CASHOUT_RESTRICTED": 14,
     "RULES_IS_HOMEPAGE": 35,
+    "PRIZE_NOT_QUANTIFIED": 28,
     "MARKED_UNCONFIRMED": 21,
     "NOT_A_COMPETITION": 9,
     "UNDER_TIERED": 2,
     "SOURCE_OFF_DOMAIN": 20,
     "GAMBLING_OPERATOR": 2,
     "NO_OFFICIAL_SOURCE": 12,
-    "NO_CASH_PRIZE": 23,
+    "NO_CASH_PRIZE": 21,
     "HTTP_ONLY": 1,
     "STATUS_STALE": 1,
     "NO_RULES_URL": 6,

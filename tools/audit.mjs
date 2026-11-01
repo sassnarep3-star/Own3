@@ -150,8 +150,15 @@ const UNVERIFIED_RX = /\b(not confirmed|unconfirmed|unverified|not verified|paus
 
 function classifyPrize(listing) {
   const text = `${listing.prizeUsd || ''} ${listing.prizeNote || ''}`;
-  const hasCash = CASH_RX.test(text);
-  const nonCash = NON_CASH_RX.test(listing.prizeUsd || '');
+  const prizeText = listing.prizeUsd || '';
+  /* "cash" written as a word counts, unless it is negated. Without this,
+   * "Weekly cash prizes + vouchers" was classified non-cash purely because
+   * "vouchers" matched — which is exactly the kind of wrong label this site
+   * exists to avoid. A negated form ("no cash prizes", "non-cash") does not count. */
+  const mentionsCash = CASH_RX.test(text)
+    || (/\bcash\b/i.test(prizeText) && !/\b(?:no|non-?|zero)\s*cash\b/i.test(prizeText));
+  const hasCash = mentionsCash;
+  const nonCash = NON_CASH_RX.test(prizeText);
   if (hasCash && nonCash) return 'mixed';
   if (hasCash) return 'cash';
   if (nonCash) return 'non-cash';

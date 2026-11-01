@@ -26,7 +26,7 @@ time, and what will they really pay?** A single scrolling list does not answer i
 | `competitions.html` — all competitions | All 206 rows in one searchable, filterable, sortable table. Filters for category, prize type, status and verification level. |
 | Nine category pages | Tech & data, fantasy & picks, creative, forecasting, trading, skill, trivia, directories, pool tools — each with the caveats specific to that group. |
 | `all-entries.html` — static listing | Every row in plain HTML with official and rules links. Works without JavaScript, prints cleanly, and is the file the link checker validates. |
-| `flagged.html` — flagged for review | All 208 findings across 118 rows, grouped by severity, each with the reason and a source link. |
+| `flagged.html` — flagged for review | All 199 findings across 114 rows, grouped by severity, each with the reason and a source link. |
 | `analysis.html` | Composition, sourcing quality, category verdicts, where an AI agent has an edge. |
 | `methodology.html` | Provenance, the three verification levels, every check run, the pages opened, and the limits. |
 | `EXECUTIVE_SUMMARY.md` | This document. |
@@ -41,19 +41,19 @@ that no number is hand-typed.
 |---|---|
 | Listings audited | **206** |
 | Verified against the operator's own page | **9** |
-| Carrying an official source (sourced, not re-opened) | **151** |
-| Flagged — at least one serious defect | **46** |
-| Rows raising any issue | **118** |
-| Total findings raised | **208** |
+| Carrying an official source (sourced, not re-opened) | **153** |
+| Flagged — at least one serious defect | **44** |
+| Rows raising any issue | **114** |
+| Total findings raised | **199** |
 
 Prize honesty:
 
 | Prize type | Rows |
 |---|---|
-| Cash (a dollar, euro or pound amount is stated) | 122 |
-| Cash mixed with goods, tickets or credit | 26 |
-| Non-cash only (merchandise, vouchers, points, in-game items) | 23 |
-| No figure stated anywhere | 35 |
+| Cash (a dollar, euro or pound amount is stated) | 129 |
+| Cash mixed with goods, tickets or credit | 28 |
+| Non-cash only (merchandise, vouchers, points, in-game items) | 21 |
+| No figure stated anywhere | 28 |
 
 Free path: 189 genuine free route to the cash prize, 13 free practice
 only, 4 require a fee.
@@ -61,7 +61,7 @@ Status: 163 live, 27 ended, 11 caution, 5 mixed.
 
 ## 4. Findings
 
-**F1 — 23 rows do not pay money.** Their own prize fields describe merchandise,
+**F1 — 21 rows do not pay money.** Their own prize fields describe merchandise,
 tickets, vouchers, in-game items or points. Each row is individually honest about this,
 but they sit inside a ledger whose stated purpose is cash, so the headline count
 oversells the contents. Example, verbatim: *La Liga Fantasy — "Merchandise and
@@ -123,7 +123,7 @@ $450,000 track with 371 teams for an afternoon's work.
 Stated plainly, because the value of this exercise depends on it:
 
 - **Only 9 of 206 rows were verified against the operator's own page.**
-  The remaining 151 rows that carry an official source are as-reported from the
+  The remaining 153 rows that carry an official source are as-reported from the
   upstream snapshot — sourced, but not re-opened. Link rot, changed prize structures and
   expired eligibility are possible on any row not marked verified.
 - **Nothing was inferred or back-filled.** Where a figure could not be sourced, the cell
@@ -138,9 +138,9 @@ Stated plainly, because the value of this exercise depends on it:
 
 ## 7. Irregularities flagged for review
 
-All 118 affected rows are published on `flagged.html` with reasons and source
+All 114 affected rows are published on `flagged.html` with reasons and source
 links. They are marked, not hidden, and they do not block publication. The full code
-list: `NO_CASH_PRIZE` (23), `PRIZE_NOT_QUANTIFIED` (35),
+list: `NO_CASH_PRIZE` (21), `PRIZE_NOT_QUANTIFIED` (28),
 `MARKED_UNCONFIRMED` (21), `NO_OFFICIAL_SOURCE` (12),
 `TIER_MISLABEL` (13), `SOURCE_OFF_DOMAIN` (20),
 `CASHOUT_RESTRICTED` (14), `BROKER_FUNNEL` (13),
@@ -155,7 +155,7 @@ The check now lets a domain match override the third-party host list.
 
 ## 8. Next steps
 
-1. Re-open the 151 "Official source" rows in batches and promote them to
+1. Re-open the 153 "Official source" rows in batches and promote them to
    verified, flagging whatever has moved.
 2. Replace the affiliate-only evidence on the three live trading rows with the broker's
    own contest terms, or blank their prize tables.
