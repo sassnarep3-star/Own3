@@ -43,5 +43,6 @@ This workspace is pinned to branch `arena/ca773c6b-own3`; Arena requires work an
 
 - Initial integration PR: <https://github.com/sassnarep3-star/Own3/pull/1> — merged on 2026-11-01 at merge commit `edaf99d1c54c9e7442e7bac7c1952b870ea6304e` after its validation check passed.
 - Initial Pages workflow run: <https://github.com/sassnarep3-star/Own3/actions/runs/41313212489> — validation and deploy jobs succeeded.
-- Public site: <https://sassnarep3-star.github.io/Own3/> — Pages API reports `built`; HTTPS enforced. The home page, sports category page, executive summary and review page were fetched successfully after the deployment.
-- Post-deploy QA found literal escape characters in two inserted review-table separators. That presentation defect has been corrected in the working branch and is pending a small follow-up PR/deploy; final confirmation will be added after merge.
+- Post-deploy QA found literal escape characters in two inserted review-table separators. Follow-up fix PR: <https://github.com/sassnarep3-star/Own3/pull/2> — merged on 2026-11-01 at merge commit `693671f9968499fca2c4c94f61161d05e23f726d` after validation passed.
+- Final Pages workflow run after the fix: <https://github.com/sassnarep3-star/Own3/actions/runs/41313342011> — validation and deploy jobs succeeded.
+- Public site: <https://sassnarep3-star.github.io/Own3/> — Pages API reports `built`; HTTPS enforced. The home page, sports category page, executive summary and corrected review page were fetched successfully after deployment; corrected review-page table now has proper row breaks.
