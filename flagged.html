@@ -48,8 +48,8 @@
     <p class="kicker"><a href="index.html">Dashboard</a> / Flagged</p>
     <h1>Flagged for review</h1>
     <p class="lede">
-      115 of 206 rows raised at least one issue during the audit —
-      204 findings in total. Every one is listed here with the reason and a source
+      118 of 206 rows raised at least one issue during the audit —
+      208 findings in total. Every one is listed here with the reason and a source
       link so you can check it yourself. These items do <strong>not</strong> block publication and the
       rows remain on the site; they are marked, not hidden.
     </p>
@@ -78,8 +78,11 @@
 <tr><td><a href="#no_official_source">No official source</a></td><td><code>NO_OFFICIAL_SOURCE</code></td><td>high</td><td>12</td></tr>
 <tr><td><a href="#not_a_competition">Not a competition you can win</a></td><td><code>NOT_A_COMPETITION</code></td><td>high</td><td>9</td></tr>
 <tr><td><a href="#no_rules_url">No rules link at all</a></td><td><code>NO_RULES_URL</code></td><td>medium</td><td>6</td></tr>
-<tr><td><a href="#under_tiered">UNDER_TIERED</a></td><td><code>UNDER_TIERED</code></td><td>low</td><td>2</td></tr>
+<tr><td><a href="#under_tiered">Source on the operator site graded below official</a></td><td><code>UNDER_TIERED</code></td><td>low</td><td>2</td></tr>
+<tr><td><a href="#gambling_operator">Requires a gambling-operator account</a></td><td><code>GAMBLING_OPERATOR</code></td><td>medium</td><td>2</td></tr>
 <tr><td><a href="#http_only">Insecure URL</a></td><td><code>HTTP_ONLY</code></td><td>low</td><td>1</td></tr>
+<tr><td><a href="#status_stale">Status contradicts the operator's own rules</a></td><td><code>STATUS_STALE</code></td><td>medium</td><td>1</td></tr>
+<tr><td><a href="#unstable_url">Signup link is a login redirect</a></td><td><code>UNSTABLE_URL</code></td><td>low</td><td>1</td></tr>
         </tbody>
       </table>
     </div>
@@ -574,7 +577,7 @@
 <tr>
           <td class="name"><a href="https://www.xprize.org/" target="_blank" rel="noopener nofollow">XPRIZE</a>
             <div class="small muted">tech · live</div></td>
-          <td class="prize"><strong>$2</strong><br><span class="small muted">Flagship prizes in the millions; 2026 Google-backed hackathon advertised a $2M pool</span></td>
+          <td class="prize"><strong>$2,000,000</strong><br><span class="small muted">Flagship prizes in the millions; 2026 Google-backed hackathon advertised a $2M pool</span></td>
           <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.xprize.org/), not a rules or terms page.</td>
           <td class="nowrap"><a href="https://www.xprize.org/" target="_blank" rel="noopener nofollow">XPRIZE</a><div class="small muted"><span class="tier official">official</span></div></td>
         </tr>
@@ -1246,7 +1249,7 @@
 <tr>
           <td class="name"><a href="https://fundednext.com/" target="_blank" rel="noopener nofollow">FundedNext Monthly Trading Competition</a>
             <div class="small muted">market · live</div></td>
-          <td class="prize"><strong>$5,000</strong><br><span class="small muted">1st $5,000 + $100K account; 2nd $2,000; 3rd $1,000; 4th–600th funded accounts</span></td>
+          <td class="prize"><strong>$100,000</strong><br><span class="small muted">1st $5,000 + $100K account; 2nd $2,000; 3rd $1,000; 4th–600th funded accounts</span></td>
           <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
           <td class="nowrap"><a href="https://help.fundednext.com/en/articles/11982105-how-to-win-fundednext-monthly-competition" target="_blank" rel="noopener nofollow">FundedNext Help — How to win the monthly competition (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
         </tr>
@@ -1351,7 +1354,7 @@
 <tr>
           <td class="name"><a href="https://www.codabench.org/" target="_blank" rel="noopener nofollow">Codabench / CodaLab</a>
             <div class="small muted">tech · live</div></td>
-          <td class="prize"><strong>$248,000</strong><br><span class="small muted">Per benchmark — many are unpaid; ML Contests logged $248,000 across 2025</span></td>
+          <td class="prize"><span class="small muted">Per benchmark — many are unpaid; ML Contests logged $248,000 across 2025</span></td>
           <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
           <td class="nowrap"><a href="https://www.codabench.org/" target="_blank" rel="noopener nofollow">Codabench (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
         </tr>
@@ -1382,6 +1385,55 @@
           <td class="prize"><span class="small muted">Trips, signed jerseys, DERBYSTAR balls, VIP Supercup access, 50× EA SPORTS FC 27 codes (non-cash)</span></td>
           <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
           <td class="nowrap"><a href="https://www.bundesliga.com/en/bundesliga/news/official-fantasy-manager-season-2026-27-new-features-38255" target="_blank" rel="noopener nofollow">Bundesliga.com — Fantasy Manager 2026/27 (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="gambling_operator">
+        <header>
+          <h3>Requires a gambling-operator account <span class="count">2</span></h3>
+          <p class="flag-meta"><code>GAMBLING_OPERATOR</code> · severity medium</p>
+        </header>
+        <p class="small">The contest runs on a bookmaker or betting-affiliate domain. The upstream file says it excludes contests requiring an account with a gambling operator and names DraftKings and FanDuel free-to-play games as excluded on that basis; these rows survived the cull.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://betfanatics.com/" target="_blank" rel="noopener nofollow">Fanatics NFL Survivor League</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$10,000,000</strong><br><span class="small muted">$1M+ guaranteed (up to $10M)</span></td>
+          <td class="notes">Signup is on betfanatics.com: Fanatics Sportsbook — the contest runs on the sportsbook’s own domain, so an account here is a betting account. The upstream file states it excludes contests requiring an account with a gambling operator, and names DraftKings and FanDuel free-to-play games as excluded on exactly this basis. This row is the same pattern and survived the cull.</td>
+          <td class="nowrap"><a href="https://betfanatics.com/" target="_blank" rel="noopener nofollow">Fanatics Sportsbook (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://andysbetclub.co.uk/predictor-game/" target="_blank" rel="noopener nofollow">Andy's Bet Club £1M Predictor</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$1,000,000</strong><br><span class="small muted">£1,000,000</span></td>
+          <td class="notes">Signup is on andysbetclub.co.uk: Andy’s Bet Club, a betting-affiliate brand rather than a league, broadcaster or software platform. The upstream file states it excludes contests requiring an account with a gambling operator, and names DraftKings and FanDuel free-to-play games as excluded on exactly this basis. This row is the same pattern and survived the cull.</td>
+          <td class="nowrap"><a href="https://andysbetclub.co.uk/predictor-game/" target="_blank" rel="noopener nofollow">Andy's Bet Club Predictor</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="status_stale">
+        <header>
+          <h3>Status contradicts the operator's own rules <span class="count">1</span></h3>
+          <p class="flag-meta"><code>STATUS_STALE</code> · severity medium</p>
+        </header>
+        <p class="small">The row says live, but the rules I read set an entry period that has already closed. Prize and eligibility figures are unaffected — only the status is wrong, and only on rows verified in detail.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.mlb.com/apps/beat-the-streak" target="_blank" rel="noopener nofollow">MLB Beat the Streak</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$5,600,000</strong><br><span class="small muted">$5,600,000 headline (≈$3,000,000 lump sum); $10,000 Top Streak prize</span></td>
+          <td class="notes">Recorded as &quot;live&quot; but the operator's own rules indicate &quot;ended&quot;. The same official rules set the entry period as 24 Mar 2026 &quot;to the end of the 2026 MLB regular season&quot;. That season has concluded, so on the review date the entry period these rules describe has closed. Upstream still records the row as live.</td>
+          <td class="nowrap"><a href="https://www.mlb.com/apps/beat-the-streak/official-rules" target="_blank" rel="noopener nofollow">Beat the Streak 2026 Official Rules (MLB)</a><div class="small muted"><span class="tier official">official</span></div></td>
         </tr>
             </tbody>
           </table>
@@ -1648,10 +1700,10 @@
       </section>
 <section class="flag-group sev-low" id="under_tiered">
         <header>
-          <h3>UNDER_TIERED <span class="count">2</span></h3>
+          <h3>Source on the operator site graded below official <span class="count">2</span></h3>
           <p class="flag-meta"><code>UNDER_TIERED</code> · severity low</p>
         </header>
-        <p class="small"></p>
+        <p class="small">The evidence is stronger than its label. Not a defect in the data, but the tier is wrong in the conservative direction and makes the row look weaker than it is.</p>
         <div class="table-scroll">
           <table>
             <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
@@ -1690,6 +1742,27 @@
           <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
           <td class="notes">Uses plain http:// instead of https://: http://www.squarespool.com/</td>
           <td class="nowrap"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-low" id="unstable_url">
+        <header>
+          <h3>Signup link is a login redirect <span class="count">1</span></h3>
+          <p class="flag-meta"><code>UNSTABLE_URL</code> · severity low</p>
+        </header>
+        <p class="small">The official-site link resolves into an OAuth or login flow rather than a public landing page, so it is a poor entry point from a table.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://aflwfantasy.afl/" target="_blank" rel="noopener nofollow">AFLW Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$37,000</strong><br><span class="small muted">Toyota Corolla Ascent Sport Hybrid (value $37,000) + AFL Store vouchers; Sherrin football</span></td>
+          <td class="notes">The signup link is a login/OAuth redirect rather than a public landing page, so it is a poor entry point from a table and may time out.</td>
+          <td class="nowrap"><a href="https://www.afl.com.au/aflw/news/1550791/win-a-37k-toyota-huge-prizes-on-offer-in-aflw-fantasy" target="_blank" rel="noopener nofollow">AFL — AFLW Fantasy 2026 prizes (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
         </tr>
             </tbody>
           </table>

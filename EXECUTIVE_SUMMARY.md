@@ -26,7 +26,7 @@ time, and what will they really pay?** A single scrolling list does not answer i
 | `competitions.html` — all competitions | All 206 rows in one searchable, filterable, sortable table. Filters for category, prize type, status and verification level. |
 | Nine category pages | Tech & data, fantasy & picks, creative, forecasting, trading, skill, trivia, directories, pool tools — each with the caveats specific to that group. |
 | `all-entries.html` — static listing | Every row in plain HTML with official and rules links. Works without JavaScript, prints cleanly, and is the file the link checker validates. |
-| `flagged.html` — flagged for review | All 204 findings across 115 rows, grouped by severity, each with the reason and a source link. |
+| `flagged.html` — flagged for review | All 208 findings across 118 rows, grouped by severity, each with the reason and a source link. |
 | `analysis.html` | Composition, sourcing quality, category verdicts, where an AI agent has an edge. |
 | `methodology.html` | Provenance, the three verification levels, every check run, the pages opened, and the limits. |
 | `EXECUTIVE_SUMMARY.md` | This document. |
@@ -43,8 +43,8 @@ that no number is hand-typed.
 | Verified against the operator's own page | **9** |
 | Carrying an official source (sourced, not re-opened) | **151** |
 | Flagged — at least one serious defect | **46** |
-| Rows raising any issue | **115** |
-| Total findings raised | **204** |
+| Rows raising any issue | **118** |
+| Total findings raised | **208** |
 
 Prize honesty:
 
@@ -138,7 +138,7 @@ Stated plainly, because the value of this exercise depends on it:
 
 ## 7. Irregularities flagged for review
 
-All 115 affected rows are published on `flagged.html` with reasons and source
+All 118 affected rows are published on `flagged.html` with reasons and source
 links. They are marked, not hidden, and they do not block publication. The full code
 list: `NO_CASH_PRIZE` (23), `PRIZE_NOT_QUANTIFIED` (35),
 `MARKED_UNCONFIRMED` (21), `NO_OFFICIAL_SOURCE` (12),

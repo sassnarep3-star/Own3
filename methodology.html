@@ -179,6 +179,10 @@
           <tr><td>No rules URL recorded</td><td><code>NO_RULES_URL</code></td><td>6</td></tr>
           <tr><td>"Rules" URL resolves to the site homepage</td><td><code>RULES_IS_HOMEPAGE</code></td><td>35</td></tr>
           <tr><td>At least one link uses plain <code>http://</code></td><td><code>HTTP_ONLY</code></td><td>1</td></tr>
+          <tr><td>Contest hosted on a bookmaker or betting-affiliate domain, against the upstream policy</td><td><code>GAMBLING_OPERATOR</code></td><td>2</td></tr>
+          <tr><td>Recorded status contradicted by the operator's own rules (only where the rules were read)</td><td><code>STATUS_STALE</code></td><td>1</td></tr>
+          <tr><td>Signup link is a login/OAuth redirect rather than a public page</td><td><code>UNSTABLE_URL</code></td><td>1</td></tr>
+          <tr><td>Source on the operator's own domain graded below <code>official</code></td><td><code>UNDER_TIERED</code></td><td>2</td></tr>
         </tbody>
       </table>
     </div>
@@ -254,8 +258,10 @@
       allowlist, and every operator domain is outside it. Link rot is therefore possible on any row.
       The structural checks confirm every URL is well-formed and points where the row says it does.</li>
       <li><strong>Eligibility is copied, not re-verified.</strong> Age floors, state exclusions and
-      jurisdiction blocks are the most volatile fields in the dataset and the most consequential. The
-      three rows I did verify (CBS, MLB, Metaculus) matched exactly; the rest are as-reported.</li>
+      jurisdiction blocks are the most volatile fields in the dataset and the most consequential. Where
+      the rules page stated them, the values matched exactly — CBS Pro Pick'em (50 states + DC, 18+,
+      Puerto Rico excluded), MLB Beat the Streak (US incl. territories + Canada excl. Quebec, 21+),
+      Metaculus (free, cash prizes). Every other row is as-reported.</li>
       <li><strong>Prizes change.</strong> A "largest stated prize" is the biggest number written in the
       prize field, not a guaranteed payout. Most of these pay only to the top of a large field, and
       several only pay if a near-impossible condition is met — MLB's $5,600,000 requires a 57-game hit

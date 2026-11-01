@@ -12,8 +12,8 @@
     "verifiedThisSession": 9,
     "officialLinked": 151,
     "flagged": 46,
-    "rowsWithAnyFlag": 115,
-    "totalFlagInstances": 204
+    "rowsWithAnyFlag": 118,
+    "totalFlagInstances": 208
   },
   "prizeType": {
     "cash": 122,
@@ -51,12 +51,15 @@
     "NOT_A_COMPETITION": 9,
     "UNDER_TIERED": 2,
     "SOURCE_OFF_DOMAIN": 20,
+    "GAMBLING_OPERATOR": 2,
     "NO_OFFICIAL_SOURCE": 12,
     "NO_CASH_PRIZE": 23,
     "HTTP_ONLY": 1,
+    "STATUS_STALE": 1,
     "NO_RULES_URL": 6,
     "BROKER_FUNNEL": 13,
-    "TIER_MISLABEL": 13
+    "TIER_MISLABEL": 13,
+    "UNSTABLE_URL": 1
   },
   "fieldCoverage": {
     "rulesUrl": 200,

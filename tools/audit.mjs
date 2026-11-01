@@ -110,7 +110,9 @@ const VERIFIED = {
     url: 'https://www.mlb.com/apps/beat-the-streak/official-rules',
     read: '2026 Official Rules: "NO PURCHASE NECESSARY TO ENTER OR WIN." Eligibility: US incl. commonwealths/territories/possessions and Canada excluding Quebec, 21+, registered MLB.com user. Grand Prize US$5,600,000, payable as a 30-year annuity of US$186,667/yr or a lump sum of US$3,000,000 (present value as of 12 Mar 2026); awarded only for a 57-game streak. Top Streak Prize US$10,000; awarded only if no Grand Prize and a streak of at least 20 is reached. Entry period 24 Mar 2026 to the end of the 2026 regular season.',
     confirms: '$5,600,000 headline / $3,000,000 lump sum; $10,000 Top Streak. Free entry. US + Canada excl. Quebec, 21+.',
-    note: 'Status is stale. The entry period ends with the 2026 regular season, which finished in October 2026, so on the review date the contest is closed until 2027. Upstream still says live.',
+    observedStatus: 'ended',
+    statusBasis: 'The same official rules set the entry period as 24 Mar 2026 "to the end of the 2026 MLB regular season". That season has concluded, so on the review date the entry period these rules describe has closed. Upstream still records the row as live.',
+    note: 'Prize and eligibility figures are exactly right. Only the status is stale, and it is the status that matters to a reader deciding where to spend an afternoon.',
   },
   kaggle: {
     url: 'https://www.kaggle.com/competitions',
@@ -128,7 +130,8 @@ const VERIFIED = {
     url: 'https://aflwfantasy.afl/',
     read: 'Resolves to the AFL iD OAuth sign-in flow at login.id.afl, then rendered "The page has timed out". It is genuinely an AFL-operated login, but it is not a usable public entry page.',
     confirms: 'Official AFL property; signup URL is a login redirect, not a landing page.',
-    note: 'Recommends https://fantasy.afl.com.au/ instead of the raw login redirect.',
+    note: 'The record’s signup URL is a raw OAuth redirect rather than a public entry page. The canonical entry point is https://fantasy.afl.com.au/.',
+    unstableUrl: true,
   },
   zindi: {
     url: 'https://zindi.world/competitions',
@@ -155,20 +158,57 @@ function classifyPrize(listing) {
   return 'unstated';
 }
 
-/** Largest dollar figure written in the prize text. Used only for sorting/sizing. */
+/** Largest dollar figure written in the prize text. Used only for sorting/sizing.
+ *  Handles plain amounts, thousands separators and K/M/BN multipliers, because the
+ *  upstream prize strings mix styles freely: "$100K perfect", "$1.03M across 2025",
+ *  "$5,600,000 headline". An earlier version missed the suffixes and read
+ *  "$100K" as $100, which mis-sorted the table — the suffix handling below is the fix.
+ *  Note: amounts in £ or € are treated as the same magnitude. That is a sorting
+ *  convenience only; the site always prints the original string verbatim. */
 function maxDollar(text) {
   if (!text) return null;
-  const m = text.match(/(?:\$|USD\s?|A\$|€|£)\s?([0-9][0-9,]*(?:\.[0-9]+)?)\s?(?:million|m\b)?/gi);
-  if (!m) return null;
+  const re = /(?:\$|A\$|USD\s?|€|£)\s?([0-9][0-9,]*(?:\.[0-9]+)?)\s*(k|m|bn|b|million|billion|thousand)?\b/gi;
+  /* Money that is written in the prize field but is not payable to the entrant.
+   * kinolime is the clear case: "$25,000 cash production award + up to $15M
+   * production financing" — the $15M finances a film, it is not a prize. Taking
+   * the raw maximum would have ranked it first on the site at $15M, which is
+   * simply wrong. Aggregates "across <year>" are excluded for the same reason:
+   * they are totals for a series of events, not one prize. */
+  const FINANCING = /\b(financing|production budget|budget)\b/i;
+  const AGGREGATE = /^[\s)]*(?:;|,)?\s*across\s+\d/i;
   let best = 0;
-  for (const hit of m) {
-    let num = parseFloat(hit.replace(/[^0-9.]/g, ''));
+  let hit;
+  while ((hit = re.exec(text)) !== null) {
+    const before = text.slice(Math.max(0, hit.index - 30), hit.index);
+    const afterWide = text.slice(hit.index + hit[0].length, hit.index + hit[0].length + 30);
+    const afterNarrow = text.slice(hit.index + hit[0].length, hit.index + hit[0].length + 14);
+    if (FINANCING.test(before + afterWide)) continue;      // e.g. "up to $15M production financing"
+    if (AGGREGATE.test(afterNarrow)) continue;             // e.g. "$1.03M across 2025"
+    let num = parseFloat(hit[1].replace(/,/g, ''));
     if (!isFinite(num)) continue;
-    if (/million|\bm\b/i.test(hit)) num *= 1e6;
+    const unit = (hit[2] || '').toLowerCase();
+    if (unit === 'k' || unit === 'thousand') num *= 1e3;
+    else if (unit === 'm' || unit === 'million') num *= 1e6;
+    else if (unit === 'bn' || unit === 'b' || unit === 'billion') num *= 1e9;
     if (num > best) best = num;
   }
   return best || null;
 }
+
+/* Hosts that are a gambling operator's own domain. The upstream policy says it
+ * excludes "any contest that requires an account with a gambling operator
+ * (bookmaker, sportsbook or real-money DFS)" and names DraftKings and FanDuel
+ * free-to-play games specifically. These rows contradict that policy. */
+const GAMBLING_OPERATORS = {
+  'betfanatics.com': 'Fanatics Sportsbook — the contest runs on the sportsbook’s own domain, so an account here is a betting account.',
+  'andysbetclub.co.uk': 'Andy’s Bet Club, a betting-affiliate brand rather than a league, broadcaster or software platform.',
+  'skybet.com': 'Sky Bet — a bookmaker.',
+  'bet365.com': 'bet365 — a bookmaker.',
+  'paddypower.com': 'Paddy Power — a bookmaker.',
+  'betmgm.com': 'BetMGM — a sportsbook.',
+  'fanduel.com': 'FanDuel — a sportsbook and DFS operator.',
+  'draftkings.com': 'DraftKings — a sportsbook and DFS operator.',
+};
 
 /* Types whose members are not actually free-to-enter prize competitions. */
 const NOT_A_CONTEST_TYPES = new Set(['pools', 'directory']);
@@ -181,6 +221,7 @@ const BROKER_FUNNEL_RX = /(demo|forex|cfd|broker|prop account|funded|trading bon
    ──────────────────────────────────────────────────────────────────────────── */
 const rows = src.listings.map((l) => {
   const flags = [];
+  const v = VERIFIED[l.id];                // manual verification recorded this session
   const sources = Array.isArray(l.sources) ? l.sources : [];
   const officialSources = sources.filter((s) => s.tier === 'official');
   const opDomain = regDomain(l.signupUrl);
@@ -302,6 +343,17 @@ const rows = src.listings.map((l) => {
     });
   }
 
+  /* — gambling-operator host, against the upstream policy — */
+  const bookKey = Object.keys(GAMBLING_OPERATORS).find(
+    (d) => opDomain === d || (opDomain || '').endsWith('.' + d));
+  if (bookKey) {
+    flags.push({
+      code: 'GAMBLING_OPERATOR',
+      severity: 'medium',
+      detail: `Signup is on ${opDomain}: ${GAMBLING_OPERATORS[bookKey]} The upstream file states it excludes contests requiring an account with a gambling operator, and names DraftKings and FanDuel free-to-play games as excluded on exactly this basis. This row is the same pattern and survived the cull.`,
+    });
+  }
+
   /* — banking on a bonus / credit rather than money — */
   if (/trading bonus|credited|prop account|account credit|bonus cash|not direct withdrawal|not withdrawable/i.test(`${l.prizeUsd || ''} ${l.minCashout || ''} ${l.prizeNote || ''}`)) {
     flags.push({
@@ -311,8 +363,25 @@ const rows = src.listings.map((l) => {
     });
   }
 
+  /* — status the operator's own page contradicts (only where I read the rules) — */
+  if (v && v.observedStatus && v.observedStatus !== l.status) {
+    flags.push({
+      code: 'STATUS_STALE',
+      severity: 'medium',
+      detail: `Recorded as "${l.status}" but the operator's own rules indicate "${v.observedStatus}". ${v.statusBasis || ''}`,
+    });
+  }
+
+  /* — signup URL is a login redirect rather than a usable entry page — */
+  if (v && v.unstableUrl) {
+    flags.push({
+      code: 'UNSTABLE_URL',
+      severity: 'low',
+      detail: 'The signup link is a login/OAuth redirect rather than a public landing page, so it is a poor entry point from a table and may time out.',
+    });
+  }
+
   /* — unverified-by-us but structurally sound — */
-  const v = VERIFIED[l.id];
   let level;
   if (v) level = 'verified';
   else if (flags.some((f) => f.severity === 'high')) level = 'flagged';
@@ -447,3 +516,33 @@ console.log(`rows with any flag       ${pad(report.totals.rowsWithAnyFlag)}`);
 console.log(`prize types              ${JSON.stringify(report.prizeType)}`);
 console.log('\nflag instances:');
 Object.entries(flagCounts).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => console.log(`  ${pad(v)}  ${k}`));
+
+/* ────────────────────────────────────────────────────────────────────────────
+   6. Human-readable record of the pages opened this session.
+      Generated from the same VERIFIED map the site uses, so the log can never
+      claim a verification the site does not show.
+   ──────────────────────────────────────────────────────────────────────────── */
+const vlines = [
+  '# Live verification log',
+  '',
+  `Session: \`arena/6fc21fe0\` · date: ${TODAY}`,
+  '',
+  'Method: each operator page below was fetched directly and the quoted claim read on the page.',
+  'Only what appears on the page is recorded. Everything not in this table is marked',
+  '`official-linked` on the site — sourced, but **not** re-opened this session.',
+  '',
+  `**${Object.keys(VERIFIED).length} of ${rows.length} rows were verified.**`,
+  '',
+  '| Listing | Operator page | What the page says | Prize / eligibility confirmed | Note |',
+  '|---|---|---|---|---|',
+];
+for (const [id, v] of Object.entries(VERIFIED)) {
+  const esc = (s) => String(s || '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+  vlines.push(`| \`${id}\` | <${v.url}> | ${esc(v.read)} | ${esc(v.confirms)} | ${esc(v.note) || '—'} |`);
+}
+vlines.push('', '---', '',
+  'Nothing else in the dataset was verified by opening a page. Where a figure could not be',
+  'sourced to an operator page, the site shows it blank and flags the row; see',
+  '`flagged.html` and `data/audit-report.json`.');
+writeFileSync('data/verification-live.md', vlines.join('\n') + '\n');
+console.log(`\nwrote data/verification-live.md (${Object.keys(VERIFIED).length} verified rows)`);

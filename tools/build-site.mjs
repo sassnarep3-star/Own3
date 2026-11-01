@@ -45,7 +45,7 @@ const CATS = [
   {
     id: 'market', slug: 'trading', name: 'Trading & market contests',
     tagline: 'Broker demo-account contests and paper-trading competitions. Read the cash-out terms before you spend time here.',
-    note: 'Caution category. Most of these are customer-acquisition promotions for brokers, and many pay in trading credit or prop accounts rather than withdrawable cash. Fourteen rows carry a cash-out or broker-funnel flag. This category is the weakest match for the phrase "free to enter competitions that pay real money".',
+    note: 'Caution category. Most of these are customer-acquisition promotions for brokers, and many pay in trading credit or prop accounts rather than withdrawable cash. Fifteen of the nineteen rows carry a broker-funnel or cash-out flag. This category is the weakest match for the phrase "free to enter competitions that pay real money".',
   },
   {
     id: 'skill', slug: 'skill', name: 'Skill tournaments',
@@ -189,7 +189,9 @@ function dashboardBody() {
   /* Start-here shortlist: free + live, no high-severity flag, money estimated. */
   const picks = rows
     .filter((r) => r.freePath === 'full' && r.status === 'live' && r.prizeType === 'cash'
-      && !r.flags.some((f) => f.severity === 'high'))
+      && !r.flags.some((f) => f.severity === 'high'
+        || f.code === 'GAMBLING_OPERATOR' || f.code === 'BROKER_FUNNEL'
+        || f.code === 'STATUS_STALE'))
     .sort((a, b) => (b.maxPrizeUsd || 0) - (a.maxPrizeUsd || 0))
     .slice(0, 8);
 
@@ -258,8 +260,14 @@ ${pickRows}
       </table>
     </div>
     <p class="small muted" style="margin-top:10px">
-      Four of these — Metaculus, DrivenData, ARC Prize and Kaggle — were opened and read during this
-      audit. See <a href="methodology.html">Method &amp; sources</a> for what "verified" means here.
+      ${(() => {
+        const v = picks.filter((r) => r.verifyLevel === 'verified');
+        return v.length
+          ? `<strong>${v.length}</strong> of these ${picks.length} were opened and read during this audit (${v.map((r) => escapeHtml(r.name)).join(', ')}).`
+          : `None of these ${picks.length} were opened during this audit.`;
+      })()}
+      Metaculus, Zindi, CBS Pro Pick'em and MLB Beat the Streak were also verified and appear elsewhere
+      in the table. See <a href="methodology.html">Method &amp; sources</a> for what "verified" means here.
     </p>
   </section>
 
@@ -435,6 +443,10 @@ function flaggedBody() {
     SOURCE_OFF_DOMAIN: { title: 'Prize cited off the operator\'s domain', sev: 'medium', what: 'No official-tier source sits on the operator\'s own domain, so the prize figure comes from a third party.' },
     RULES_IS_HOMEPAGE: { title: '"Rules" link points at the homepage', sev: 'medium', what: 'The rules URL is the site root, so entry conditions and prize terms cannot be checked from the row.' },
     CASHOUT_RESTRICTED: { title: 'Cash-out may not be cash', sev: 'medium', what: 'The prize or cash-out terms mention trading credit, bonus funds, prop accounts or non-withdrawable balances.' },
+    GAMBLING_OPERATOR: { title: 'Requires a gambling-operator account', sev: 'medium', what: 'The contest runs on a bookmaker or betting-affiliate domain. The upstream file says it excludes contests requiring an account with a gambling operator and names DraftKings and FanDuel free-to-play games as excluded on that basis; these rows survived the cull.' },
+    UNDER_TIERED: { title: 'Source on the operator site graded below official', sev: 'low', what: 'The evidence is stronger than its label. Not a defect in the data, but the tier is wrong in the conservative direction and makes the row look weaker than it is.' },
+    STATUS_STALE: { title: 'Status contradicts the operator\'s own rules', sev: 'medium', what: 'The row says live, but the rules I read set an entry period that has already closed. Prize and eligibility figures are unaffected — only the status is wrong, and only on rows verified in detail.' },
+    UNSTABLE_URL: { title: 'Signup link is a login redirect', sev: 'low', what: 'The official-site link resolves into an OAuth or login flow rather than a public landing page, so it is a poor entry point from a table.' },
     BROKER_FUNNEL: { title: 'Broker customer-acquisition contest', sev: 'medium', what: 'Demo-account contests run by trading firms. The upstream file excluded bookmaker and DFS funnels on the same logic but kept these.' },
     NO_RULES_URL: { title: 'No rules link at all', sev: 'medium', what: 'Nothing on the row points at official terms.' },
     PRIZE_NOT_QUANTIFIED: { title: 'No dollar figure stated', sev: 'low', what: 'No amount is given in the prize field. Left blank rather than estimated.' },
@@ -601,6 +613,10 @@ const TOKENS = {
   f_norules: n(REPORT.flagCounts.NO_RULES_URL || 0),
   f_unquantified: n(REPORT.flagCounts.PRIZE_NOT_QUANTIFIED || 0),
   f_http: n(REPORT.flagCounts.HTTP_ONLY || 0),
+  f_gambling: n(REPORT.flagCounts.GAMBLING_OPERATOR || 0),
+  f_statusstale: n(REPORT.flagCounts.STATUS_STALE || 0),
+  f_unstable: n(REPORT.flagCounts.UNSTABLE_URL || 0),
+  f_undertiered: n(REPORT.flagCounts.UNDER_TIERED || 0),
   live: n(REPORT.byStatus.live),
   ended: n(REPORT.byStatus.ended),
   caution: n(REPORT.byStatus.caution),
