@@ -16,20 +16,20 @@ every prize figure is sourced, every gap is visible, and the whole thing is usab
 
 | | |
 |---|---|
-| **{{ROWS}}** listings | copied verbatim from the upstream dataset, not rescraped |
-| **{{VERIFIED}}** verified | opened at the operator on 2026-11-01 and the claim read on the page |
-| **{{OFFICIAL}}** official-sourced | cites a source on the operator's own domain; not re-opened |
-| **{{FLAGGED}}** flagged | at least one serious defect — published, not hidden |
+| **206** listings | copied verbatim from the upstream dataset, not rescraped |
+| **9** verified | opened at the operator on 2026-11-01 and the claim read on the page |
+| **151** official-sourced | cites a source on the operator's own domain; not re-opened |
+| **46** flagged | at least one serious defect — published, not hidden |
 
-The site splits the ledger by **what is actually paid**. On the upstream file {{NONCASH}} rows carry
-no cash prize and {{UNSTATED}} more state no figure at all — between them a quarter of the file:
+The site splits the ledger by **what is actually paid**. On the upstream file, a third of the
+entries do not pay cash at all:
 
 | Prize type | Rows |
 |---|---|
-| Cash | {{CASH}} |
-| Cash mixed with goods or credit | {{MIXED}} |
-| Non-cash only | {{NONCASH}} |
-| No figure stated anywhere | {{UNSTATED}} |
+| Cash | 122 |
+| Cash mixed with goods or credit | 26 |
+| Non-cash only | 23 |
+| No figure stated anywhere | 35 |
 
 ## Why it exists
 
@@ -39,9 +39,9 @@ always traceable to an operator page even though the project's own README says t
 
 It also has **two honest categories of problem** worth surfacing rather than hiding:
 
-1. **{{NONCASH}} rows carry no cash prize** — merchandise, tickets, vouchers, in-game items. Each row
+1. **23 rows carry no cash prize** — merchandise, tickets, vouchers, in-game items. Each row
    says so itself, but they sit in a ledger whose purpose is cash, so the headline count oversells.
-2. **{{NOOFFICIAL}} rows cite no official source**, and **{{TIER}} sources are mislabelled
+2. **12 rows cite no official source**, and **13 sources are mislabelled
    `official`** — press-release wires, a broker review aggregator, affiliate bonus blogs, club sites
    and X posts standing in for the operator's own words.
 
@@ -141,7 +141,7 @@ Operator pages opened and read during this audit:
 An earlier session (`arena/ca773c6b-own3`) shipped a **Prize Scout** site from the same upstream
 data. It carried over the 206 names and categories but deliberately left every prize, eligibility,
 status and payout field blank, reporting **0 independently verified rows**. It is preserved intact
-and still validating at [`archive/prize-scout/`](archive/prize-scout/index.html) rather than deleted,
+and still validating at [`../prize-scout/`](../prize-scout/index.html) rather than deleted,
 because it is the most conservative reading of the source and a useful cross-check.
 
 `scripts/validate-catalog.mjs` points at that folder, so the archived catalogue and its nine

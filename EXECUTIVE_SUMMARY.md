@@ -1,173 +1,40 @@
-# Executive summary — Free Cash Competitions
+# Executive summary
 
-**Prepared:** 2026-11-01
-**Upstream dataset:** `karagemop466-tech/FreeMoneyApps`, `assets/data.js`, commit `466f7c1`, upstream review date 2026-08-19
-**Live site:** https://sassnarep3-star.github.io/Own3/
-**Scope:** 206 listings, full structural audit, 9 rows verified against the operator's own page.
+> Data as of 2026-11-01. Every figure below comes from `data/competitions.json` / `data/stats.json`; values not confirmed on an official page are blank, never estimated.
 
----
+## The short version
 
-## 1. The problem
+- The **Free Money & Contest Ledger** (source site) lists **206** free-entry cash competitions. It was re-checked against operators' own pages: **26** rows (13%) were read on an official page, **6** fully verified, **11** partially, **9** contradicted by the operator's own page. **180** rows remain unverified and are shown blank.
+- **Do not trust the ledger's headline numbers.** Its "189 true free" count includes 26 ended and 10 cautioned rows, and at least one "free" contest (Tom Howard poetry) charges a $27 fee.
+- **14** rows have no usable official source and are held out of the tables (see [Flagged for Review](flagged-for-review.html#quarantined)). The other **192** rows each carry an official link.
+- The best verified opportunities for an AI-assisted entrant are in [Best bets](best-bets.html): **9** Tier A (free entry confirmed) and **4** Tier B (large prize, entry terms still to read).
 
-The existing ledger (<https://karagemop466-tech.github.io/FreeMoneyApps/>) is good
-research with a poor interface. 206 entries render as one long undifferentiated
-scroll. There is no search and no filtering. It loads external Google Fonts, which
-makes it slow on a phone. Its own prize figures are not always traceable to the
-operator's page, even though the project's README says they must be.
+## What to do first
 
-The question a reader actually has is narrow: **which free competitions are worth my
-time, and what will they really pay?** A single scrolling list does not answer it.
+1. Open [Best bets](best-bets.html) and start with Tier A; check each competition's rules before entering.
+2. Time-sensitive: FundedFast championship joining runs 2026-11-04 to 2026-11-09; NASCAR Fantasy Live closes 2026-11-08; Sony World Photography Student category closes 2026-11-27; ESPN College Pick'em ends 2026-12-06.
+3. **AI-agent rule check:** the only AI rule read on an official page is Winning Writers' ban on AI-generated text (Wergle Flomp). All other competitions' AI-tool policies are unverified.
 
-## 2. What was built
+## Key findings
 
-| Deliverable | Purpose |
+| Finding | Detail |
 |---|---|
-| `index.html` — dashboard | Stat tiles, a shortlist of the strongest free-entry cash contests, category cards, and a legend. Phone-first layout. |
-| `competitions.html` — all competitions | All 206 rows in one searchable, filterable, sortable table. Filters for category, prize type, status and verification level. |
-| Nine category pages | Tech & data, fantasy & picks, creative, forecasting, trading, skill, trivia, directories, pool tools — each with the caveats specific to that group. |
-| `all-entries.html` — static listing | Every row in plain HTML with official and rules links. Works without JavaScript, prints cleanly, and is the file the link checker validates. |
-| `flagged.html` — flagged for review | All 199 findings across 114 rows, grouped by severity, each with the reason and a source link. |
-| `analysis.html` | Composition, sourcing quality, category verdicts, where an AI agent has an edge. |
-| `methodology.html` | Provenance, the three verification levels, every check run, the pages opened, and the limits. |
-| `EXECUTIVE_SUMMARY.md` | This document. |
+| Ledger is stale | All 206 rows carry a 2026-08-19 check date, 74 days before this review. |
+| Contradictions | 9 of 26 checked rows contradict their official page: a fee, an ended contest, a different prize or a dead link. [Details](flagged-for-review.html#contradicted). |
+| "Free USD cash" overstated | 65 rows stamped free mention non-cash prizes and 30 use non-USD currency (keyword flags). |
+| Source quality | 20 rows tag a third-party site (news, press release, social, aggregator) as "official". These are not accepted as official links. |
+| Shared links | 19 rows share a signup URL with another row, so the link is a platform, not the specific contest. |
+| Already ended | 27 rows are marked ended by the ledger itself. |
+| Weighting | Sports picks are 129 of 206 rows; the largest verified prizes are in code/ML and hackathon competitions. |
+| Site usability | The source page shows all entries as one long page with no search or filters (its own text says so); this site adds search, filters, category pages and mobile card tables. |
 
-The site is plain HTML, CSS and one small JavaScript file. There is no build step at
-runtime, no framework, no CDN, no external font. It is generated by two Node scripts so
-that no number is hand-typed.
+## Scope and honesty
 
-## 3. Key numbers
+- Verified means read on the operator's official page on 2026-11-01. Method and the full log of pages read: [Method & sources](method.html).
+- Win odds are not published on the pages read, so "best" means largest verified prize with free entry and open status, not expected value.
+- External link reachability could not be machine-tested from the build environment; internal links are validated in CI.
+- Source repository pinned at commit `466f7c1`.
 
-| Metric | Value |
-|---|---|
-| Listings audited | **206** |
-| Verified against the operator's own page | **9** |
-| Carrying an official source (sourced, not re-opened) | **153** |
-| Flagged — at least one serious defect | **44** |
-| Rows raising any issue | **114** |
-| Total findings raised | **199** |
+## Where to go next
 
-Prize honesty:
-
-| Prize type | Rows |
-|---|---|
-| Cash (a dollar, euro or pound amount is stated) | 129 |
-| Cash mixed with goods, tickets or credit | 28 |
-| Non-cash only (merchandise, vouchers, points, in-game items) | 21 |
-| No figure stated anywhere | 28 |
-
-Free path: 189 genuine free route to the cash prize, 13 free practice
-only, 4 require a fee.
-Status: 163 live, 27 ended, 11 caution, 5 mixed.
-
-## 4. Findings
-
-**F1 — 21 rows do not pay money.** Their own prize fields describe merchandise,
-tickets, vouchers, in-game items or points. Each row is individually honest about this,
-but they sit inside a ledger whose stated purpose is cash, so the headline count
-oversells the contents. Example, verbatim: *La Liga Fantasy — "Merchandise and
-experiences — official terms state no cash prizes"*.
-
-**F2 — 9 rows are not competitions.** Seven pool-hosting tools whose
-prize field reads "prizes decided by your group" (confirmed on squarespool.com, which
-offers no prize at all), plus two directories of other contests.
-
-**F3 — 12 rows break the project's own sourcing rule.** The rule requires
-any stated prize figure to cite the operator's own page. These rest on affiliate, forum
-or social sources only, and several are still marked *live*.
-
-**F4 — 13 sources are mislabelled `official`.** Press-release wires
-(`prnewswire.com`), a broker review aggregator (`myfxbook.com`, `tradingbrokers.com`),
-affiliate bonus blogs (`ndfxbonus.com`, `fofan.org`), club sites
-(`tottenhamhotspur.com`, `leicestertigers.com`) and X posts are all graded as the
-operator's own word. The three worst cases — `roboforex-demo`, `fbs-pro-demo`,
-`npbfx-demo` — are marked live and quote exact graded prize tables with no operator page
-behind them.
-
-**F5 — The 19-row trading category is a category error.** These are broker
-demo-account contests: customer-acquisition promotions. 13 carry a
-broker-funnel flag and 14 rows site-wide carry a cash-out restriction flag —
-trading credit, prop accounts, non-withdrawable balances. The upstream file already
-excludes bookmaker and DFS funnels on exactly this logic but kept forex funnels.
-
-**F6 — Status decays.** Status is inherited from a 2026-08-19 snapshot rather than
-observed. MLB Beat the Streak is marked live although its own 2026 rules close entry at
-the end of the regular season, which has finished; its $5,600,000 headline also requires
-a 57-game hitting streak and pays nothing at all if nobody reaches 20. Its row is
-verified and correct apart from the status — which is the point: the data can be right
-and still mislead.
-
-## 5. Recommendation
-
-**Concentrate on Tech & data and Forecasting.** They are the only categories that pass
-all six tests that matter for agent-assisted entry: automated scoring, a public
-leaderboard, text-readable rules, free entry with no rake, an outcome determined by
-skill rather than luck, and a prize paid as cash. Kaggle, DrivenData, ARC Prize and
-Metaculus were each opened and confirmed during this audit — Metaculus states on its own
-site that it is not a prediction market and that you can "participate for free and win
-cash prizes".
-
-**Treat Fantasy & sports picks as low-effort entertainment** with a handful of genuinely
-free prizes. CBS Pro Pick'em was verified in full: free entry, 18 × $1,000 weekly
-prizes, a $5,000 season prize and a $100,000 perfect-week prize, restricted to the 50
-states plus DC. It is seasonal and luck-dominated.
-
-**Deprioritise Trading and Skill** despite larger headline numbers, because the fee, the
-rake or the credit terms absorb the expected value.
-
-A caution on prize size: the competitions with the best prize-to-competition ratio are
-usually the smaller ones. A $3,400 forecasting pool with a few hundred entrants beats a
-$450,000 track with 371 teams for an afternoon's work.
-
-## 6. What could not be confirmed
-
-Stated plainly, because the value of this exercise depends on it:
-
-- **Only 9 of 206 rows were verified against the operator's own page.**
-  The remaining 153 rows that carry an official source are as-reported from the
-  upstream snapshot — sourced, but not re-opened. Link rot, changed prize structures and
-  expired eligibility are possible on any row not marked verified.
-- **Nothing was inferred or back-filled.** Where a figure could not be sourced, the cell
-  is blank and the row is flagged. There is no estimate, average or "approximately"
-  anywhere in the table.
-- **A full link crawl was not possible.** Outbound access from the build environment was
-  limited to a host allowlist, so several hundred operator URLs could not be polled. The
-  structural checks confirm every URL is well-formed and points where the row claims;
-  they cannot confirm every destination is still live.
-- **Eligibility is copied, not re-verified**, except on the three rows checked in detail,
-  which matched exactly.
-
-## 7. Irregularities flagged for review
-
-All 114 affected rows are published on `flagged.html` with reasons and source
-links. They are marked, not hidden, and they do not block publication. The full code
-list: `NO_CASH_PRIZE` (21), `PRIZE_NOT_QUANTIFIED` (28),
-`MARKED_UNCONFIRMED` (21), `NO_OFFICIAL_SOURCE` (12),
-`TIER_MISLABEL` (13), `SOURCE_OFF_DOMAIN` (20),
-`CASHOUT_RESTRICTED` (14), `BROKER_FUNNEL` (13),
-`NOT_A_COMPETITION` (9), `RULES_IS_HOMEPAGE` (35),
-`NO_RULES_URL` (6), `HTTP_ONLY` (1).
-
-One correction was made to the audit itself: an early pass flagged
-`favorites-pickem` and `supercoach-afl` as having a mislabelled official source. For
-`favorites-pickem` that was a false positive — `favorites.actionnetwork.com` and
-`www.actionnetwork.com` are the same registrable domain, so the operator was speaking.
-The check now lets a domain match override the third-party host list.
-
-## 8. Next steps
-
-1. Re-open the 153 "Official source" rows in batches and promote them to
-   verified, flagging whatever has moved.
-2. Replace the affiliate-only evidence on the three live trading rows with the broker's
-   own contest terms, or blank their prize tables.
-3. Re-poll status on the 129 seasonal rows at the start of each season instead
-   of displaying an inherited value.
-4. Split 99designs and Freelancer.com out of "creative contests" into a client-funded
-   work view.
-5. Add a change log so a reader can see when a prize figure or eligibility rule moved.
-
----
-
-*Independent compilation. Not affiliated with, endorsed by or sponsored by any listed
-operator. No link is an affiliate or referral link. Prizes are described only as the
-operator describes them. Play only where it is legal for you; age limits are set by each
-operator. Winnings may be taxable. Nothing here is legal, tax or financial advice.*
+- [Dashboard](index.html) · [All entries](all-entries.html) · [Analysis](analysis.html) · [Flagged for Review](flagged-for-review.html) · [Method](method.html)

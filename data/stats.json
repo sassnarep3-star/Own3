@@ -1,0 +1,60 @@
+{
+ "generatedOn": "2026-11-01",
+ "upstreamCommit": "466f7c1e7a14b52b4a0d36beb84a00d68fd409b7",
+ "totalRows": 206,
+ "byType": {
+  "skill": 12,
+  "trivia": 2,
+  "creative": 18,
+  "tech": 14,
+  "directory": 2,
+  "sports": 129,
+  "pools": 7,
+  "forecasting": 3,
+  "market": 19
+ },
+ "byUpstreamStatus": {
+  "mixed": 5,
+  "ended": 27,
+  "live": 163,
+  "caution": 11
+ },
+ "byUpstreamFreePath": {
+  "paid-cash": 4,
+  "partial": 13,
+  "full": 189
+ },
+ "headline": {
+  "upstreamFree189": 189,
+  "upstreamFreeAndEnded": 26,
+  "upstreamFreeAndCaution": 10,
+  "upstreamIos62": 62,
+  "listingsWithIosUrl": 9,
+  "listingsListingAndroid": 48,
+  "addedThisPassCLength": 60
+ },
+ "rowFlags": {
+  "SHARED_URL": 19,
+  "STALE": 206,
+  "THIRD_PARTY_OFFICIAL": 21,
+  "ENDED_UPSTREAM": 27,
+  "NO_OFFICIAL_SOURCE": 14,
+  "SIGNUP_THIRD_PARTY": 7,
+  "NON_CASH_OR_MIXED": 65,
+  "CONTRADICTED": 15,
+  "SIGNUP_DOMAIN_MISMATCH": 13,
+  "NON_USD": 30,
+  "CAUTION_UPSTREAM": 11,
+  "NON_HTTPS": 1
+ },
+ "rowsWithAnyFlag": 206,
+ "quarantined": 14,
+ "verifiedLevels": {
+  "unverified": 180,
+  "partial": 11,
+  "contradicted": 9,
+  "verified": 6
+ },
+ "rowsWithVerifiedPrize": 16,
+ "rowsWithOfficialLink": 192
+}
