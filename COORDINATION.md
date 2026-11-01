@@ -61,12 +61,13 @@ shared outputs (table data, site index/navigation) are changed only by the final
 | # | Task | Status | Owner | Files touched (scope) |
 |---|------|--------|-------|-----------------------|
 | T0 | Create this board | done | 1151755f | `COORDINATION.md` |
-| T1 | Repo review + upstream data import + automated audit (irregularity detection) | in progress | 1151755f | `data/upstream/**`, `tools/import_upstream.js`, `tools/audit.js`, `data/audit.json` |
-| T2 | Official-source verification (line by line, per row) | unclaimed → claimed by 1151755f below | 1151755f | `data/verification.json`, `VERIFICATION_LOG.md` |
-| T3 | Site: landing page, category pages, assets | unclaimed → claimed by 1151755f below | 1151755f | `site-src/**`, `assets/**`, `*.html` (generated) |
-| T4 | Executive summary | unclaimed → claimed by 1151755f below | 1151755f | `EXECUTIVE_SUMMARY.md`, `summary.html` (generated) |
+| T1 | Repo review + upstream data import + automated audit (irregularity detection) | done | 1151755f | `data/upstream/**`, `tools/import_upstream.js`, `tools/audit.js`, `data/audit.json` |
+| T2 | Official-source verification (line by line, per row) | in progress (26 rows checked so far; remaining rows stay unverified) | 1151755f | `data/verification.json`, `VERIFICATION_LOG.md` |
+| T3 | Site: landing page, category pages, assets (extends session ca773c6b's site; same paths) | in progress | 1151755f | `site-src/**`, `assets/**`, `*.html` (generated) |
+| T4 | Executive summary | in progress | 1151755f | `EXECUTIVE_SUMMARY.md`, `summary.html` (generated) |
 | T5 | Final integration: merge, combined re-verification, link check, PR, merge, Pages deploy | unclaimed | — (1151755f once T1–T4 are done) | shared outputs: `data/ledger.json`, `index.html`, nav |
 
 ## Log
 - 2026-11-01 — 1151755f created the board and claimed T1–T4 (single session available; no competing claims on origin).
 - 2026-11-01 — 1151755f: `git pull --rebase` found session `ca773c6b` had already merged PR #1 to `main` (conservative site, all rows unverified, `data/competitions.json`, `categories/*.html`, `executive-summary.html`, `flagged-for-review.html`, `scripts/validate-catalog.mjs`, `.github/workflows/pages.yml`). Their claim is `done`, so no overlap. Conflict in this file resolved by keeping their text verbatim and appending this section. 1151755f builds on their work: it ADDS official-source verification and keeps their file paths.
+- 2026-11-01 — 1151755f: T1 done. Imported upstream `karagemop466-tech/FreeMoneyApps@466f7c1` (206 listings) to `data/upstream/data.js`; `tools/build_data.js` computes automatic irregularity flags into `data/ledger.json`/`data/stats.json`.
