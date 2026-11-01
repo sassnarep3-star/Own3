@@ -1,0 +1,355 @@
+{
+  "_meta": {
+    "checkedOn": "2026-11-01",
+    "session": "1151755f",
+    "method": "Each page below was fetched on 2026-11-01 and read directly. A field is filled in ONLY if the exact value appears on the cited official page. Fields not seen on the page are left blank (null) and shown as unverified on the site. Nothing is inferred.",
+    "levels": {
+      "verified": "Free-entry, prize and open/closed status were all read from the cited official page.",
+      "partial": "At least one field was read from the official page; one or more fields are still blank/unverified.",
+      "contradicted": "The official page contradicts the upstream ledger on a material point (entry fee, ended, wrong figure, dead link). See discrepancies."
+    }
+  },
+  "entries": {
+    "espn-pickem": {
+      "level": "verified",
+      "sourceUrl": "https://fantasy.espn.com/games/nfl-pickem-2026/picks",
+      "sourceLabel": "ESPN NFL Pick'em 2026 (official game page)",
+      "freeEntry": "Yes — page says \"FREE to play\"",
+      "prize": "$102,000 total; 58 prizes across 4 game modes. Page also states $1,500 guaranteed prizes every week and a $5,000 bonus for full picks in all 4 modes.",
+      "eligibility": null,
+      "dates": "09/09/2026 – 01/10/2027 (page 'Event Dates'); max 10 entries",
+      "status": "open",
+      "notes": ["Eligibility (age/state) is in the Official Rules (https://fantasy.espn.com/games/nfl-pickem-2026/howtoplay#CompleteRules), which were not fetched in this session."],
+      "discrepancies": []
+    },
+    "espn-cfb": {
+      "level": "verified",
+      "sourceUrl": "https://fantasy.espn.com/games/college-football-pickem-2026/picks",
+      "sourceLabel": "ESPN College Pick'em 2026 (official game page)",
+      "freeEntry": "Yes — page says \"FREE to play\"",
+      "prize": "$86,000 total; 46 season-long and weekly prizes. Page also states $1,500 in prizes every week and a $5,000 bonus for full picks in all 14 weeks and all 3 modes.",
+      "eligibility": null,
+      "dates": "09/05/2026 – 12/06/2026 (page 'Event Dates'); max 5 entries",
+      "status": "open",
+      "notes": ["Eligibility is in the Official Rules (https://fantasy.espn.com/games/college-football-pickem-2026/howtoplay#CompleteRules), not fetched."],
+      "discrepancies": []
+    },
+    "cbs-pro-pickem": {
+      "level": "verified",
+      "sourceUrl": "https://www.cbssports.com/fantasy/football/games/pickem/rules",
+      "sourceLabel": "CBSSports.com 2026 Pro Football Pick'em Official Rules",
+      "freeEntry": "Yes — \"The Challenge is FREE to play. No purchase, wireless device or entry fee necessary.\"",
+      "prize": "18 weekly prizes of $1,000 each (check); one $5,000 season-long prize; $100,000 contingency prize shared by anyone who picks every game correctly in a week AND predicts the exact scores of both tiebreaker games.",
+      "eligibility": "Registered CBSI-network users who are legal residents of the 50 US states or DC (Puerto Rico and territories excluded) and 18+ (or age of majority). One entry per person.",
+      "dates": "Early sign-up from 2026-07-20; contest runs 2026-09-09 to 2027-01-10 (18 weekly periods)",
+      "status": "open",
+      "notes": ["The $100,000 is NOT a perfect-bracket-style prize for most players: it requires a perfect week plus exact tiebreaker scores."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "$1K/week + $5K season + $100K perfect", "official": "Matches, but the $100K requires a perfect week AND exact scores for both tiebreaker games (Section 3, Contingency Prize)."}
+      ]
+    },
+    "mlb-beat-the-streak": {
+      "level": "partial",
+      "sourceUrl": "https://www.mlb.com/apps/beat-the-streak/official-rules",
+      "sourceLabel": "MLB Beat the Streak 2026 Official Rules",
+      "freeEntry": "Yes — \"NO PURCHASE NECESSARY\"; \"MLB.com account and BTS registration are both free.\"",
+      "prize": "Grand Prize $5,600,000 (30-year annuity of $186,667/yr OR $3,000,000 lump sum valued as of 2026-03-12) — awarded only for a streak of 57+. If no one reaches 57, a $10,000 Top Streak Prize goes to the best streak of at least 20. If nobody reaches 20, no prize is awarded.",
+      "eligibility": "Legal residents of the US (incl. territories) and Canada (excluding Quebec); registered MLB.com users; at least 21 years old and of age of majority. Winners provide ID, SSN and receive IRS 1099 for prizes of $600+.",
+      "dates": "Entry period began on or about 2026-03-24 and ends upon the conclusion of the final game of the 2026 MLB regular season",
+      "status": "unconfirmed",
+      "notes": ["Rules tie the entry window to the 2026 regular season. Whether the 2026 contest is still accepting entries was not confirmed from an official source — check the official page."],
+      "discrepancies": []
+    },
+    "nascar-fantasy-live": {
+      "level": "partial",
+      "sourceUrl": "https://fantasygames.nascar.com/live/page/rules",
+      "sourceLabel": "NASCAR Fantasy Live 2026 Official Rules",
+      "freeEntry": "Yes — \"There is no purchase necessary and no fee to register.\"",
+      "prize": null,
+      "eligibility": "Legal residents of the 50 US states and DC; 18+ at registration. Up to 5 entries per person. Winners must return an affidavit and IRS W-9.",
+      "dates": "Season 2026-02-15 to on/about 2026-11-08; registration closes 5 minutes before the final race on 2026-11-08; overall winners determined on/about 2026-11-09",
+      "status": "open",
+      "notes": ["Rules list Grand, Second and Third Place prizes and a Daytona 500 Champion prize; the dollar amounts were not seen in the sections of the rules fetched this session (3 of 5 pages), so the prize field is left blank."],
+      "discrepancies": []
+    },
+    "checkmate-gaming": {
+      "level": "contradicted",
+      "sourceUrl": "https://www.checkmategaming.com/free-tournaments",
+      "sourceLabel": "Checkmate Gaming — Free Tournaments page",
+      "freeEntry": "Yes for events labelled \"FREE ENTRY\" (page: \"Totally free to enter with real cash prizes\"). The $1,500 \"ELITE ENTRY\" event on the same page is not labelled free.",
+      "prize": "Free-entry events listed for 2026-11-01/02 show prizes of $40 (most events), $100 (invite-only 1v1) and $120. A $1,500 \"Elite Entry\" 3v3 event is also listed (entry terms not confirmed).",
+      "eligibility": null,
+      "dates": "New tournaments posted daily (events listed from 2026-11-01 01:30 PM EST)",
+      "status": "open",
+      "notes": ["Per-event regions shown as US/CA/EU or US/CA. Age and ID rules were not on the page."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "$10–$180 cash per tournament (free entry)", "official": "Page currently lists $40, $100 and $120 free-entry prizes (and a $1,500 Elite event). The $10–$180 range could not be confirmed."}
+      ]
+    },
+    "fundedfast-open": {
+      "level": "contradicted",
+      "sourceUrl": "https://fundedfast.com/trading-competition",
+      "sourceLabel": "FundedFast — Free trading competition",
+      "freeEntry": "Yes — \"There is no entry fee at any point and you never need a card.\"",
+      "prize": "$2,000 cash pool for the top 20: 1st $400, 2nd $250, 3rd $175, 4th $125, 5th $100, 6th–10th $70 each, 11th–20th $60 each. Paid after an identity check; no funded account.",
+      "eligibility": null,
+      "dates": "November 2026 championship opens Wed 2026-11-04 21:00 UTC; joining closes Mon 2026-11-09 21:00 UTC; leaderboard freezes 2026-12-02; final standings 2026-12-04",
+      "status": "upcoming",
+      "notes": ["Page says the binding official rules (eligibility, scoring) are published before the championship opens — not yet seen."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "1st $25, 2nd $20, 3rd $15 (cash) per two-week round", "official": "Monthly 30-day championship; $2,000 pool for top 20 (1st $400)."},
+        {"field": "format", "upstream": "two-week round", "official": "30 days / 22 trading days, monthly"}
+      ]
+    },
+    "wergle-flomp": {
+      "level": "verified",
+      "sourceUrl": "https://winningwriters.com/our-contests/wergle-flomp-humor-poetry-contest-free",
+      "sourceLabel": "Winning Writers — Wergle Flomp Humor Poetry Contest (no fee)",
+      "freeEntry": "Yes — \"No fee to enter.\"",
+      "prize": "$2,000 (1st) + $750 (2nd) + $350 (3rd) + 10 honorable mentions of $200 each; page states $5,100 in prizes. Winners also receive non-cash subscriptions (Duotrope / Chill Subs).",
+      "eligibility": "Authors from all countries except Iran, North Korea, Crimea, Russia and Belarus; no age restriction; poem in English; one humor poem, max 250 lines. NO AI-generated text is allowed (any AI use must be disclosed).",
+      "dates": "Submit 2026-08-15 to 2027-04-01; results announced 2027-08-15",
+      "status": "open",
+      "notes": ["Judged creative contest — the official rules prohibit AI-generated text, so an AI coding agent must not write the entry."],
+      "discrepancies": []
+    },
+    "tom-howard-poetry": {
+      "level": "contradicted",
+      "sourceUrl": "https://winningwriters.com/our-contests/tom-howard-margaret-reid-poetry-contest",
+      "sourceLabel": "Winning Writers — Tom Howard/Margaret Reid Poetry Contest",
+      "freeEntry": "No — \"Fee: $27 per submission (one submission may contain up to 3 poems).\"",
+      "prize": "$3,500 (Tom Howard Prize) + $3,500 (Margaret Reid Prize) + 10 honorable mentions of $500; page states $12,000 in prizes.",
+      "eligibility": "Authors from all countries except Iran, North Korea, Crimea, Russia and Belarus; no age restriction; no AI-generated text.",
+      "dates": "Submission window 2027-04-15 to 2027-10-01; page says \"This contest is currently closed. It will open again on April 15, 2027.\"",
+      "status": "closed",
+      "notes": [],
+      "discrepancies": [
+        {"field": "freeEntry", "upstream": "freePath=full (free USD path), status=live", "official": "Entry fee $27 per submission; contest currently closed until 2027-04-15."}
+      ]
+    },
+    "arcprize": {
+      "level": "partial",
+      "sourceUrl": "https://arcprize.org/",
+      "sourceLabel": "ARC Prize Foundation homepage",
+      "freeEntry": null,
+      "prize": "$2,000,000 in prizes (homepage: \"Now $2,000,000 in prizes!\"; \"In partnership with Kaggle, over $2M is up for grabs\"; graphic text says 3 tracks).",
+      "eligibility": null,
+      "dates": null,
+      "status": "open",
+      "notes": ["Homepage shows an \"Enter ARC Prize 2026\" call to action. Entry fee, rules, and deadlines were not on the page. Kaggle's listing (fetched the same day) shows the ARC Prize 2026 – Paper Track at $450,000 with 8 days to go."],
+      "discrepancies": []
+    },
+    "kaggle": {
+      "level": "partial",
+      "sourceUrl": "https://www.kaggle.com/competitions",
+      "sourceLabel": "Kaggle — Competitions and Hackathons",
+      "freeEntry": null,
+      "prize": "Listing on 2026-11-01 shows: ARC Prize 2026 – Paper Track $450,000 (8 days to go); NFL Big Data Bowl 2027 $100,000 (2 months to go); Google – The Gemma 4 Developer Agent Paper Track $35,000 (11 days to go).",
+      "eligibility": null,
+      "dates": "See each competition page",
+      "status": "open",
+      "notes": ["Page describes competitions as \"open to anyone\"; an explicit free-entry statement and per-competition eligibility rules were not on this page."],
+      "discrepancies": []
+    },
+    "devpost": {
+      "level": "partial",
+      "sourceUrl": "https://devpost.com/hackathons",
+      "sourceLabel": "Devpost — hackathons listing",
+      "freeEntry": null,
+      "prize": "Open hackathons listed on 2026-11-01 include: Meta VR Start Developer Competition 2026 $1,000,000 (17 days left); Codegeist 2026 $120,000; Kiroween 2026 $100,000; PayPal AI Hackathon $67,500 (11 days left); UGREEN Hackathon 2026 $46,000 (15 days left).",
+      "eligibility": null,
+      "dates": "Per hackathon (see listing)",
+      "status": "open",
+      "notes": ["Entry fee and eligibility are set per hackathon and were not on the listing page."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "Per event — currently $10,000 to $685,000 per hackathon", "official": "Listing shows a $1,000,000 hackathon, above the upstream stated maximum."}
+      ]
+    },
+    "metaculus": {
+      "level": "partial",
+      "sourceUrl": "https://www.metaculus.com/tournaments/",
+      "sourceLabel": "Metaculus — Tournaments",
+      "freeEntry": "Yes — \"You can participate for free and win cash prizes for being accurate.\"",
+      "prize": "19 tournaments listed. Prize pools shown range from $3,400 to $50,000, e.g. Fall 2026 FutureEval Bot Tournament $50,000; US Midterms 2026 $10,000 (ends in 3 days); ACX 2026 Prediction Contest $10,000; Metaculus Cup Fall 2026 $5,000. Several tournaments show \"NO PRIZE POOL\".",
+      "eligibility": null,
+      "dates": "Per tournament (see listing)",
+      "status": "open",
+      "notes": ["Prize eligibility and payment method per tournament were not on the listing page. At least one tournament is a bot tournament (FutureEval)."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "Per tournament — $3,000 to $50,000 prize pools", "official": "Listing shows $3,400 to $50,000 (no pool at $3,000 seen)."}
+      ]
+    },
+    "drivendata": {
+      "level": "partial",
+      "sourceUrl": "https://www.drivendata.org/competitions/",
+      "sourceLabel": "DrivenData — Competitions",
+      "freeEntry": null,
+      "prize": "One open prize competition on 2026-11-01: The Geologic Enhanced Mapping System (GEMS) Prize Challenge (hosted by DOE) — $300,000 in prizes, 4 weeks left. Practice competitions on the page carry no prize.",
+      "eligibility": null,
+      "dates": "GEMS: 4 weeks left as of 2026-11-01",
+      "status": "open",
+      "notes": ["Entry fee and eligibility are on the competition page, not the index."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "Per contest — often $10,000–$200,000 total purses", "official": "Only one open prize competition seen, at $300,000 (above the stated range)."}
+      ]
+    },
+    "ewc-play": {
+      "level": "contradicted",
+      "sourceUrl": "https://esportsworldcup.com/en/play/fantasy/cs2",
+      "sourceLabel": "Esports World Cup — EWC Play Fantasy",
+      "freeEntry": "Yes — FAQ: \"Yes, it's free. There's no entry fee and no wager or stake of any kind.\"",
+      "prize": "Page header shows 1st $10,000, 2nd $7,000, 3rd $6,000, 4th $5,000; top 130 paid.",
+      "eligibility": null,
+      "dates": "EWC 2026 in Paris, July 6 to August 23 (per page FAQ)",
+      "status": "ended",
+      "notes": ["Every fantasy title on the page is marked \"completed\" and the page says \"Tournament Completed\"."],
+      "discrepancies": [
+        {"field": "status", "upstream": "status=live", "official": "Page shows \"Tournament Completed\"; all titles marked completed."}
+      ]
+    },
+    "sony-world-photo": {
+      "level": "verified",
+      "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards",
+      "sourceLabel": "World Photography Organisation — Sony World Photography Awards",
+      "freeEntry": "Yes — page says the Awards \"have championed inclusivity and access by being free to enter.\"",
+      "prize": "Series competition: $25,000 + solo exhibition + Sony equipment. Single Image competition: $5,000 + Sony equipment. Student and Youth: first prize is Sony equipment (non-cash).",
+      "eligibility": null,
+      "dates": "Student closes 2026-11-27 16:00 GMT; Single Image and Youth close 2027-01-05 16:00 GMT; Series closes 2027-01-12 16:00 GMT",
+      "status": "open",
+      "notes": ["Upstream's 'Professional' and 'Open' competitions are now named 'Series' and 'Single Image' on the official page."],
+      "discrepancies": [
+        {"field": "naming", "upstream": "$25,000 (Professional Photographer of the Year); $5,000 (Open)", "official": "Series competition (previously Professional) $25,000; Single Image competition (previously Open) $5,000."}
+      ]
+    },
+    "streak-contest": {
+      "level": "verified",
+      "sourceUrl": "https://apps.apple.com/us/app/streak-contest/id1623816920",
+      "sourceLabel": "Apple App Store — Streak Contest (MobLab Limited)",
+      "freeEntry": "Yes — listing says \"no entry fees\" and \"No purchase or deposit required\"; app is free.",
+      "prize": "Prize ladder: $5 for 5 correct picks, $100 for 10, $1,000 for 15, $20,000 for 20, $100,000 for 25 (paid in cash).",
+      "eligibility": "18+ (App Store age rating 18+); \"NY and FL residents excluded\".",
+      "dates": "Ongoing daily picks (no end date on listing)",
+      "status": "open",
+      "notes": ["The same listing also says \"Available in all 50 states\" while excluding NY and FL — internally inconsistent; confirm in the official rules at streakcontest.app (not fetched)."],
+      "discrepancies": []
+    },
+    "tradingview-leap": {
+      "level": "contradicted",
+      "sourceUrl": "https://www.tradingview.com/the-leap/tradestation-july-2026/rules/",
+      "sourceLabel": "TradingView — The Leap with TradeStation rules (July 2026)",
+      "freeEntry": "Yes — rules open with \"NO PURCHASE OR PAYMENT OF ANY KIND NECESSARY TO PARTICIPATE OR WIN.\"",
+      "prize": null,
+      "eligibility": "18+ and age of majority; legal residents outside Iran, North Korea, Russia, Belarus, Cuba, Crimea/Donetsk/Luhansk.",
+      "dates": "Competition 2026-07-20 08:00 UTC to 2026-08-14 08:00 UTC; registration closed 2026-08-09",
+      "status": "ended",
+      "notes": ["Prize table was not in the part of the rules fetched (1 of 4 pages) — left blank."],
+      "discrepancies": [
+        {"field": "status", "upstream": "status=live; $50,000 total prize table", "official": "The cited rules page covers a competition that ended 2026-08-14."}
+      ]
+    },
+    "nrl-fantasy": {
+      "level": "contradicted",
+      "sourceUrl": "https://nrlfantasy.zendesk.com/hc/en-us/articles/15492067192861-Prizes",
+      "sourceLabel": "NRL Fantasy help centre — Prizes",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["The cited page is headed \"2024 Prizes Page Update\" and refers to the 2025 NRL Magic Round trip — it is a past-season page. No current-season prize figures are verified."],
+      "discrepancies": [
+        {"field": "prize", "upstream": "1st overall: trip + $2,000; monthly 1st: $1,000 (upstream notes the table shown is 2025)", "official": "The cited page is the 2024 prize page; current-season prizes were not confirmed."}
+      ]
+    },
+    "zindi": {
+      "level": "contradicted",
+      "sourceUrl": "https://zindi.world/rules",
+      "sourceLabel": "Zindi rules link cited by upstream (returns 404)",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["Fetched on 2026-11-01: the response body was \"404 page not found\"."],
+      "discrepancies": [
+        {"field": "link", "upstream": "rulesUrl https://zindi.world/rules", "official": "HTTP 404 on 2026-11-01 — broken link."}
+      ]
+    },
+    "herox": {
+      "level": "contradicted",
+      "sourceUrl": "https://www.challenge.gov/",
+      "sourceLabel": "Challenge.gov notice (platform sunset)",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["Challenge.gov says: \"The Challenge.gov platform was sunset on March 30, 2026. The content has moved to other government websites\" and points to https://www.usa.gov/challenges. HeroX's own pages were not fetched."],
+      "discrepancies": [
+        {"field": "link", "upstream": "rulesUrl https://www.challenge.gov/", "official": "Platform sunset 2026-03-30; the link no longer lists challenges. Upstream also tags HeroX's own link as 'forum', not official."}
+      ]
+    },
+    "aicrowd": {
+      "level": "contradicted",
+      "sourceUrl": "https://www.aicrowd.com/challenges",
+      "sourceLabel": "AIcrowd — Challenges",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["Page category/tag list contains unrelated SEO-spam strings (pirated-movie titles, web-design ads) and a test string rendered as text: Bugbounty {{8*9}} {8*9} ${8*9} \"><img src=x onerror=alert(1)>. No challenge prize figures were visible in the first page of results fetched."],
+      "discrepancies": [
+        {"field": "page integrity", "upstream": "Upstream notes the tag index carries SEO spam; prize 'up to $150,000+'", "official": "Spam and an injection-test string are visible on the official page; prize figure not confirmed. Treat with caution."}
+      ]
+    },
+    "fpl-official": {
+      "level": "partial",
+      "sourceUrl": "https://fantasy.premierleague.com/en/",
+      "sourceLabel": "Fantasy Premier League (official)",
+      "freeEntry": "Yes — \"It's FREE to play and you can win great prizes!\"",
+      "prize": null,
+      "eligibility": null,
+      "dates": "2026/27 season in progress (site news dated 2026-10-31 covers Gameweek 9)",
+      "status": "open",
+      "notes": ["No prize items or dollar amounts are shown on the homepage; upstream's 'VIP trip + Surface Laptop + Puma gear' is not confirmed and is non-cash."],
+      "discrepancies": []
+    },
+    "xprize": {
+      "level": "partial",
+      "sourceUrl": "https://www.xprize.org/",
+      "sourceLabel": "XPRIZE Foundation homepage",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["Homepage shows past-prize impact statements only; no current prize amounts, so upstream's '$2M Google-backed hackathon' is unconfirmed."],
+      "discrepancies": []
+    },
+    "hipa": {
+      "level": "partial",
+      "sourceUrl": "https://www.hipa.ae/",
+      "sourceLabel": "HIPA (Hamdan Bin Mohammed International Photography Award) homepage",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["Homepage lists competitions (2025-2026) but the prize-money counter renders as '$ 0 +' and no prize amounts were visible, so upstream's $200,000 / $1,000,000 figures are unconfirmed."],
+      "discrepancies": []
+    },
+    "afl-tipping": {
+      "level": "partial",
+      "sourceUrl": "https://tipping.afl.com.au/",
+      "sourceLabel": "AFL Tipping hub (official)",
+      "freeEntry": null,
+      "prize": null,
+      "eligibility": null,
+      "dates": null,
+      "status": "unconfirmed",
+      "notes": ["The hub page only shows game tiles; no prizes, rules or dates are shown. Upstream's $25,000 figure was cited to an afl.com.au news article, not fetched."],
+      "discrepancies": []
+    }
+  }
+}

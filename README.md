@@ -1,158 +1,42 @@
-# Free Cash Competitions
+# Prize Scout
 
-An audited, mobile-first ledger of **free-to-enter competitions that can pay real money** — rebuilt
-from the [Free Money & Contest Ledger](https://karagemop466-tech.github.io/FreeMoneyApps/) so that
-every prize figure is sourced, every gap is visible, and the whole thing is usable on a phone.
+A mobile-friendly GitHub Pages research dashboard for free-entry cash-prize competition candidates. It is intentionally evidence-first: a listing is not a recommendation, and unverified facts are left blank rather than guessed.
 
-**Live site:** <https://sassnarep3-star.github.io/Own3/>
+## Current catalog status (2026-11-01)
 
-- 📊 **[Executive summary](EXECUTIVE_SUMMARY.md)** — what was found and what to do about it
-- 🚩 **[Flagged for review](https://sassnarep3-star.github.io/Own3/flagged.html)** — every defect, with sources
-- 🔬 **[Method & sources](https://sassnarep3-star.github.io/Own3/methodology.html)** — what "verified" means
+- 206 candidate records from the reference ledger; 192 have an official-source link and appear in the nine category pages and the all-entries table. 14 have no usable official source and are held out on the [Flagged for Review](flagged-for-review.html) page.
+- **26 rows were read on an official page on 2026-11-01**: 6 fully verified, 11 partially verified, 9 contradicted by the operator's own page. **180 rows remain unverified**, with prize, entry, dates and eligibility left blank by design.
+- A value appears in a table only if it was read on the official page named in the row. Nothing is inferred. The reference ledger's own claims are kept in `data/competitions.json` under `upstream` for audit only.
+- Pages: [Dashboard](index.html), [Best bets](best-bets.html), [All entries](all-entries.html), nine category pages, [Analysis](analysis.html), [Executive summary](executive-summary.html), [Flagged for Review](flagged-for-review.html), [Method & sources](method.html). Full log of pages read: [VERIFICATION_LOG.md](VERIFICATION_LOG.md).
 
----
+The live reference catalog is [Free Money & Contest Ledger](https://karagemop466-tech.github.io/FreeMoneyApps/). Its public repository is [karagemop466-tech/FreeMoneyApps](https://github.com/karagemop466-tech/FreeMoneyApps), pinned for this extraction to commit [`466f7c1e7a14b52b4a0d36beb84a00d68fd409b7`](https://github.com/karagemop466-tech/FreeMoneyApps/commit/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7). The source includes an [audit dated 2026-08-19](https://github.com/karagemop466-tech/FreeMoneyApps/blob/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7/AUDIT_2026-08-19.md) and a separate [document explicitly marked superseded](https://github.com/karagemop466-tech/FreeMoneyApps/blob/466f7c1e7a14b52b4a0d36beb84a00d68fd409b7/100_VERIFIED_CONTESTS.md). See the site's [executive summary](executive-summary.html) and [Flagged for Review](flagged-for-review.html) for the scope and reported irregularities.
 
-## What this is
+## Run and verify locally
 
-| | |
-|---|---|
-| **206** listings | copied verbatim from the upstream dataset, not rescraped |
-| **9** verified | opened at the operator on 2026-11-01 and the claim read on the page |
-| **151** official-sourced | cites a source on the operator's own domain; not re-opened |
-| **46** flagged | at least one serious defect — published, not hidden |
+The published site is static HTML. Serve the repository root with any static HTTP server (for example, `python3 -m http.server 8000`).
 
-The site splits the ledger by **what is actually paid**. On the upstream file, a third of the
-entries do not pay cash at all:
+Rebuild from source data (Node 18+, no dependencies):
 
-| Prize type | Rows |
-|---|---|
-| Cash | 122 |
-| Cash mixed with goods or credit | 26 |
-| Non-cash only | 23 |
-| No figure stated anywhere | 35 |
-
-## Why it exists
-
-The upstream ledger is good research with a bad interface: 206 entries in one long scroll, no
-search, no filters, external font loading that hurts on mobile, and prize figures that are not
-always traceable to an operator page even though the project's own README says they must be.
-
-It also has **two honest categories of problem** worth surfacing rather than hiding:
-
-1. **23 rows carry no cash prize** — merchandise, tickets, vouchers, in-game items. Each row
-   says so itself, but they sit in a ledger whose purpose is cash, so the headline count oversells.
-2. **12 rows cite no official source**, and **13 sources are mislabelled
-   `official`** — press-release wires, a broker review aggregator, affiliate bonus blogs, club sites
-   and X posts standing in for the operator's own words.
-
-Every one of those rows is published on the
-[Flagged for review](https://sassnarep3-star.github.io/Own3/flagged.html) page with the reason and a
-source link. Nothing was silently corrected and no value was estimated.
-
-## Recommendation
-
-Concentrate on **tech & data** (Kaggle, DrivenData, ARC Prize) and **forecasting** (Metaculus) —
-those are the categories with automated scoring, public leaderboards, text-readable rules, free
-entry with no rake, and prizes paid as cash. They are also the categories where a coding agent can
-actually compound an advantage. Deprioritise **trading** and **skill** contests despite their larger
-headline numbers: fees, rakes and bonus-credit terms absorb the expected value.
-
-## Site structure
-
-```
-index.html              dashboard: stats, shortlist, category cards, legend
-competitions.html       all rows — search, filters, sort
-tech.html sports.html creative.html forecasting.html trading.html
-skill.html trivia.html directories.html pools.html        nine category pages
-all-entries.html        every row as static HTML (no JS) — the link-check spine
-flagged.html            all findings by severity, with sources
-analysis.html           composition, sourcing quality, category verdicts
-methodology.html        provenance, verification levels, checks, limits
-executive-summary.html  the summary as a page
-404.html
-assets/css/style.css    mobile-first, no external fonts
-assets/js/app.js        table render, search, filters, sort (~600 lines, no deps)
-assets/data/competitions.json   generated dataset the site renders
+```sh
+node tools/build_data.js      # data/verification.json + data/upstream/data.js -> data/competitions.json, data/stats.json
+node tools/build_log.js       # -> VERIFICATION_LOG.md
+node tools/build_site.js      # -> all HTML pages and EXECUTIVE_SUMMARY.md
+node scripts/validate-catalog.mjs
 ```
 
-## Repository layout
+The validator enforces: an https official link on every table row (never a known news/affiliate/social domain); no value filled in unless the row was read on its official page and matches `data/verification.json`; quarantined rows never in a table; all internal links and anchors resolve; best-bets rows are verified, open and carry a verified prize. It does **not** test whether external websites are reachable (the build environment cannot reach them) — see the Method page.
 
-```
-data/source-ledger.json   verbatim copy of upstream assets/data.js → window.LEDGER
-data/audit-report.json    generated: counts, flag tallies, field coverage
-data/verification-live.md notes from each operator page opened
-tools/audit.mjs           classifies rows, raises flags, assigns verification levels
-tools/build-site.mjs      renders every HTML page from one shared shell
-tools/check-links.mjs     publish gate: internal links, anchors, URL shape, tokens
-src/pages/*.body.html     prose page bodies (tokens filled at build time)
-src/EXECUTIVE_SUMMARY.md.tmpl
-COORDINATION.md           shared task board for parallel agent sessions
-```
+To verify more rows: read the operator's official page, add an entry to `data/verification.json` with only the values actually seen, then rebuild.
 
-## Build
+## Other builds kept in this repository
 
-Needs Node 18+. No dependencies.
+Parallel sessions produced two earlier builds. Both are preserved intact and still validated in CI, but **neither is the published root site**:
 
-```bash
-node tools/audit.mjs        # data → flags + verification levels
-node tools/build-site.mjs   # → every .html page and EXECUTIVE_SUMMARY.md
-node tools/check-links.mjs  # fails the build on a broken internal link or bad URL
-```
+- [`archive/audited-ledger/`](archive/audited-ledger/index.html) — flat-page ledger that shows the upstream values "as stated" with verification labels, plus its own structural audit ([flag list](archive/audited-ledger/flagged.html)).
+- [`archive/prize-scout/`](archive/prize-scout/index.html) — first build, every claim field blank, 0 verified rows.
 
-Or `npm run build`. Nothing is published unless `check-links.mjs` exits 0.
+The reason the root uses the strict build is logged in [COORDINATION.md](COORDINATION.md).
 
-Preview locally:
+## Deployment
 
-```bash
-python3 -m http.server 8080
-```
-
-## How verification is labelled
-
-| Badge | Meaning |
-|---|---|
-| **Verified here** | The operator's own page was opened on 2026-11-01 and the claim read there. The quoted sentence appears on the row. |
-| **Official source** | The row cites a source on the operator's own registrable domain. Not re-opened this session — as-reported, not freshly confirmed. |
-| **Flagged** | At least one serious defect. The reason is printed on the row. |
-
-Where no official figure exists, **the cell is blank**. There is no inference, no averaging and no
-"approximately" anywhere in the table. See [methodology.html](methodology.html) for the full list of
-checks and the explicit limits of the audit.
-
-## Sources
-
-Primary dataset: <https://github.com/karagemop466-tech/FreeMoneyApps> — `assets/data.js`, commit
-`466f7c1`, upstream review date 2026-08-19.
-
-Operator pages opened and read during this audit:
-
-- <https://www.metaculus.com/tournaments/>
-- <https://www.cbssports.com/fantasy/football/games/pickem/rules>
-- <https://www.mlb.com/apps/beat-the-streak/official-rules>
-- <https://www.drivendata.org/competitions/>
-- <https://arcprize.org/>
-- <https://www.kaggle.com/competitions>
-- <https://zindi.world/competitions>
-- <https://www.squarespool.com/>
-- <https://aflwfantasy.afl/>
-
-## Previous build (archived)
-
-An earlier session (`arena/ca773c6b-own3`) shipped a **Prize Scout** site from the same upstream
-data. It carried over the 206 names and categories but deliberately left every prize, eligibility,
-status and payout field blank, reporting **0 independently verified rows**. It is preserved intact
-and still validating at [`archive/prize-scout/`](archive/prize-scout/index.html) rather than deleted,
-because it is the most conservative reading of the source and a useful cross-check.
-
-`scripts/validate-catalog.mjs` points at that folder, so the archived catalogue and its nine
-category pages keep being checked on every CI run. See
-[COORDINATION.md](COORDINATION.md#2026-11-01--integration-two-sessions-one-repository) for the
-full integration record.
-
-## Licence and disclaimer
-
-Independent compilation. Not affiliated with, endorsed by or sponsored by any listed operator. No
-link is an affiliate or referral link. Prizes are described only as the operator describes them; the
-operator's rules win every argument. Play only where it is legal for you — age limits are 18+ or 21+
-depending on the contest and your jurisdiction. Winnings may be taxable. Nothing here is legal, tax
-or financial advice.
+`.github/workflows/pages.yml` builds/validates the static files and publishes the repository root to GitHub Pages after changes land on `main`. Pull requests run the validation job. Enable GitHub Pages with **GitHub Actions** as the build and deployment source in repository settings if it is not already enabled.

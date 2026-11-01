@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Directories — free cash competitions</title>
-<meta name="description" content="Directories: Indexes that point at other contests rather than running one. Prize, cash-out terms, eligibility, official source and review flags for each row.">
+<title>All competitions — Free Cash Competitions</title>
+<meta name="description" content="All 206 audited competitions in one sortable table with search, filters, prize type, verification status and official source links.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Directories — free cash competitions">
-<meta property="og:description" content="Directories: Indexes that point at other contests rather than running one. Prize, cash-out terms, eligibility, official source and review flags for each row.">
+<meta property="og:title" content="All competitions — Free Cash Competitions">
+<meta property="og:description" content="All 206 audited competitions in one sortable table with search, filters, prize type, verification status and official source links.">
 <meta name="theme-color" content="#fbfaf7">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316202b'/><text x='32' y='45' font-size='38' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffffff'>$</text></svg>">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -31,7 +31,7 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Dashboard</a></li>
-        <li><a href="competitions.html">All competitions</a></li>
+        <li><a href="competitions.html" aria-current="page">All competitions</a></li>
         <li><a href="tech.html">Tech & data</a></li>
         <li><a href="sports.html">Fantasy & picks</a></li>
         <li><a href="creative.html">Creative</a></li>
@@ -45,26 +45,17 @@
 <main id="main">
 <div class="wrap">
   <section class="hero">
-    <p class="kicker"><a href="index.html">Dashboard</a> / Category</p>
-    <h1>Directories</h1>
-    <p class="lede">Indexes that point at other contests rather than running one.</p>
-    <div class="stats">
-      <div class="stat"><b>2</b><span>In this category</span></div>
-      <div class="stat ok"><b>1</b><span>State a cash prize</span></div>
-      <div class="stat "><b>0</b><span>Flagged for review</span></div>
-      <div class="stat"><b>0</b><span>Verified here today</span></div>
-    </div>
-    <div class="callout">
-      <p>Useful for finding work, not for entering. Neither row is a competition you can win.</p>
-    </div>
-    <p class="small muted">
-      2 marked live · 1 cash · 0 non-cash · 1 prize unstated.
-      Status values come from the upstream file; only 0 rows were re-opened against the operator today.
-    </p>
+    <p class="kicker"><a href="index.html">Dashboard</a> / All competitions</p>
+    <h1>All 206 competitions</h1>
+    <p class="lede">One table. Search by name, prize or eligibility; filter by category, prize type,
+    status or verification level. The default sort is the triage order described in
+    <a href="methodology.html">Method</a>, which weighs free entry, a stated cash prize, prize size,
+    an official source and live status.</p>
+    <p class="small muted">122 rows state a cash prize · 23 state a non-cash prize ·
+    35 state no figure at all · 46 flagged.</p>
   </section>
-
   <section class="section">
-    <div id="ledger" data-filter-type="directory">
+    <div id="ledger" >
   <div class="controls" id="controls"></div>
   <div class="result-bar">
     <span id="result-count">Loading…</span>
@@ -106,7 +97,7 @@
       <li><a href="analysis.html">Analysis</a></li>
       <li><a href="executive-summary.html">Executive summary</a></li>
       <li><a href="methodology.html">Method &amp; sources</a></li>
-      <li><a href="archive/prize-scout/index.html">Previous build (archived)</a></li>
+      <li><a href="../prize-scout/index.html">Previous build (archived)</a></li>
     </ul>
   </div>
 </footer>

@@ -1,208 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Executive summary — Free Cash Competitions</title>
-<meta name="description" content="Executive summary of the audit: 206 competitions reviewed, 46 flagged, what was verified, what could not be confirmed, and where to concentrate effort.">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Executive summary — Free Cash Competitions">
-<meta property="og:description" content="Executive summary of the audit: 206 competitions reviewed, 46 flagged, what was verified, what could not be confirmed, and where to concentrate effort.">
-<meta name="theme-color" content="#fbfaf7">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316202b'/><text x='32' y='45' font-size='38' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffffff'>$</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css">
-
+<meta name="description" content="Executive summary: what was reviewed, what was verified, what is flagged, and what to do next.">
+<title>Executive summary — Prize Scout</title>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">$</span>
-      <span class="brand-text">
-        <span class="brand-title">Free Cash Competitions</span>
-        <span class="brand-sub">verified ledger · 2026-11-01</span>
-      </span>
-    </a>
-    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      Menu
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="competitions.html">All competitions</a></li>
-        <li><a href="tech.html">Tech & data</a></li>
-        <li><a href="sports.html">Fantasy & picks</a></li>
-        <li><a href="creative.html">Creative</a></li>
-        <li><a href="flagged.html">Flagged for review</a></li>
-        <li><a href="methodology.html">Method</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry cash competitions · verified from official sources</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="best-bets.html">Best bets</a><a href="all-entries.html">All entries</a><a href="analysis.html">Analysis</a><a href="executive-summary.html" aria-current="page">Executive summary</a><a href="flagged-for-review.html">Flagged for review <span class="nav-count">23+</span></a><a href="method.html">Method & sources</a></nav>
 </header>
-
-<main id="main">
-<div class="wrap">
-  <section class="hero">
-    <p class="kicker"><a href="index.html">Dashboard</a> / Executive summary</p>
-    <h1>Executive summary</h1>
-    <p class="lede">
-      An audited replacement for the FreeMoneyApps ledger: 206 competitions, rebuilt as a
-      mobile-first dashboard with per-category tables, a verification level on every row, and a
-      published list of every defect found. Prepared 2026-11-01.
-    </p>
-  </section>
-
-  <div class="prose">
-    <h2>Purpose</h2>
-    <p>
-      The existing site (<a href="https://karagemop466-tech.github.io/FreeMoneyApps/" target="_blank" rel="noopener">FreeMoneyApps</a>)
-      is a strong piece of research with a bad interface: 206 entries rendered as one long undifferentiated
-      scroll, no search, no filters, heavy external font and CSS dependencies, and prize figures that are
-      not always traceable to an operator's own page. The goal was a site that answers one question
-      quickly — <em>which free competitions are worth my time, and what will they actually pay?</em> — and
-      that never states a number it cannot source.
-    </p>
-
-    <h2>What was delivered</h2>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th scope="col">Deliverable</th><th scope="col">What it does</th></tr></thead>
-        <tbody>
-          <tr><td><a href="index.html">Dashboard</a></td><td>Stat tiles, a shortlist of the strongest free-entry cash contests, category cards and a plain-language legend. Designed for a phone first.</td></tr>
-          <tr><td><a href="competitions.html">All competitions</a></td><td>All 206 rows in one searchable, filterable, sortable table with prize type, free path, status, eligibility and review flags.</td></tr>
-          <tr><td>Nine <a href="index.html">category pages</a></td><td>Tech &amp; data, fantasy, creative, forecasting, trading, skill, trivia, directories, pool tools — each with the caveats specific to that group.</td></tr>
-          <tr><td><a href="all-entries.html">Full static listing</a></td><td>Every row in plain HTML with official and rules links, so the data is auditable without JavaScript and prints cleanly.</td></tr>
-          <tr><td><a href="flagged.html">Flagged for review</a></td><td>All 208 findings across 118 rows, grouped by severity with the reason and a source link for each.</td></tr>
-          <tr><td><a href="analysis.html">Analysis</a></td><td>The reasoning: composition, sourcing quality, category verdicts and where an AI agent has an edge.</td></tr>
-          <tr><td><a href="methodology.html">Method &amp; sources</a></td><td>Provenance, the three verification levels, every check run, the pages actually opened, and the limits.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>Key numbers</h2>
-    <div class="stats" style="margin:8px 0 20px">
-      <div class="stat"><b>206</b><span>Competitions audited</span></div>
-      <div class="stat ok"><b>9</b><span>Verified against the operator</span></div>
-      <div class="stat"><b>151</b><span>Citing an official source</span></div>
-      <div class="stat bad"><b>46</b><span>Flagged for review</span></div>
-    </div>
-    <ul>
-      <li><strong>122</strong> rows state a cash prize; <strong>26</strong> mix cash with goods; <strong>23</strong> are non-cash; <strong>35</strong> state no figure at all.</li>
-      <li><strong>189</strong> rows have a genuine free path to the cash prize, <strong>13</strong> only offer free practice, <strong>4</strong> require a fee.</li>
-      <li><strong>163</strong> rows are marked live, <strong>27</strong> ended, <strong>11</strong> caution, <strong>5</strong> mixed.</li>
-      <li><strong>118</strong> of 206 rows raise at least one issue — <strong>208</strong> findings in total.</li>
-    </ul>
-
-    <h2>Six findings that change how you should use the list</h2>
-    <ol>
-      <li>
-        <strong>23 rows do not pay money.</strong> Their own prize fields describe merchandise,
-        tickets, vouchers, in-game items or points. They are honestly labelled row by row, but they sit in
-        a ledger whose stated purpose is cash, so the headline count oversells what is on offer.
-      </li>
-      <li>
-        <strong>9 rows are not competitions.</strong> Seven pool-hosting tools, whose
-        own prize field reads "prizes decided by your group", and two directories of other contests.
-      </li>
-      <li>
-        <strong>12 rows break the project's own sourcing rule</strong>, which requires a
-        stated prize figure to cite the operator's own page. They rest on affiliate, forum or social
-        sources — and some are still marked live.
-      </li>
-      <li>
-        <strong>13 further sources are mislabelled <code>official</code></strong> — press-release
-        wires, a broker review aggregator, affiliate bonus blogs, club fan sites and X posts. Three live
-        rows quote exact prize tables with no operator page behind them.
-      </li>
-      <li>
-        <strong>The 19-row trading category is a category error.</strong> Broker demo contests
-        are customer-acquisition promotions; prizes are often credited as trading bonuses or prop
-        accounts. The upstream file excluded bookmaker and DFS funnels on exactly this logic but kept
-        these.
-      </li>
-      <li>
-        <strong>Status decays.</strong> Status is inherited from a 2026-08-19 snapshot rather than
-        observed. MLB Beat the Streak is marked live although its own rules close entry at the end of the
-        2026 season, which has finished. Every row here shows its review date for this reason.
-      </li>
-    </ol>
-
-    <h2>Recommendation</h2>
-    <div class="callout">
-      <p><strong>Concentrate effort on <a href="tech.html">Tech &amp; data</a> and
-      <a href="forecasting.html">Forecasting</a>.</strong> These are the only categories that pass all six
-      tests that matter for agent-assisted entry: automated scoring, a public leaderboard, text-readable
-      rules, free entry with no rake, an outcome that depends on skill rather than luck, and a prize paid
-      as cash. Kaggle, DrivenData, ARC Prize and Metaculus were each opened and confirmed during this
-      audit.</p>
-      <p style="margin-top:8px"><strong>Treat <a href="sports.html">Fantasy &amp; sports picks</a> as
-      low-effort entertainment</strong> with a handful of genuinely free prizes — CBS Pro Pick'em was
-      verified as free with 18 × $1,000 weekly prizes, a $5,000 season prize and a $100,000 perfect-week
-      prize — but it is seasonal and luck-dominated.</p>
-      <p style="margin-top:8px"><strong>Deprioritise <a href="trading.html">Trading</a> and
-      <a href="skill.html">Skill</a></strong> despite their larger headline numbers, because the fee, the
-      rake or the credit terms absorb the expected value.</p>
-    </div>
-
-    <h2>What could not be confirmed</h2>
-    <p>
-      Stated plainly, because the value of this exercise depends on it: <strong>only 9 of
-      206 rows were verified against the operator's own page.</strong> The remaining 151
-      rows that carry an official source are as-reported from the upstream snapshot — sourced, but not
-      re-opened. Link rot, changed prize structures and expired eligibility are all possible on any row
-      not marked verified. Nothing has been inferred or back-filled to paper over those gaps: where a
-      figure could not be sourced, the cell is blank and the row is flagged on
-      <a href="flagged.html">Flagged for review</a>.
-    </p>
-    <p>
-      Outbound network access from the build environment was limited to a host allowlist, so a
-      several-hundred-link crawl was not possible. The structural checks confirm every URL is well-formed
-      and points where the row claims; they cannot confirm every destination is still live.
-    </p>
-
-    <h2>Next steps</h2>
-    <ol>
-      <li>Re-open the 151 "Official source" rows a batch at a time and promote them to verified, or flag what has moved.</li>
-      <li>Replace the affiliate-only evidence on the three live trading rows with the broker's own contest terms, or blank their prize tables.</li>
-      <li>Re-poll status on the 129 seasonal rows at the start of each season rather than displaying an inherited value.</li>
-      <li>Split 99designs and Freelancer.com out of "creative contests" into a "client-funded work" view.</li>
-      <li>Add a change log so a reader can see when a prize figure or eligibility rule last moved.</li>
-    </ol>
-
-    <hr>
-    <p class="small muted">
-      Companion documents: <a href="analysis.html">Analysis</a> ·
-      <a href="methodology.html">Method &amp; sources</a> ·
-      <a href="flagged.html">Flagged for review</a> ·
-      <a href="all-entries.html">Full static listing</a>.
-      The same summary is available as Markdown in the repository at <code>EXECUTIVE_SUMMARY.md</code>.
-    </p>
-  </div>
-</div>
-
+<main id="main" class="shell">
+<div class="eyebrow">Decision brief · 2026-11-01</div>
+<div class="prose"><h1>Executive summary</h1>
+<div class="panel callout">Data as of 2026-11-01. Every figure below comes from <code>data/competitions.json</code> / <code>data/stats.json</code>; values not confirmed on an official page are blank, never estimated.</div>
+<h2>The short version</h2>
+<ul><li>The <b>Free Money &amp; Contest Ledger</b> (source site) lists <b>206</b> free-entry cash competitions. It was re-checked against operators' own pages: <b>26</b> rows (13%) were read on an official page, <b>6</b> fully verified, <b>11</b> partially, <b>9</b> contradicted by the operator's own page. <b>180</b> rows remain unverified and are shown blank.</li><li><b>Do not trust the ledger's headline numbers.</b> Its &quot;189 true free&quot; count includes 26 ended and 10 cautioned rows, and at least one &quot;free&quot; contest (Tom Howard poetry) charges a $27 fee.</li><li><b>14</b> rows have no usable official source and are held out of the tables (see <a href="flagged-for-review.html#quarantined">Flagged for Review</a>). The other <b>192</b> rows each carry an official link.</li><li>The best verified opportunities for an AI-assisted entrant are in <a href="best-bets.html">Best bets</a>: <b>9</b> Tier A (free entry confirmed) and <b>4</b> Tier B (large prize, entry terms still to read).</li></ul>
+<h2>What to do first</h2>
+<ol><li>Open <a href="best-bets.html">Best bets</a> and start with Tier A; check each competition's rules before entering.</li><li>Time-sensitive: FundedFast championship joining runs 2026-11-04 to 2026-11-09; NASCAR Fantasy Live closes 2026-11-08; Sony World Photography Student category closes 2026-11-27; ESPN College Pick'em ends 2026-12-06.</li><li><b>AI-agent rule check:</b> the only AI rule read on an official page is Winning Writers' ban on AI-generated text (Wergle Flomp). All other competitions' AI-tool policies are unverified.</li></ol>
+<h2>Key findings</h2>
+<div class="table-wrap"><table class="grid responsive"><thead><tr><th>Finding</th><th>Detail</th></tr></thead><tbody><tr><th scope="row" data-label="Finding">Ledger is stale</th><td data-label="Detail">All 206 rows carry a 2026-08-19 check date, 74 days before this review.</td></tr><tr><th scope="row" data-label="Finding">Contradictions</th><td data-label="Detail">9 of 26 checked rows contradict their official page: a fee, an ended contest, a different prize or a dead link. <a href="flagged-for-review.html#contradicted">Details</a>.</td></tr><tr><th scope="row" data-label="Finding">&quot;Free USD cash&quot; overstated</th><td data-label="Detail">65 rows stamped free mention non-cash prizes and 30 use non-USD currency (keyword flags).</td></tr><tr><th scope="row" data-label="Finding">Source quality</th><td data-label="Detail">20 rows tag a third-party site (news, press release, social, aggregator) as &quot;official&quot;. These are not accepted as official links.</td></tr><tr><th scope="row" data-label="Finding">Shared links</th><td data-label="Detail">19 rows share a signup URL with another row, so the link is a platform, not the specific contest.</td></tr><tr><th scope="row" data-label="Finding">Already ended</th><td data-label="Detail">27 rows are marked ended by the ledger itself.</td></tr><tr><th scope="row" data-label="Finding">Weighting</th><td data-label="Detail">Sports picks are 129 of 206 rows; the largest verified prizes are in code/ML and hackathon competitions.</td></tr><tr><th scope="row" data-label="Finding">Site usability</th><td data-label="Detail">The source page shows all entries as one long page with no search or filters (its own text says so); this site adds search, filters, category pages and mobile card tables.</td></tr></tbody></table></div>
+<h2>Scope and honesty</h2>
+<ul><li>Verified means read on the operator's official page on 2026-11-01. Method and the full log of pages read: <a href="method.html">Method &amp; sources</a>.</li><li>Win odds are not published on the pages read, so &quot;best&quot; means largest verified prize with free entry and open status, not expected value.</li><li>External link reachability could not be machine-tested from the build environment; internal links are validated in CI.</li><li>Source repository pinned at commit <code>466f7c1</code>.</li></ul>
+<h2>Where to go next</h2>
+<ul><li><a href="index.html">Dashboard</a> · <a href="all-entries.html">All entries</a> · <a href="analysis.html">Analysis</a> · <a href="flagged-for-review.html">Flagged for Review</a> · <a href="method.html">Method</a></li></ul></div>
+<p class="foot">Also available as <a href="EXECUTIVE_SUMMARY.md">EXECUTIVE_SUMMARY.md</a> in the repository.</p>
 </main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <p><strong>Independent research compilation.</strong> Not affiliated with, endorsed by or sponsored by any listed operator. No link here is an affiliate or referral link. Prizes are described only as the operator describes them; where the operator does not state a figure, the field is blank rather than estimated.</p>
-    <p>Play only where it is legal for you. Age limits are set by each operator — 18+ or 21+ depending on the contest and your jurisdiction. Prize winnings may be taxable; in the US, operators commonly issue a 1099 for prizes of $600 or more. Nothing here is legal, tax or financial advice.</p>
-    <p class="small">Dataset snapshot: upstream ledger reviewed 2026-08-19 (commit <code>466f7c1</code>). Structural audit and page verification re-run 2026-11-01.</p>
-    <ul class="footer-links">
-      <li><a href="index.html">Dashboard</a></li>
-      <li><a href="competitions.html">All 206 competitions</a></li>
-      <li><a href="all-entries.html">Full listing (static)</a></li>
-      <li><a href="flagged.html">Flagged for review</a></li>
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="executive-summary.html">Executive summary</a></li>
-      <li><a href="methodology.html">Method &amp; sources</a></li>
-      <li><a href="archive/prize-scout/index.html">Previous build (archived)</a></li>
-    </ul>
-  </div>
-</footer>
-
+<footer class="site-footer"><div class="shell footer-inner">
+<span>Independent research · not affiliated with any listed operator · data as of 2026-11-01</span>
+<span><a href="flagged-for-review.html">Flagged for review</a> · <a href="method.html">Method</a> · <a href="data/competitions.json">Data (JSON)</a> · <a href="https://github.com/sassnarep3-star/Own3">Repo</a></span>
+</div></footer>
 <script src="assets/js/app.js" defer></script>
-
 </body>
 </html>

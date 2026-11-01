@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Trivia competitions: competitions with verification status and official source links.">
+<title>Trivia competitions — Prize Scout</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry cash competitions · verified from official sources</small></span></a>
+  <nav aria-label="Main navigation"><a href="../index.html" aria-current="page">Dashboard</a><a href="../best-bets.html">Best bets</a><a href="../all-entries.html">All entries</a><a href="../analysis.html">Analysis</a><a href="../executive-summary.html">Executive summary</a><a href="../flagged-for-review.html">Flagged for review <span class="nav-count">23+</span></a><a href="../method.html">Method & sources</a></nav>
+</header>
+<main id="main" class="shell">
+
+<div class="crumb"><a href="../index.html">Dashboard</a> / Trivia competitions</div>
+<nav class="tabs" aria-label="Categories"><a href="skill.html">Skill tournaments</a><a href="trivia.html" aria-current="page">Trivia competitions</a><a href="sports.html">Fantasy &amp; sports picks</a><a href="creative.html">Creative contests</a><a href="forecasting.html">Forecasting tournaments</a><a href="market.html">Market competitions</a><a href="tech.html">Tech &amp; data competitions</a><a href="directory.html">Directories &amp; forums</a><a href="pools.html">Free pool &amp; league platforms</a></nav>
+<h1>Trivia competitions</h1>
+<p class="lead">Live or async quiz contests. Free daily plays exist on some apps. Prize pools are split among remaining winners. <span class="muted">(Category description from the upstream ledger.)</span></p>
+<div class="kpis small"><div class="kpi "><b>2</b><span>entries</span></div><div class="kpi "><b>0</b><span>checked on official pages</span></div><div class="kpi warn"><b>2</b><span>unverified (blank)</span></div></div>
+<div class="filters" role="search">
+<label class="grow">Search<input type="search" id="q" placeholder="Name or category" autocomplete="off"></label>
+<label>Show<select id="vf"><option value="">All rows</option><option value="checked">Checked against official page</option><option value="verified">Fully verified only</option><option value="unverified">Unverified only</option></select></label>
+<span class="count" id="count" aria-live="polite"></span>
+</div>
+<div class="table-wrap"><table class="grid responsive" id="grid"><thead><tr><th scope="col">Competition</th><th scope="col">Prize <small>(verified)</small></th><th scope="col">Free entry <small>(verified)</small></th><th scope="col">Dates &amp; status <small>(verified)</small></th><th scope="col">Eligibility <small>(verified)</small></th><th scope="col">Verification</th><th scope="col">Official source</th></tr></thead><tbody>
+<tr data-level="unverified" data-cat="trivia" data-search="givling trivia competitions">
+<th scope="row" data-label="Competition"><span class="nm">Givling</span><details class="more"><summary>Notes &amp; flags (2)</summary><p class="dh">Automatic flags</p><ul><li>Upstream tags https://truthinadvertising.org/articles/what-you-should-know-about-the-trivia-game-app-givling/ as &quot;official&quot; but truthinadvertising.org is a third-party site (news / press release / social / aggregator), not the contest operator.</li><li>Upstream itself marks this as ended / out of season, yet it is counted in the upstream &quot;189 true free paths&quot; headline.</li></ul><p class="dh">Unverified (left blank)</p><p>free entry, prize, eligibility, dates, status</p></details></th>
+
+<td data-label="Prize" class="blank prize"></td>
+<td data-label="Free entry" class="blank "></td>
+<td data-label="Dates & status" class="blank "></td>
+<td data-label="Eligibility" class="blank "></td>
+<td data-label="Verification"><span class="badge lvl-unverified">Unverified</span><small>not yet checked</small></td>
+<td data-label="Official source" class="src"><a href="https://www.givling.com/" target="_blank" rel="noopener noreferrer">Official link (unchecked) <span aria-hidden="true">↗</span></a><small>Givling</small></td>
+</tr>
+<tr data-level="unverified" data-cat="trivia" data-search="swagbucks daily trivia trivia competitions">
+<th scope="row" data-label="Competition"><span class="nm">Swagbucks Daily Trivia</span><details class="more"><summary>Notes &amp; flags (1)</summary><p class="dh">Automatic flags</p><ul><li>Prize text mentions non-cash items (trips, vouchers, gift cards, equipment, etc.) but the row is stamped &quot;Free USD path&quot; upstream.</li></ul><p class="dh">Unverified (left blank)</p><p>free entry, prize, eligibility, dates, status</p></details></th>
+
+<td data-label="Prize" class="blank prize"></td>
+<td data-label="Free entry" class="blank "></td>
+<td data-label="Dates & status" class="blank "></td>
+<td data-label="Eligibility" class="blank "></td>
+<td data-label="Verification"><span class="badge lvl-unverified">Unverified</span><small>not yet checked</small></td>
+<td data-label="Official source" class="src"><a href="https://help.swagbucks.com/hc/en-us/articles/15374709231764-What-is-Swagbucks-Daily-Trivia" target="_blank" rel="noopener noreferrer">Official link (unchecked) <span aria-hidden="true">↗</span></a><small>Swagbucks Help — What is Swagbucks Daily Trivia? (official)</small></td>
+</tr>
+</tbody></table></div>
+<p class="foot">A blank cell means <b>unverified</b>: the value could not be confirmed on an official page, so nothing was filled in. Rows are sorted verified-first.</p>
+
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+<span>Independent research · not affiliated with any listed operator · data as of 2026-11-01</span>
+<span><a href="../flagged-for-review.html">Flagged for review</a> · <a href="../method.html">Method</a> · <a href="../data/competitions.json">Data (JSON)</a> · <a href="https://github.com/sassnarep3-star/Own3">Repo</a></span>
+</div></footer>
+<script src="../assets/js/app.js" defer></script>
+</body>
+</html>
