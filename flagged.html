@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review — sources, reasons and unverified items</title>
+<meta name="description" content="Every audit finding across 206 rows: non-cash prizes in a cash ledger, missing and mislabelled official sources, unconfirmed figures and rows that are not competitions.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flagged for review — sources, reasons and unverified items">
+<meta property="og:description" content="Every audit finding across 206 rows: non-cash prizes in a cash ledger, missing and mislabelled official sources, unconfirmed figures and rows that are not competitions.">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316202b'/><text x='32' y='45' font-size='38' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffffff'>$</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">$</span>
+      <span class="brand-text">
+        <span class="brand-title">Free Cash Competitions</span>
+        <span class="brand-sub">verified ledger · 2026-11-01</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="competitions.html">All competitions</a></li>
+        <li><a href="tech.html">Tech & data</a></li>
+        <li><a href="sports.html">Fantasy & picks</a></li>
+        <li><a href="creative.html">Creative</a></li>
+        <li><a href="flagged.html" aria-current="page">Flagged for review</a></li>
+        <li><a href="methodology.html">Method</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <section class="hero">
+    <p class="kicker"><a href="index.html">Dashboard</a> / Flagged</p>
+    <h1>Flagged for review</h1>
+    <p class="lede">
+      115 of 206 rows raised at least one issue during the audit —
+      204 findings in total. Every one is listed here with the reason and a source
+      link so you can check it yourself. These items do <strong>not</strong> block publication and the
+      rows remain on the site; they are marked, not hidden.
+    </p>
+    <div class="callout warn">
+      <p><strong>Nothing on this page has been silently corrected.</strong> The upstream dataset is
+      reproduced byte for byte in <code>data/source-ledger.json</code> and the audit is generated from
+      it. Where a value could not be confirmed against an official page, it is blank in the interface
+      and flagged here. If you want a row fixed or removed, this page is the list to work from.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Summary of findings</h2></div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Finding</th><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Rows</th></tr></thead>
+        <tbody>
+<tr><td><a href="#prize_not_quantified">No dollar figure stated</a></td><td><code>PRIZE_NOT_QUANTIFIED</code></td><td>low</td><td>35</td></tr>
+<tr><td><a href="#rules_is_homepage">"Rules" link points at the homepage</a></td><td><code>RULES_IS_HOMEPAGE</code></td><td>medium</td><td>35</td></tr>
+<tr><td><a href="#no_cash_prize">Prize is not money</a></td><td><code>NO_CASH_PRIZE</code></td><td>high</td><td>23</td></tr>
+<tr><td><a href="#marked_unconfirmed">The row admits the prize is unconfirmed</a></td><td><code>MARKED_UNCONFIRMED</code></td><td>medium</td><td>21</td></tr>
+<tr><td><a href="#source_off_domain">Prize cited off the operator's domain</a></td><td><code>SOURCE_OFF_DOMAIN</code></td><td>medium</td><td>20</td></tr>
+<tr><td><a href="#cashout_restricted">Cash-out may not be cash</a></td><td><code>CASHOUT_RESTRICTED</code></td><td>medium</td><td>14</td></tr>
+<tr><td><a href="#broker_funnel">Broker customer-acquisition contest</a></td><td><code>BROKER_FUNNEL</code></td><td>medium</td><td>13</td></tr>
+<tr><td><a href="#tier_mislabel">Source graded "official" but is not the operator</a></td><td><code>TIER_MISLABEL</code></td><td>high</td><td>13</td></tr>
+<tr><td><a href="#no_official_source">No official source</a></td><td><code>NO_OFFICIAL_SOURCE</code></td><td>high</td><td>12</td></tr>
+<tr><td><a href="#not_a_competition">Not a competition you can win</a></td><td><code>NOT_A_COMPETITION</code></td><td>high</td><td>9</td></tr>
+<tr><td><a href="#no_rules_url">No rules link at all</a></td><td><code>NO_RULES_URL</code></td><td>medium</td><td>6</td></tr>
+<tr><td><a href="#under_tiered">UNDER_TIERED</a></td><td><code>UNDER_TIERED</code></td><td>low</td><td>2</td></tr>
+<tr><td><a href="#http_only">Insecure URL</a></td><td><code>HTTP_ONLY</code></td><td>low</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+<section class="flag-group sev-high" id="no_cash_prize">
+        <header>
+          <h3>Prize is not money <span class="count">23</span></h3>
+          <p class="flag-meta"><code>NO_CASH_PRIZE</code> · severity high</p>
+        </header>
+        <p class="small">The row is listed as a competition that pays cash, but its own prize field describes merchandise, tickets, vouchers, points or in-game items. Nothing here is payable.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Official FPL (Premier League)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">VIP trip + Surface Laptop + Puma gear</span></td>
+          <td class="notes">The recorded prize is not money: &quot;VIP trip + Surface Laptop + Puma gear&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Official Fantasy Premier League</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://gaming.uefa.com/en/uclfantasy" target="_blank" rel="noopener nofollow">UCL Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">UCL Final trip + PS5</span></td>
+          <td class="notes">The recorded prize is not money: &quot;UCL Final trip + PS5&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://gaming.uefa.com/en/uclfantasy" target="_blank" rel="noopener nofollow">UCL Fantasy</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.bundesliga.com/" target="_blank" rel="noopener nofollow">Bundesliga Fantasy Manager</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Trips, signed jerseys, DERBYSTAR balls, VIP Supercup access, 50× EA SPORTS FC 27 codes (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Trips, signed jerseys, DERBYSTAR balls, VIP Supercup access, 50× EA SPORTS FC 27 codes (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.bundesliga.com/en/bundesliga/news/official-fantasy-manager-season-2026-27-new-features-38255" target="_blank" rel="noopener nofollow">Bundesliga.com — Fantasy Manager 2026/27 (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.laliga.com/" target="_blank" rel="noopener nofollow">La Liga Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Merchandise and experiences — official terms state no cash prizes</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Merchandise and experiences — official terms state no cash prizes&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.laliga.com/en-GB/legal/condiciones-de-uso-fantasy" target="_blank" rel="noopener nofollow">LALIGA Fantasy — Conditions of Use (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.challengermode.com/" target="_blank" rel="noopener nofollow">Challengermode</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><span class="small muted">Per tournament — cash, gift cards, Riot Points, products</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Per tournament — cash, gift cards, Riot Points, products&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://support.challengermode.com/en/start-here/how-to-get-started-with-challengermode" target="_blank" rel="noopener nofollow">Challengermode Support — How to get started (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.atptour.com/" target="_blank" rel="noopener nofollow">ATP Fantasy (Official ATP Tour)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">ATP merchandise and 2027 tickets (no cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;ATP merchandise and 2027 tickets (no cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.atptour.com/en/news/atp-launches-official-fantasy-game-2026" target="_blank" rel="noopener nofollow">ATP — ATP launches official fantasy game (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.superbru.com/" target="_blank" rel="noopener nofollow">Superbru</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Sponsor-funded prizes per game (tickets, vouchers, experiences)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Sponsor-funded prizes per game (tickets, vouchers, experiences)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.superbru.com/worldcup/prizes.php" target="_blank" rel="noopener nofollow">Superbru — prizes (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://ligue1.com/en/fantasy" target="_blank" rel="noopener nofollow">Ligue 1 Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes (see official game page; non-cash, season-dependent)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Prizes (see official game page; non-cash, season-dependent)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://ligue1.com/en/fantasy" target="_blank" rel="noopener nofollow">Ligue 1 Fantasy (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://lolesports.com/" target="_blank" rel="noopener nofollow">LoL Esports Pick'Em</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: emotes, icons, and a Jhin skin for a perfect bracket (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;In-game rewards: emotes, icons, and a Jhin skin for a perfect bracket (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://lolesports.com/en-US/news/msi-2026-primer" target="_blank" rel="noopener nofollow">LoL Esports — MSI 2026 Primer (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://supercoach.news.com.au/bbl/" target="_blank" rel="noopener nofollow">KFC SuperCoach BBL</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Weekly cash prizes + vouchers (seasonal)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Weekly cash prizes + vouchers (seasonal)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://supercoach.news.com.au/bbl/" target="_blank" rel="noopener nofollow">SuperCoach BBL (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.europeantour.com/" target="_blank" rel="noopener nofollow">Fantasy DP World Tour</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Callaway golf clubs + custom fitting (overall); hospitality, putters, clubs for other tiers (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Callaway golf clubs + custom fitting (overall); hospitality, putters, clubs for other tiers (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.europeantour.com/dpworld-tour/news/articles/detail/fantasy-dp-world-tour-is-back/" target="_blank" rel="noopener nofollow">DP World Tour — Fantasy DP World Tour is back (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.icc-cricket.com/" target="_blank" rel="noopener nofollow">ICC T20 World Cup Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Signed merchandise, T20 Shop vouchers (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Signed merchandise, T20 Shop vouchers (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://play.google.com/store/apps/editorial?id=mc_apps_edit_icc_fantasy_fcp&gl=GB&hl=en" target="_blank" rel="noopener nofollow">ICC — official fantasy cricket guide (Google Play editorial)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.euroleaguebasketball.net/euroleague/fantasy/prizes-and-rules/" target="_blank" rel="noopener nofollow">EuroLeague Fantasy Challenge</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Game tickets, jerseys, basketballs and EuroLeague TV subscriptions (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Game tickets, jerseys, basketballs and EuroLeague TV subscriptions (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.euroleaguebasketball.net/euroleague/fantasy/prizes-and-rules/" target="_blank" rel="noopener nofollow">EuroLeague Fantasy — Prizes and Rules (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://valorantesports.com/pickems" target="_blank" rel="noopener nofollow">Valorant Champions Pick'Em</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: sprays, gun buddies, titles (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;In-game rewards: sprays, gun buddies, titles (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://x.com/ValorantEsports/status/1963633815282405466" target="_blank" rel="noopener nofollow">Valorant Esports — Champions Pick'Ems (official Riot)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://championsleague.cev.eu/" target="_blank" rel="noopener nofollow">CEV Champions League Volley Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Final 2026 tickets (season winner); jerseys + match balls (2nd–3rd); match ball + EuroVolley.TV (4th–5th)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Final 2026 tickets (season winner); jerseys + match balls (2nd–3rd); match ball + EuroVolley.TV (4th–5th)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://cevmatchpredictor.zendesk.com/hc/en-us/articles/12463995830941-CEV-Champions-League-Fantasy-Terms-Conditions" target="_blank" rel="noopener nofollow">CEV — Champions League Fantasy Terms &amp; Conditions (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://championsleague.cev.eu/" target="_blank" rel="noopener nofollow">CEV Champions League Predictor Game</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Tickets to the Final Four 2027 (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Tickets to the Final Four 2027 (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://championsleague.cev.eu/en/articles/cev-champions-league-volley-2026/win-fantastic-prizes-with-the-clvolleyw-predictor-game/" target="_blank" rel="noopener nofollow">CEV — Champions League Predictor Game (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.superleague.co.uk/predictor" target="_blank" rel="noopener nofollow">Betfred Super League Predictor</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Season winner: launch invite + 4 event tickets + SuperLeague+ pass; monthly/weekly tickets; streak prizes</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Season winner: launch invite + 4 event tickets + SuperLeague+ pass; monthly/weekly tickets; streak prizes&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.superleague.co.uk/article/5728/play-super-league-predictor-in-2026" target="_blank" rel="noopener nofollow">Super League — Play Super League Predictor in 2026 (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.motogp.com/" target="_blank" rel="noopener nofollow">MotoGP Fantasy (Official)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">1st signed Marquez helmet; 2nd PS5 + MotoGP26; 3rd signed knee slider; weekly GP tickets</span></td>
+          <td class="notes">The recorded prize is not money: &quot;1st signed Marquez helmet; 2nd PS5 + MotoGP26; 3rd signed knee slider; weekly GP tickets&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.motogp.com/en/news/2026/02/18/motogp-fantasy-play-smart-and-win-big/874823" target="_blank" rel="noopener nofollow">MotoGP — Fantasy prizes 2026 (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://wslfantasy.com/" target="_blank" rel="noopener nofollow">WSL Fantasy (Barclays Women's Super League)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes for top season spots and each 'leg' leaderboard (non-cash, not itemised)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Prizes for top season spots and each 'leg' leaderboard (non-cash, not itemised)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.tottenhamhotspur.com/news/1086226/women-everything-you-need-to-know-about-the-wsls-new-fantasy-game" target="_blank" rel="noopener nofollow">Tottenham Hotspur — WSL fantasy guide (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.dota2.com/" target="_blank" rel="noopener nofollow">The International (Dota 2) Compendium Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: Dota Plus subscriptions, Terrain Token, Aegis replica, Immortal Treasures (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;In-game rewards: Dota Plus subscriptions, Terrain Token, Aegis replica, Immortal Treasures (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.dota2.com/" target="_blank" rel="noopener nofollow">Dota 2 — The International Compendium (official Valve)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.biathlonworld.com/inside-ibu/marketing/ibu-biathlon-ecup" target="_blank" rel="noopener nofollow">IBU eCup (Winter Sports Mania)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">2x VIP tickets to the BMW IBU World Cup for monthly winners (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;2x VIP tickets to the BMW IBU World Cup for monthly winners (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.biathlonworld.com/inside-ibu/marketing/ibu-biathlon-ecup" target="_blank" rel="noopener nofollow">IBU — Official IBU eCup (biathlonworld.com)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premiershiprugby.com/" target="_blank" rel="noopener nofollow">Fantasy Premiership Rugby</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Overall winner: VIP Final package; runner-up: signed shirt + 4 tickets; per-round: 2 tickets</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Overall winner: VIP Final package; runner-up: signed shirt + 4 tickets; per-round: 2 tickets&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.leicestertigers.com/news/fantasy-premiership-2223-launch" target="_blank" rel="noopener nofollow">Leicester Tigers — Fantasy Premiership Rugby launch (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.fiaformulae.com/en/news/9291" target="_blank" rel="noopener nofollow">Formula E Predictor</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Signed shirt + cap (top scorer); merchandise discount codes (non-cash)</span></td>
+          <td class="notes">The recorded prize is not money: &quot;Signed shirt + cap (top scorer); merchandise discount codes (non-cash)&quot;. A row with no cash prize does not belong in a list of competitions that pay cash.</td>
+          <td class="nowrap"><a href="https://www.fiaformulae.com/en/news/9291" target="_blank" rel="noopener nofollow">Formula E — Predictor (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-high" id="tier_mislabel">
+        <header>
+          <h3>Source graded "official" but is not the operator <span class="count">13</span></h3>
+          <p class="flag-meta"><code>TIER_MISLABEL</code> · severity high</p>
+        </header>
+        <p class="small">A press-release wire, a social post, a club website or an affiliate site is graded official. On rows where that is the only support, the prize figure is effectively uncited.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://signate.jp/" target="_blank" rel="noopener nofollow">Signate (Japan) Data Competitions</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><span class="small muted">Per competition — yen-denominated cash prizes (e.g. ¥4,000,000 total / ¥1,200,000 top)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: x.com.</td>
+          <td class="nowrap"><a href="https://signate.jp/" target="_blank" rel="noopener nofollow">Signate (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.afl.com.au/" target="_blank" rel="noopener nofollow">AFL Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$300,000</strong><br><span class="small muted">A$300,000+ prize pool (incl. a crypto.com component)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: x.com.</td>
+          <td class="nowrap"><a href="https://www.afl.com.au/fantasy" target="_blank" rel="noopener nofollow">AFL Fantasy hub (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fortraders.com/tournaments" target="_blank" rel="noopener nofollow">For Traders Tournaments</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$75,000</strong><br><span class="small muted">Funded-account prizes; weekly 24h Wednesday Clash advertises a $75,000 prize pool in challenges</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: x.com.</td>
+          <td class="nowrap"><a href="https://fortraders.com/tournaments" target="_blank" rel="noopener nofollow">For Traders — Tournaments (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.icc-cricket.com/" target="_blank" rel="noopener nofollow">ICC T20 World Cup Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Signed merchandise, T20 Shop vouchers (non-cash)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: play.google.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://play.google.com/store/apps/editorial?id=mc_apps_edit_icc_fantasy_fcp&gl=GB&hl=en" target="_blank" rel="noopener nofollow">ICC — official fantasy cricket guide (Google Play editorial)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://valorantesports.com/pickems" target="_blank" rel="noopener nofollow">Valorant Champions Pick'Em</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: sprays, gun buddies, titles (non-cash)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: x.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://x.com/ValorantEsports/status/1963633815282405466" target="_blank" rel="noopener nofollow">Valorant Esports — Champions Pick'Ems (official Riot)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xm.com/" target="_blank" rel="noopener nofollow">XM Demo Competition (Demo Weekly)</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25,000</strong><br><span class="small muted">$25,000/week shared by 100 winners (1st $2,000, 2nd $1,500, 3rd $1,250)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: www.myfxbook.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/xmrsquos-anniversary-demo-competitions-now-live-ndash-join-the-celebration-with-a-100000-prize-pool-/33454" target="_blank" rel="noopener nofollow">XM — Demo Competitions announcement (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://hw.online/" target="_blank" rel="noopener nofollow">Headway No Limits Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,125</strong><br><span class="small muted">$2,125 pool: 1st $1,000, 2nd $500, 3rd $200, 4th $100, 5th $75, 6th–10th $50</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: www.myfxbook.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/headway-launches-no-limits-demo/41776" target="_blank" rel="noopener nofollow">Headway — No Limits demo contest (official press release)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasygaelicfootball.com/" target="_blank" rel="noopener nofollow">Fantasy Gaelic Football (GAA)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">£700 first prize (2026); club of the year £300; further place prizes</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: x.com.</td>
+          <td class="nowrap"><a href="https://fantasygaelicfootball.com/" target="_blank" rel="noopener nofollow">Fantasy Gaelic Football (official site)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://supercoach.com.au/" target="_blank" rel="noopener nofollow">KFC SuperCoach AFL</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$50,000</strong><br><span class="small muted">$50,000 1st; $5,000 2nd; $1,000 3rd–10th; $1,000 weekly ($2,000 for Plus subscribers); $1,000 Cup</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: www.codesports.com.au. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://www.codesports.com.au/afl/supercoach-news/supercoach-afl-returns-for-2026-heres-everything-you-need-to-know/news-story/a5da766fdefa2f0cd3e31252a4848ef8" target="_blank" rel="noopener nofollow">Code Sports — SuperCoach AFL returns for 2026 (official News Corp)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://wslfantasy.com/" target="_blank" rel="noopener nofollow">WSL Fantasy (Barclays Women's Super League)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes for top season spots and each 'leg' leaderboard (non-cash, not itemised)</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: www.tottenhamhotspur.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://www.tottenhamhotspur.com/news/1086226/women-everything-you-need-to-know-about-the-wsls-new-fantasy-game" target="_blank" rel="noopener nofollow">Tottenham Hotspur — WSL fantasy guide (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premiershiprugby.com/" target="_blank" rel="noopener nofollow">Fantasy Premiership Rugby</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Overall winner: VIP Final package; runner-up: signed shirt + 4 tickets; per-round: 2 tickets</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: www.leicestertigers.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://www.leicestertigers.com/news/fantasy-premiership-2223-launch" target="_blank" rel="noopener nofollow">Leicester Tigers — Fantasy Premiership Rugby launch (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.ohha.com/fantasy-stable" target="_blank" rel="noopener nofollow">OHHA Harness Racing Fantasy League</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">$5,000 total: $1,500 1st, $800 2nd, $400 3rd, $100 4th–10th + $100 last</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: ustrottingnews.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://ustrottingnews.com/ohhas-fantasy-league-returns-with-more-ways-to-win/" target="_blank" rel="noopener nofollow">U.S. Trotting News — OHHA Fantasy League 2026 (official news)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://majorschallenge.com/" target="_blank" rel="noopener nofollow">Majors Challenge Perfect Team Contest</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$250,000</strong><br><span class="small muted">$250,000 grand prize for a perfect 12-player team; Shot Scope gift cards for top five</span></td>
+          <td class="notes">1 source(s) are graded &quot;official&quot; but are not hosted on the operator's own domain: thegolfwire.com. This is the row's only support, so the prize figure is effectively uncited.</td>
+          <td class="nowrap"><a href="https://thegolfwire.com/majors-challenge-perfect-team-contest-masters/" target="_blank" rel="noopener nofollow">The Golf Wire — Majors Challenge Perfect Team contest (official press)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-high" id="no_official_source">
+        <header>
+          <h3>No official source <span class="count">12</span></h3>
+          <p class="flag-meta"><code>NO_OFFICIAL_SOURCE</code> · severity high</p>
+        </header>
+        <p class="small">The project's sourcing rule requires an operator-owned page for any stated prize figure. These rows cite only affiliate, forum or social sources.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not confirmed for 2026</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Fantasy Arena FPL league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://allaboutfpl.com/2025/07/list-of-free-to-join-prize-fpl-mini-leagues-ahead-of-25-26-season/" target="_blank" rel="noopener nofollow">Free-to-join FPL prize leagues</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Hub league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://fpltips.com/fpl-leagues-with-prizes/" target="_blank" rel="noopener nofollow">FPL leagues with prizes</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Bona Fide Sports league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on forum source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/1v4h6th/fpl_202627_minileagues_thread/" target="_blank" rel="noopener nofollow">r/FantasyPL minileagues thread</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">OLKA Express league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on forum source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/1m6naoy/league_codes_megathread/" target="_blank" rel="noopener nofollow">r/FantasyPL league codes megathread</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">FPLManagerIndia league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://allaboutfpl.com/2025/07/list-of-free-to-join-prize-fpl-mini-leagues-ahead-of-25-26-season/" target="_blank" rel="noopener nofollow">Free-to-join FPL prize leagues</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">fplStore_ league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://fpltips.com/fpl-leagues-with-prizes/" target="_blank" rel="noopener nofollow">FPL leagues with prizes</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Pitchbooking.com league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on forum source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/wecme0/list_of_free_to_enter_fpl_leagues_with_prizes/" target="_blank" rel="noopener nofollow">Free FPL leagues with prizes</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://roboforex.com/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://tradingbrokers.com/roboforex-demo-contest/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fbs.com/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://fofan.org/contest/fbs-pro-demo-trading-contest/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://npbfx.com/" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://www.ndfxbonus.com/2026/07/npbfx-trading-battle-demo-contest-win.html" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantazilig.tff.org/" target="_blank" rel="noopener nofollow">TFF Fantezi Lig (Turkish Süper Lig)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">An automobile for the overall season champion + weekly/monthly rewards</span></td>
+          <td class="notes">No source is recorded at tier &quot;official&quot;. The prize claim rests on affiliate source(s) only, which the project's own sourcing rule forbids.</td>
+          <td class="nowrap"><a href="https://en.shiftdelete.net/tff-launches-official-fantasy-league-mobile-game-for-super-lig/" target="_blank" rel="noopener nofollow">TFF launches official Fantasy League (secondary news)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-high" id="not_a_competition">
+        <header>
+          <h3>Not a competition you can win <span class="count">9</span></h3>
+          <p class="flag-meta"><code>NOT_A_COMPETITION</code> · severity high</p>
+        </header>
+        <p class="small">Pool-hosting tools and directories. The pool tools offer no prize of their own — the group running the pool sets any stake.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://reedsy.com/resources/writing-contests" target="_blank" rel="noopener nofollow">Reedsy Writing Contest List</a>
+            <div class="small muted">directory · live</div></td>
+          <td class="prize"><span class="small muted">Listed per contest (hundreds to tens of thousands)</span></td>
+          <td class="notes">This is a directory or index of contests, not a contest you can enter and win.</td>
+          <td class="nowrap"><a href="https://reedsy.com/resources/writing-contests" target="_blank" rel="noopener nofollow">Reedsy writing contests</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://gridirongames.com/football-pools/nfl-survivor/" target="_blank" rel="noopener nofollow">Gridiron Games</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group — commissioner pays a hosting fee</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://gridirongames.com/football-pools/nfl-survivor/" target="_blank" rel="noopener nofollow">Gridiron Games</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool.com</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://home.myfantasyleague.com/" target="_blank" rel="noopener nofollow">MyFantasyLeague</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your league</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://home.myfantasyleague.com/" target="_blank" rel="noopener nofollow">MyFantasyLeague</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://trofeo.live/nfl-confidence-pool" target="_blank" rel="noopener nofollow">Trofeo.live</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Pools with friends</span></td>
+          <td class="notes">This is a pool-hosting tool. The site offers no prize; any stake is set by whoever runs the pool (&quot;prizes decided by your group&quot;).</td>
+          <td class="nowrap"><a href="https://trofeo.live/nfl-confidence-pool" target="_blank" rel="noopener nofollow">Trofeo.live</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests</a>
+            <div class="small muted">directory · live</div></td>
+          <td class="prize"><span class="small muted">n/a — directory</span></td>
+          <td class="notes">This is a directory or index of contests, not a contest you can enter and win.</td>
+          <td class="nowrap"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="rules_is_homepage">
+        <header>
+          <h3>"Rules" link points at the homepage <span class="count">35</span></h3>
+          <p class="flag-meta"><code>RULES_IS_HOMEPAGE</code> · severity medium</p>
+        </header>
+        <p class="small">The rules URL is the site root, so entry conditions and prize terms cannot be checked from the row.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.skillz.com/" target="_blank" rel="noopener nofollow">Skillz / Blackout Bingo / Skillz Arena</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash match prizes vary by entry; platform has paid out large historical totals</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.skillz.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.skillz.com/" target="_blank" rel="noopener nofollow">Skillz</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.pocket7games.com/" target="_blank" rel="noopener nofollow">Pocket7Games</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash tournament prize pools</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.pocket7games.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.pocket7games.com/" target="_blank" rel="noopener nofollow">Pocket7Games</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a>
+            <div class="small muted">trivia · ended</div></td>
+          <td class="prize"><span class="small muted">Trivia removed — no longer a trivia contest</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.givling.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xprize.org/" target="_blank" rel="noopener nofollow">XPRIZE</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$2</strong><br><span class="small muted">Flagship prizes in the millions; 2026 Google-backed hackathon advertised a $2M pool</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.xprize.org/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.xprize.org/" target="_blank" rel="noopener nofollow">XPRIZE</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://football.fantasysports.yahoo.com/" target="_blank" rel="noopener nofollow">Yahoo Survival Football</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$6,000</strong><br><span class="small muted">Historically $6,000 total — $5,000 in MGM resort credits plus $1,000 cash</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://football.fantasysports.yahoo.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://football.fantasysports.yahoo.com/" target="_blank" rel="noopener nofollow">Yahoo Survival Football</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://apexfantasyleagues.com/" target="_blank" rel="noopener nofollow">Apex Fantasy Free League Entry</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$125</strong><br><span class="small muted">$125 league entry</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://apexfantasyleagues.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://apexfantasyleagues.com/" target="_blank" rel="noopener nofollow">Apex Fantasy</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://draft.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Draft</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes (league-dependent)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://draft.premierleague.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://draft.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Draft</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasyfootball.telegraph.co.uk/" target="_blank" rel="noopener nofollow">Telegraph Fantasy Football</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">£5,000 prize pool (2026/27)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://fantasyfootball.telegraph.co.uk/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://fantasyfootball.telegraph.co.uk/" target="_blank" rel="noopener nofollow">Telegraph Fantasy Football (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://premierleaguepredictor.co.uk/" target="_blank" rel="noopener nofollow">Premier League Predictor</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Weekly cash prizes</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://premierleaguepredictor.co.uk/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://premierleaguepredictor.co.uk/" target="_blank" rel="noopener nofollow">Premier League Predictor</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Paused</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://thespecialone.co.uk/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Contest complete</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://goaloracle.io/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Unverified</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.streakforthecash.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://officepoolstop.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.funofficepools.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://mysurvivorpool.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool.com</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (http://www.squarespool.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://home.myfantasyleague.com/" target="_blank" rel="noopener nofollow">MyFantasyLeague</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your league</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://home.myfantasyleague.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://home.myfantasyleague.com/" target="_blank" rel="noopener nofollow">MyFantasyLeague</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://start.gg/" target="_blank" rel="noopener nofollow">Start.gg (formerly smash.gg)</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><span class="small muted">Per tournament — set and paid by the organizer</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://start.gg/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://start.gg/" target="_blank" rel="noopener nofollow">Start.gg tournament platform (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.crowdspring.com/" target="_blank" rel="noopener nofollow">CrowdSpring Design Contests</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><span class="small muted">Client-funded prize per contest (varies)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.crowdspring.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.crowdspring.com/" target="_blank" rel="noopener nofollow">CrowdSpring (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://signate.jp/" target="_blank" rel="noopener nofollow">Signate (Japan) Data Competitions</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><span class="small muted">Per competition — yen-denominated cash prizes (e.g. ¥4,000,000 total / ¥1,200,000 top)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://signate.jp/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://signate.jp/" target="_blank" rel="noopener nofollow">Signate (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://tattico.com/" target="_blank" rel="noopener nofollow">Tattico Fantasy Serie A</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$750</strong><br><span class="small muted">Free global leaderboard; FFScout runs a free-to-join £750 prize league on it</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://tattico.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://tattico.com/" target="_blank" rel="noopener nofollow">Tattico Fantasy Serie A (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.dreamteamfc.com/" target="_blank" rel="noopener nofollow">The Sun Dream Team</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$100,000</strong><br><span class="small muted">£60,000 top prize; £100,000+ total cash prizes</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.dreamteamfc.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.dreamteamfc.com/" target="_blank" rel="noopener nofollow">The Sun Dream Team (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.football.scot/" target="_blank" rel="noopener nofollow">William Hill Premiership (SPFL) Fantasy Football</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$10,000</strong><br><span class="small muted">£10,000 overall winner + monthly prizes (EA Sports games)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://fantasy.football.scot/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://fantasy.football.scot/" target="_blank" rel="noopener nofollow">SPFL — William Hill Premiership Fantasy rules (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xm.com/" target="_blank" rel="noopener nofollow">XM Demo Competition (Demo Weekly)</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25,000</strong><br><span class="small muted">$25,000/week shared by 100 winners (1st $2,000, 2nd $1,500, 3rd $1,250)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.xm.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/xmrsquos-anniversary-demo-competitions-now-live-ndash-join-the-celebration-with-a-100000-prize-pool-/33454" target="_blank" rel="noopener nofollow">XM — Demo Competitions announcement (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://roboforex.com/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://roboforex.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://tradingbrokers.com/roboforex-demo-contest/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fbs.com/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://fbs.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://fofan.org/contest/fbs-pro-demo-trading-contest/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://npbfx.com/" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://npbfx.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.ndfxbonus.com/2026/07/npbfx-trading-battle-demo-contest-win.html" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasygaelicfootball.com/" target="_blank" rel="noopener nofollow">Fantasy Gaelic Football (GAA)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">£700 first prize (2026); club of the year £300; further place prizes</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://fantasygaelicfootball.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://fantasygaelicfootball.com/" target="_blank" rel="noopener nofollow">Fantasy Gaelic Football (official site)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.dota2.com/" target="_blank" rel="noopener nofollow">The International (Dota 2) Compendium Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: Dota Plus subscriptions, Terrain Token, Aegis replica, Immortal Treasures (non-cash)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.dota2.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.dota2.com/" target="_blank" rel="noopener nofollow">Dota 2 — The International Compendium (official Valve)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://stablestakes.com/" target="_blank" rel="noopener nofollow">StableStakes (Fantasy Horse Racing)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">$5,000 Crown Showdown prize pool; other contests $2,500+</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://stablestakes.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://stablestakes.com/" target="_blank" rel="noopener nofollow">StableStakes (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.hipa.ae/" target="_blank" rel="noopener nofollow">Hamdan International Photography Award (HIPA)</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><strong>$1,000,000</strong><br><span class="small muted">$200,000 grand prize; category prizes $20,000–$50,000; total pool $1,000,000</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.hipa.ae/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.hipa.ae/" target="_blank" rel="noopener nofollow">HIPA — official site</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.worldpressphoto.org/" target="_blank" rel="noopener nofollow">World Press Photo Contest</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><strong>$10,000</strong><br><span class="small muted">€10,000 (Photo of the Year); €1,000 per winner; Fujifilm camera for the top winner</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://www.worldpressphoto.org/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://www.worldpressphoto.org/" target="_blank" rel="noopener nofollow">World Press Photo — official site</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://epoty.org/" target="_blank" rel="noopener nofollow">Environmental Photographer of the Year (EPOTY)</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">£5,000 (EPOTY); £1,000 per category; Nikon gear for Young EPOTY</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://epoty.org/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://epoty.org/" target="_blank" rel="noopener nofollow">EPOTY — official site</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://spie.org/" target="_blank" rel="noopener nofollow">SPIE International Day of Light Photo Contest</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><strong>$2,500</strong><br><span class="small muted">$2,500 (1st), $1,000 (2nd), $500 (3rd), $750 (technology/science)</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://spie.org/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://spie.org/" target="_blank" rel="noopener nofollow">SPIE — International Day of Light Photo Contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://istanbulphotoawards.com/" target="_blank" rel="noopener nofollow">Istanbul Photo Awards</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><strong>$6,000</strong><br><span class="small muted">$6,000 (single news); $3,000 other categories; $1,500 runners-up; $1,000 third</span></td>
+          <td class="notes">The &quot;rules&quot; link points at the operator homepage (https://istanbulphotoawards.com/), not a rules or terms page.</td>
+          <td class="nowrap"><a href="https://istanbulphotoawards.com/" target="_blank" rel="noopener nofollow">Istanbul Photo Awards — official site</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="marked_unconfirmed">
+        <header>
+          <h3>The row admits the prize is unconfirmed <span class="count">21</span></h3>
+          <p class="flag-meta"><code>MARKED_UNCONFIRMED</code> · severity medium</p>
+        </header>
+        <p class="small">The prize text says the figure is not confirmed, not published, paused, or not running. The value is blank on this site.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a>
+            <div class="small muted">trivia · ended</div></td>
+          <td class="prize"><span class="small muted">Trivia removed — no longer a trivia contest</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Trivia removed — no longer a trivia contest&quot;).</td>
+          <td class="nowrap"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.foxsports.com/fox-super-6" target="_blank" rel="noopener nofollow">FOX Super 6</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not currently published — confirm on the live game page</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Not currently published — confirm on the live game page&quot;).</td>
+          <td class="nowrap"><a href="https://www.foxsports.com/fox-super-6" target="_blank" rel="noopener nofollow">FOX Super 6</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://nflpickwatch.com/contest/nfl/2026" target="_blank" rel="noopener nofollow">NFL Pickwatch Contest</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not running for 2026</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Not running for 2026&quot;).</td>
+          <td class="nowrap"><a href="https://nflpickwatch.com/contest/nfl/2026" target="_blank" rel="noopener nofollow">NFL Pickwatch Contest</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not confirmed for 2026</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Not confirmed for 2026&quot;).</td>
+          <td class="nowrap"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://nflmockdraft.app.splashsports.com/nfl-mock-draft/my-entry" target="_blank" rel="noopener nofollow">Splash Sports NFL Mock Draft</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not verified outside the entry window</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Not verified outside the entry window&quot;).</td>
+          <td class="nowrap"><a href="https://nflmockdraft.app.splashsports.com/nfl-mock-draft/my-entry" target="_blank" rel="noopener nofollow">Splash Sports NFL Mock Draft</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Football Mad FPL league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize pool not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize pool not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://www.footballmad.co.uk/think-youre-a-fantasy-football-genius-prove-it-5-000-in-cash-prizes-up-for-grabs/" target="_blank" rel="noopener nofollow">Football Mad — host’s own league announcement (2025/26)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Fantasy Arena FPL league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://allaboutfpl.com/2025/07/list-of-free-to-join-prize-fpl-mini-leagues-ahead-of-25-26-season/" target="_blank" rel="noopener nofollow">Free-to-join FPL prize leagues</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Hub league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://fpltips.com/fpl-leagues-with-prizes/" target="_blank" rel="noopener nofollow">FPL leagues with prizes</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Bona Fide Sports league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/1v4h6th/fpl_202627_minileagues_thread/" target="_blank" rel="noopener nofollow">r/FantasyPL minileagues thread</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">OLKA Express league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/1m6naoy/league_codes_megathread/" target="_blank" rel="noopener nofollow">r/FantasyPL league codes megathread</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">FPLManagerIndia league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://allaboutfpl.com/2025/07/list-of-free-to-join-prize-fpl-mini-leagues-ahead-of-25-26-season/" target="_blank" rel="noopener nofollow">Free-to-join FPL prize leagues</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">fplStore_ league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://fpltips.com/fpl-leagues-with-prizes/" target="_blank" rel="noopener nofollow">FPL leagues with prizes</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Pitchbooking.com league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize not confirmed for 2026/27</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prize not confirmed for 2026/27&quot;).</td>
+          <td class="nowrap"><a href="https://www.reddit.com/r/FantasyPL/comments/wecme0/list_of_free_to_enter_fpl_leagues_with_prizes/" target="_blank" rel="noopener nofollow">Free FPL leagues with prizes</a><div class="small muted"><span class="tier forum">forum</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Paused</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Paused&quot;).</td>
+          <td class="nowrap"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Contest complete</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Contest complete&quot;).</td>
+          <td class="nowrap"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Unverified</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Unverified&quot;).</td>
+          <td class="nowrap"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://roboforex.com/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)&quot;).</td>
+          <td class="nowrap"><a href="https://tradingbrokers.com/roboforex-demo-contest/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fbs.com/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)&quot;).</td>
+          <td class="nowrap"><a href="https://fofan.org/contest/fbs-pro-demo-trading-contest/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://npbfx.com/" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50&quot;).</td>
+          <td class="nowrap"><a href="https://www.ndfxbonus.com/2026/07/npbfx-trading-battle-demo-contest-win.html" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantazilig.tff.org/" target="_blank" rel="noopener nofollow">TFF Fantezi Lig (Turkish Süper Lig)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">An automobile for the overall season champion + weekly/monthly rewards</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;An automobile for the overall season champion + weekly/monthly rewards&quot;).</td>
+          <td class="nowrap"><a href="https://en.shiftdelete.net/tff-launches-official-fantasy-league-mobile-game-for-super-lig/" target="_blank" rel="noopener nofollow">TFF launches official Fantasy League (secondary news)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://agentmma.com/contests/next" target="_blank" rel="noopener nofollow">AgentMMA UFC Fantasy Contest</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes for top finishers (amount not specified on the public page)</span></td>
+          <td class="notes">The row itself says the prize is not confirmed (&quot;Prizes for top finishers (amount not specified on the public page)&quot;).</td>
+          <td class="nowrap"><a href="https://agentmma.com/contests/next" target="_blank" rel="noopener nofollow">AgentMMA — UFC fantasy contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="source_off_domain">
+        <header>
+          <h3>Prize cited off the operator's domain <span class="count">20</span></h3>
+          <p class="flag-meta"><code>SOURCE_OFF_DOMAIN</code> · severity medium</p>
+        </header>
+        <p class="small">No official-tier source sits on the operator's own domain, so the prize figure comes from a third party.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.herox.com/challenges" target="_blank" rel="noopener nofollow">HeroX / Challenge.gov</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$500,000</strong><br><span class="small muted">Per challenge — federal pots often $25,000–$500,000+</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (herox.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.challenge.gov/" target="_blank" rel="noopener nofollow">Challenge.gov</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Fantasy Football Scout FPL league</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$1,200</strong><br><span class="small muted">£1,200 cash + memberships</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (premierleague.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.fantasyfootballscout.co.uk/2026/08/14/win-5000-worth-of-prizes-with-fantasy-football-scout-in-2026-27" target="_blank" rel="noopener nofollow">Fantasy Football Scout league</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://gaming.uefa.com/en/uclfantasy" target="_blank" rel="noopener nofollow">FFScout UCL Fantasy league</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$150</strong><br><span class="small muted">£150 + Mega Bundle</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (uefa.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.fantasyfootballscout.co.uk/mini-leagues" target="_blank" rel="noopener nofollow">FFScout mini-leagues</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.efl.com/" target="_blank" rel="noopener nofollow">FFScout Fantasy EFL league</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Mega Bundle</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (efl.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.fantasyfootballscout.co.uk/mini-leagues" target="_blank" rel="noopener nofollow">FFScout mini-leagues</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">Football Mad FPL league</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Prize pool not confirmed for 2026/27</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (premierleague.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.footballmad.co.uk/think-youre-a-fantasy-football-genius-prove-it-5-000-in-cash-prizes-up-for-grabs/" target="_blank" rel="noopener nofollow">Football Mad — host’s own league announcement (2025/26)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener nofollow">LazyFPL league</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$500</strong><br><span class="small muted">£500 prize pool (top six)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (premierleague.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.lazyfpl.com/readers-mini-league" target="_blank" rel="noopener nofollow">LazyFPL readers’ mini-league (host’s own page)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.nrl.com/fantasy/" target="_blank" rel="noopener nofollow">NRL Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$2,000</strong><br><span class="small muted">1st overall: trip + $2,000; monthly 1st: $1,000; vouchers for placings</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (nrl.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://nrlfantasy.zendesk.com/hc/en-us/articles/15492067192861-Prizes" target="_blank" rel="noopener nofollow">NRL Fantasy — Prizes (official support)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.icc-cricket.com/" target="_blank" rel="noopener nofollow">ICC T20 World Cup Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Signed merchandise, T20 Shop vouchers (non-cash)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (icc-cricket.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://play.google.com/store/apps/editorial?id=mc_apps_edit_icc_fantasy_fcp&gl=GB&hl=en" target="_blank" rel="noopener nofollow">ICC — official fantasy cricket guide (Google Play editorial)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://valorantesports.com/pickems" target="_blank" rel="noopener nofollow">Valorant Champions Pick'Em</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">In-game rewards: sprays, gun buddies, titles (non-cash)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (valorantesports.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://x.com/ValorantEsports/status/1963633815282405466" target="_blank" rel="noopener nofollow">Valorant Esports — Champions Pick'Ems (official Riot)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasyvoetbal.nl/" target="_blank" rel="noopener nofollow">ESPN Fantasy Voetbal (Eredivisie)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes via sub-leagues and season (not itemised on the public page)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (fantasyvoetbal.nl). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://eredivisie.com/news/this-is-espn-fantasy-voetbal-the-official-game-of-the-vriendenloterij-eredivisie/" target="_blank" rel="noopener nofollow">Eredivisie — ESPN Fantasy Voetbal (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xm.com/" target="_blank" rel="noopener nofollow">XM Demo Competition (Demo Weekly)</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25,000</strong><br><span class="small muted">$25,000/week shared by 100 winners (1st $2,000, 2nd $1,500, 3rd $1,250)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (xm.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/xmrsquos-anniversary-demo-competitions-now-live-ndash-join-the-celebration-with-a-100000-prize-pool-/33454" target="_blank" rel="noopener nofollow">XM — Demo Competitions announcement (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://hw.online/" target="_blank" rel="noopener nofollow">Headway No Limits Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,125</strong><br><span class="small muted">$2,125 pool: 1st $1,000, 2nd $500, 3rd $200, 4th $100, 5th $75, 6th–10th $50</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (hw.online). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/headway-launches-no-limits-demo/41776" target="_blank" rel="noopener nofollow">Headway — No Limits demo contest (official press release)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://championsleague.cev.eu/" target="_blank" rel="noopener nofollow">CEV Champions League Volley Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Final 2026 tickets (season winner); jerseys + match balls (2nd–3rd); match ball + EuroVolley.TV (4th–5th)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (cev.eu). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://cevmatchpredictor.zendesk.com/hc/en-us/articles/12463995830941-CEV-Champions-League-Fantasy-Terms-Conditions" target="_blank" rel="noopener nofollow">CEV — Champions League Fantasy Terms &amp; Conditions (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://supercoach.com.au/" target="_blank" rel="noopener nofollow">KFC SuperCoach AFL</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$50,000</strong><br><span class="small muted">$50,000 1st; $5,000 2nd; $1,000 3rd–10th; $1,000 weekly ($2,000 for Plus subscribers); $1,000 Cup</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (supercoach.com.au). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.codesports.com.au/afl/supercoach-news/supercoach-afl-returns-for-2026-heres-everything-you-need-to-know/news-story/a5da766fdefa2f0cd3e31252a4848ef8" target="_blank" rel="noopener nofollow">Code Sports — SuperCoach AFL returns for 2026 (official News Corp)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://supercoach.com.au/nbl" target="_blank" rel="noopener nofollow">SuperCoach NBL</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$29,000</strong><br><span class="small muted">Mitsubishi ASX GS (value $29,000+) major prize + $500 weekly cash prizes</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (supercoach.com.au). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.nbl.com.au/news/supercoach-nbl-start-picking-your-team-now" target="_blank" rel="noopener nofollow">NBL — SuperCoach NBL (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://wslfantasy.com/" target="_blank" rel="noopener nofollow">WSL Fantasy (Barclays Women's Super League)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes for top season spots and each 'leg' leaderboard (non-cash, not itemised)</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (wslfantasy.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.tottenhamhotspur.com/news/1086226/women-everything-you-need-to-know-about-the-wsls-new-fantasy-game" target="_blank" rel="noopener nofollow">Tottenham Hotspur — WSL fantasy guide (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://aflwfantasy.afl/" target="_blank" rel="noopener nofollow">AFLW Fantasy</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$37,000</strong><br><span class="small muted">Toyota Corolla Ascent Sport Hybrid (value $37,000) + AFL Store vouchers; Sherrin football</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (aflwfantasy.afl). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.afl.com.au/aflw/news/1550791/win-a-37k-toyota-huge-prizes-on-offer-in-aflw-fantasy" target="_blank" rel="noopener nofollow">AFL — AFLW Fantasy 2026 prizes (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.premiershiprugby.com/" target="_blank" rel="noopener nofollow">Fantasy Premiership Rugby</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Overall winner: VIP Final package; runner-up: signed shirt + 4 tickets; per-round: 2 tickets</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (premiershiprugby.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://www.leicestertigers.com/news/fantasy-premiership-2223-launch" target="_blank" rel="noopener nofollow">Leicester Tigers — Fantasy Premiership Rugby launch (official club)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.ohha.com/fantasy-stable" target="_blank" rel="noopener nofollow">OHHA Harness Racing Fantasy League</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">$5,000 total: $1,500 1st, $800 2nd, $400 3rd, $100 4th–10th + $100 last</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (ohha.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://ustrottingnews.com/ohhas-fantasy-league-returns-with-more-ways-to-win/" target="_blank" rel="noopener nofollow">U.S. Trotting News — OHHA Fantasy League 2026 (official news)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://majorschallenge.com/" target="_blank" rel="noopener nofollow">Majors Challenge Perfect Team Contest</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><strong>$250,000</strong><br><span class="small muted">$250,000 grand prize for a perfect 12-player team; Shot Scope gift cards for top five</span></td>
+          <td class="notes">No official-tier source is hosted on the signup domain (majorschallenge.com). This is weak on its own: for a private mini-league the organiser may legitimately live on a different domain from the platform that hosts entry. Read it alongside the tier label rather than as a defect.</td>
+          <td class="nowrap"><a href="https://thegolfwire.com/majors-challenge-perfect-team-contest-masters/" target="_blank" rel="noopener nofollow">The Golf Wire — Majors Challenge Perfect Team contest (official press)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="cashout_restricted">
+        <header>
+          <h3>Cash-out may not be cash <span class="count">14</span></h3>
+          <p class="flag-meta"><code>CASHOUT_RESTRICTED</code> · severity medium</p>
+        </header>
+        <p class="small">The prize or cash-out terms mention trading credit, bonus funds, prop accounts or non-withdrawable balances.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.papaya.com/" target="_blank" rel="noopener nofollow">Solitaire Cash (Papaya)</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash rooms advertise prizes up to tens of dollars per event</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.papaya.com/faq" target="_blank" rel="noopener nofollow">Papaya FAQ</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.papaya.com/" target="_blank" rel="noopener nofollow">Bingo Cash (Papaya)</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash-room prize tables vary</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.papaya.com/faq" target="_blank" rel="noopener nofollow">Papaya FAQ</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.gamersaloon.com/promos/1rounder/" target="_blank" rel="noopener nofollow">GamerSaloon 1-Rounders</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><strong>$10</strong><br><span class="small muted">$10 cash per bracket</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.gamersaloon.com/promos/1rounder/" target="_blank" rel="noopener nofollow">GamerSaloon 1-Rounders</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://bullrush.com/" target="_blank" rel="noopener nofollow">BullRush Trading Competitions</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$101,000</strong><br><span class="small muted">$101,000 monthly tournament in prop accounts + prize pool; free hourly competitions</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://bullrush.com/competition-types/" target="_blank" rel="noopener nofollow">BullRush — Competition types (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://ninjatrader.com/ninjatrader-arena/" target="_blank" rel="noopener nofollow">NinjaTrader Arena</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><span class="small muted">Cash prizes or account credits per competition</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://ninjatrader.com/ninjatrader-arena/" target="_blank" rel="noopener nofollow">NinjaTrader Arena (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://contest.deriv.com/" target="_blank" rel="noopener nofollow">Deriv Trading Tournaments</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,000</strong><br><span class="small muted">1st $1,000; 2nd $600; 3rd $400 (typical $2,000 monthly pool)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://deriv.com/newsroom/updates/free-trading-tournaments-virtual-funds-cash-prizes" target="_blank" rel="noopener nofollow">Deriv — monthly demo trading tournaments (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xm.com/" target="_blank" rel="noopener nofollow">XM Demo Competition (Demo Weekly)</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25,000</strong><br><span class="small muted">$25,000/week shared by 100 winners (1st $2,000, 2nd $1,500, 3rd $1,250)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/xmrsquos-anniversary-demo-competitions-now-live-ndash-join-the-celebration-with-a-100000-prize-pool-/33454" target="_blank" rel="noopener nofollow">XM — Demo Competitions announcement (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://hw.online/" target="_blank" rel="noopener nofollow">Headway No Limits Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,125</strong><br><span class="small muted">$2,125 pool: 1st $1,000, 2nd $500, 3rd $200, 4th $100, 5th $75, 6th–10th $50</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/headway-launches-no-limits-demo/41776" target="_blank" rel="noopener nofollow">Headway — No Limits demo contest (official press release)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.hfm.com/int/en/promotions/demo-contest" target="_blank" rel="noopener nofollow">HFM Virtual to Real Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,000</strong><br><span class="small muted">1st $2,000, 2nd $1,000, 3rd $500 (trading bonuses, credited to a live account)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.hfm.com/int/en/promotions/demo-contest" target="_blank" rel="noopener nofollow">HFM — Virtual to Real Demo Contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.litefinance.org/contests/demo/best/" target="_blank" rel="noopener nofollow">LiteFinance Best of the Best Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$10,000</strong><br><span class="small muted">1st $4,000, 2nd $2,500, 3rd $1,500, 4th $1,000, 5th $1,000 ($10,000 fund)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.litefinance.org/contests/demo/best/" target="_blank" rel="noopener nofollow">LiteFinance — Best of the Best contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.tickmill.com/promotions/nfp-machine" target="_blank" rel="noopener nofollow">Tickmill NFP Machine</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$500</strong><br><span class="small muted">$500 for an exact prediction; $250/$150/$100 for the closest three</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.tickmill.com/promotions/nfp-machine" target="_blank" rel="noopener nofollow">Tickmill — NFP Machine (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://roboforex.com/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://tradingbrokers.com/roboforex-demo-contest/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fbs.com/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://fofan.org/contest/fbs-pro-demo-trading-contest/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://npbfx.com/" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50</span></td>
+          <td class="notes">Prize or cash-out terms indicate the reward may be bonus credit, an account, or otherwise not withdrawable as cash.</td>
+          <td class="nowrap"><a href="https://www.ndfxbonus.com/2026/07/npbfx-trading-battle-demo-contest-win.html" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="broker_funnel">
+        <header>
+          <h3>Broker customer-acquisition contest <span class="count">13</span></h3>
+          <p class="flag-meta"><code>BROKER_FUNNEL</code> · severity medium</p>
+        </header>
+        <p class="small">Demo-account contests run by trading firms. The upstream file excluded bookmaker and DFS funnels on the same logic but kept these.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://bullrush.com/" target="_blank" rel="noopener nofollow">BullRush Trading Competitions</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$101,000</strong><br><span class="small muted">$101,000 monthly tournament in prop accounts + prize pool; free hourly competitions</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://bullrush.com/competition-types/" target="_blank" rel="noopener nofollow">BullRush — Competition types (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fundednext.com/" target="_blank" rel="noopener nofollow">FundedNext Monthly Trading Competition</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$5,000</strong><br><span class="small muted">1st $5,000 + $100K account; 2nd $2,000; 3rd $1,000; 4th–600th funded accounts</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://help.fundednext.com/en/articles/11982105-how-to-win-fundednext-monthly-competition" target="_blank" rel="noopener nofollow">FundedNext Help — How to win the monthly competition (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fortraders.com/tournaments" target="_blank" rel="noopener nofollow">For Traders Tournaments</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$75,000</strong><br><span class="small muted">Funded-account prizes; weekly 24h Wednesday Clash advertises a $75,000 prize pool in challenges</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://fortraders.com/tournaments" target="_blank" rel="noopener nofollow">For Traders — Tournaments (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://contest.deriv.com/" target="_blank" rel="noopener nofollow">Deriv Trading Tournaments</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,000</strong><br><span class="small muted">1st $1,000; 2nd $600; 3rd $400 (typical $2,000 monthly pool)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://deriv.com/newsroom/updates/free-trading-tournaments-virtual-funds-cash-prizes" target="_blank" rel="noopener nofollow">Deriv — monthly demo trading tournaments (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://tradfi.multibankgroup.com/en/lp-n/demo-competition" target="_blank" rel="noopener nofollow">MultiBank Group Demo Trading Competition</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$15,000</strong><br><span class="small muted">$15,000 per round: 1st $10,000, 2nd $3,000, 3rd $2,000; Mercedes-Benz S-Class year-end prize</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://tradfi.multibankgroup.com/en/lp-n/demo-competition" target="_blank" rel="noopener nofollow">MultiBank Group — Demo Trading Competition (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.xm.com/" target="_blank" rel="noopener nofollow">XM Demo Competition (Demo Weekly)</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25,000</strong><br><span class="small muted">$25,000/week shared by 100 winners (1st $2,000, 2nd $1,500, 3rd $1,250)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/xmrsquos-anniversary-demo-competitions-now-live-ndash-join-the-celebration-with-a-100000-prize-pool-/33454" target="_blank" rel="noopener nofollow">XM — Demo Competitions announcement (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://hw.online/" target="_blank" rel="noopener nofollow">Headway No Limits Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,125</strong><br><span class="small muted">$2,125 pool: 1st $1,000, 2nd $500, 3rd $200, 4th $100, 5th $75, 6th–10th $50</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://www.myfxbook.com/press-release/headway-launches-no-limits-demo/41776" target="_blank" rel="noopener nofollow">Headway — No Limits demo contest (official press release)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.hfm.com/int/en/promotions/demo-contest" target="_blank" rel="noopener nofollow">HFM Virtual to Real Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$2,000</strong><br><span class="small muted">1st $2,000, 2nd $1,000, 3rd $500 (trading bonuses, credited to a live account)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://www.hfm.com/int/en/promotions/demo-contest" target="_blank" rel="noopener nofollow">HFM — Virtual to Real Demo Contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.litefinance.org/contests/demo/best/" target="_blank" rel="noopener nofollow">LiteFinance Best of the Best Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$10,000</strong><br><span class="small muted">1st $4,000, 2nd $2,500, 3rd $1,500, 4th $1,000, 5th $1,000 ($10,000 fund)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://www.litefinance.org/contests/demo/best/" target="_blank" rel="noopener nofollow">LiteFinance — Best of the Best contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://roboforex.com/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$700</strong><br><span class="small muted">1st $700, 2nd $550, 3rd $420 … 10th $50 (ten prizes)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://tradingbrokers.com/roboforex-demo-contest/" target="_blank" rel="noopener nofollow">RoboForex Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fbs.com/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $450, 2nd $250, 3rd $150, 4th $100, 5th $50 ($1,000 fund)</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://fofan.org/contest/fbs-pro-demo-trading-contest/" target="_blank" rel="noopener nofollow">FBS Pro Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://npbfx.com/" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$1,000</strong><br><span class="small muted">1st $1,000 (+ iPhone), 2nd $500, 3rd $250, 4th $150, 5th–10th $100, 11th–20th $50</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://www.ndfxbonus.com/2026/07/npbfx-trading-battle-demo-contest-win.html" target="_blank" rel="noopener nofollow">NPBFX Trading Battle Demo Contest (review)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fundedfast.com/trading-competition" target="_blank" rel="noopener nofollow">FundedFast Open</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><strong>$25</strong><br><span class="small muted">1st $25, 2nd $20, 3rd $15 (cash) per two-week round</span></td>
+          <td class="notes">Broker demo-account contest. These are customer-acquisition promotions for trading firms, and prizes are frequently credited as non-withdrawable trading bonuses or prop accounts rather than payable cash.</td>
+          <td class="nowrap"><a href="https://fundedfast.com/trading-competition" target="_blank" rel="noopener nofollow">FundedFast — Trading Competition (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-medium" id="no_rules_url">
+        <header>
+          <h3>No rules link at all <span class="count">6</span></h3>
+          <p class="flag-meta"><code>NO_RULES_URL</code> · severity medium</p>
+        </header>
+        <p class="small">Nothing on the row points at official terms.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.aicrowd.com/challenges" target="_blank" rel="noopener nofollow">AIcrowd Challenges</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$150,000</strong><br><span class="small muted">Per challenge — currently up to $150,000+</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://www.aicrowd.com/challenges" target="_blank" rel="noopener nofollow">AIcrowd Challenges (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.codabench.org/" target="_blank" rel="noopener nofollow">Codabench / CodaLab</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$248,000</strong><br><span class="small muted">Per benchmark — many are unpaid; ML Contests logged $248,000 across 2025</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://www.codabench.org/" target="_blank" rel="noopener nofollow">Codabench (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://grand-challenge.org/challenges/" target="_blank" rel="noopener nofollow">Grand Challenge (medical imaging)</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$10,000</strong><br><span class="small muted">Per challenge — commonly $2,000 to $10,000</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://grand-challenge.org/challenges/" target="_blank" rel="noopener nofollow">Grand Challenge — challenge index (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://hub.crunchdao.com/competitions/structural-break-real-time" target="_blank" rel="noopener nofollow">CrunchDAO / ADIA Lab Challenges</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><span class="small muted">Prize pool not stated on the competition overview — confirm before entering</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://hub.crunchdao.com/competitions/structural-break-real-time" target="_blank" rel="noopener nofollow">ADIA Lab Structural Break Challenge: Real-Time Edition (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests</a>
+            <div class="small muted">directory · live</div></td>
+          <td class="prize"><span class="small muted">n/a — directory</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.bundesliga.com/" target="_blank" rel="noopener nofollow">Bundesliga Fantasy Manager</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Trips, signed jerseys, DERBYSTAR balls, VIP Supercup access, 50× EA SPORTS FC 27 codes (non-cash)</span></td>
+          <td class="notes">No official rules URL recorded. Entry conditions and prize terms cannot be checked from this row.</td>
+          <td class="nowrap"><a href="https://www.bundesliga.com/en/bundesliga/news/official-fantasy-manager-season-2026-27-new-features-38255" target="_blank" rel="noopener nofollow">Bundesliga.com — Fantasy Manager 2026/27 (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-low" id="prize_not_quantified">
+        <header>
+          <h3>No dollar figure stated <span class="count">35</span></h3>
+          <p class="flag-meta"><code>PRIZE_NOT_QUANTIFIED</code> · severity low</p>
+        </header>
+        <p class="small">No amount is given in the prize field. Left blank rather than estimated.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.papaya.com/" target="_blank" rel="noopener nofollow">Solitaire Cash (Papaya)</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash rooms advertise prizes up to tens of dollars per event</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash rooms advertise prizes up to tens of dollars per event&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.papaya.com/faq" target="_blank" rel="noopener nofollow">Papaya FAQ</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.skillz.com/" target="_blank" rel="noopener nofollow">Skillz / Blackout Bingo / Skillz Arena</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash match prizes vary by entry; platform has paid out large historical totals</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash match prizes vary by entry; platform has paid out large historical totals&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.skillz.com/" target="_blank" rel="noopener nofollow">Skillz</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.pocket7games.com/" target="_blank" rel="noopener nofollow">Pocket7Games</a>
+            <div class="small muted">skill · mixed</div></td>
+          <td class="prize"><span class="small muted">Cash tournament prize pools</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash tournament prize pools&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.pocket7games.com/" target="_blank" rel="noopener nofollow">Pocket7Games</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a>
+            <div class="small muted">trivia · ended</div></td>
+          <td class="prize"><span class="small muted">Trivia removed — no longer a trivia contest</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Trivia removed — no longer a trivia contest&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.givling.com/" target="_blank" rel="noopener nofollow">Givling</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.topcoder.com/challenges" target="_blank" rel="noopener nofollow">Topcoder</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><span class="small muted">Per challenge — hundreds to tens of thousands; TCO finals add extra purses</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Per challenge — hundreds to tens of thousands; TCO finals add extra purses&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.topcoder.com/challenges" target="_blank" rel="noopener nofollow">Topcoder challenges</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.foxsports.com/fox-super-6" target="_blank" rel="noopener nofollow">FOX Super 6</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not currently published — confirm on the live game page</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Not currently published — confirm on the live game page&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.foxsports.com/fox-super-6" target="_blank" rel="noopener nofollow">FOX Super 6</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://nflpickwatch.com/contest/nfl/2026" target="_blank" rel="noopener nofollow">NFL Pickwatch Contest</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not running for 2026</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Not running for 2026&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://nflpickwatch.com/contest/nfl/2026" target="_blank" rel="noopener nofollow">NFL Pickwatch Contest</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not confirmed for 2026</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Not confirmed for 2026&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://nflmockdraft.app.splashsports.com/nfl-mock-draft/my-entry" target="_blank" rel="noopener nofollow">Splash Sports NFL Mock Draft</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not verified outside the entry window</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Not verified outside the entry window&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://nflmockdraft.app.splashsports.com/nfl-mock-draft/my-entry" target="_blank" rel="noopener nofollow">Splash Sports NFL Mock Draft</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.premierleague.com/en/news/4220308/the-second-chance-league-is-live-in-fantasy" target="_blank" rel="noopener nofollow">FPL Second Chance League</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Puma gear + EA FC 26 + FPL bundle</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Puma gear + EA FC 26 + FPL bundle&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.premierleague.com/en/news/4220308/the-second-chance-league-is-live-in-fantasy" target="_blank" rel="noopener nofollow">FPL Second Chance League</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://draft.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Draft</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes (league-dependent)</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes (league-dependent)&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://draft.premierleague.com/" target="_blank" rel="noopener nofollow">FPL Draft</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.efl.com/prizes" target="_blank" rel="noopener nofollow">Fantasy EFL</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes (see official prize page)</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes (see official prize page)&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://fantasy.efl.com/prizes" target="_blank" rel="noopener nofollow">Fantasy EFL prizes</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://premierleaguepredictor.co.uk/" target="_blank" rel="noopener nofollow">Premier League Predictor</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Weekly cash prizes</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Weekly cash prizes&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://premierleaguepredictor.co.uk/" target="_blank" rel="noopener nofollow">Premier League Predictor</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.pooltracker.com/game_info/english-premier-league-predictor.asp" target="_blank" rel="noopener nofollow">Pooltracker EPL Predictor</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Pools with friends</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Pools with friends&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.pooltracker.com/game_info/english-premier-league-predictor.asp" target="_blank" rel="noopener nofollow">Pooltracker EPL Predictor</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantasy.efl.com/" target="_blank" rel="noopener nofollow">FFScout Fantasy EFL league</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Mega Bundle</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Mega Bundle&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.fantasyfootballscout.co.uk/mini-leagues" target="_blank" rel="noopener nofollow">FFScout mini-leagues</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Paused</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Paused&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://thespecialone.co.uk/" target="_blank" rel="noopener nofollow">The Special One</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://apps.apple.com/us/app/pick-em-sports-nfl-cfb/id6737177213" target="_blank" rel="noopener nofollow">Pick 'Em Sports (iOS)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Sponsored prizes</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Sponsored prizes&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://apps.apple.com/us/app/pick-em-sports-nfl-cfb/id6737177213" target="_blank" rel="noopener nofollow">Pick 'Em Sports (App Store)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://apps.apple.com/us/app/sports-predictor-fantasy-game/id1445043792" target="_blank" rel="noopener nofollow">Sports Predictor (iOS)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Cash via PayPal</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash via PayPal&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://apps.apple.com/us/app/sports-predictor-fantasy-game/id1445043792" target="_blank" rel="noopener nofollow">Sports Predictor (App Store)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Contest complete</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Contest complete&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://goaloracle.io/" target="_blank" rel="noopener nofollow">GoalOracle</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a>
+            <div class="small muted">sports · caution</div></td>
+          <td class="prize"><span class="small muted">Unverified</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Unverified&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.streakforthecash.com/" target="_blank" rel="noopener nofollow">Streak for the Cash</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.playerslounge.com/madden" target="_blank" rel="noopener nofollow">Players' Lounge Free Tournaments</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><span class="small muted">Cash</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.playerslounge.com/madden" target="_blank" rel="noopener nofollow">Players' Lounge</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes decided by your group&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://officepoolstop.com/" target="_blank" rel="noopener nofollow">OfficePoolStop</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes decided by your group&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.funofficepools.com/" target="_blank" rel="noopener nofollow">FunOfficePools</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes decided by your group&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://mysurvivorpool.com/" target="_blank" rel="noopener nofollow">MySurvivorPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://gridirongames.com/football-pools/nfl-survivor/" target="_blank" rel="noopener nofollow">Gridiron Games</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group — commissioner pays a hosting fee</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes decided by your group — commissioner pays a hosting fee&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://gridirongames.com/football-pools/nfl-survivor/" target="_blank" rel="noopener nofollow">Gridiron Games</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool.com</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes decided by your group&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://trofeo.live/nfl-confidence-pool" target="_blank" rel="noopener nofollow">Trofeo.live</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Pools with friends</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Pools with friends&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://trofeo.live/nfl-confidence-pool" target="_blank" rel="noopener nofollow">Trofeo.live</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests</a>
+            <div class="small muted">directory · live</div></td>
+          <td class="prize"><span class="small muted">n/a — directory</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;n/a — directory&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://mlcontests.com/" target="_blank" rel="noopener nofollow">ML Contests (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://99designs.com/" target="_blank" rel="noopener nofollow">99designs Design Contests</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><span class="small muted">Client-funded prize per contest (varies)</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Client-funded prize per contest (varies)&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://support.99designs.com/hc/en-us/articles/204761045-What-is-a-design-contest" target="_blank" rel="noopener nofollow">99designs Support — What is a design contest? (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://battlefy.com/" target="_blank" rel="noopener nofollow">Battlefy Esports Tournaments</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><span class="small muted">Prizes set per tournament by the organizer</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes set per tournament by the organizer&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://help.battlefy.com/en/articles/3940531-where-is-my-prize" target="_blank" rel="noopener nofollow">Battlefy Help — Where is my prize? (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://start.gg/" target="_blank" rel="noopener nofollow">Start.gg (formerly smash.gg)</a>
+            <div class="small muted">skill · live</div></td>
+          <td class="prize"><span class="small muted">Per tournament — set and paid by the organizer</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Per tournament — set and paid by the organizer&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://start.gg/" target="_blank" rel="noopener nofollow">Start.gg tournament platform (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.crowdspring.com/" target="_blank" rel="noopener nofollow">CrowdSpring Design Contests</a>
+            <div class="small muted">creative · live</div></td>
+          <td class="prize"><span class="small muted">Client-funded prize per contest (varies)</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Client-funded prize per contest (varies)&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://www.crowdspring.com/" target="_blank" rel="noopener nofollow">CrowdSpring (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://ninjatrader.com/ninjatrader-arena/" target="_blank" rel="noopener nofollow">NinjaTrader Arena</a>
+            <div class="small muted">market · live</div></td>
+          <td class="prize"><span class="small muted">Cash prizes or account credits per competition</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Cash prizes or account credits per competition&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://ninjatrader.com/ninjatrader-arena/" target="_blank" rel="noopener nofollow">NinjaTrader Arena (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://fantazilig.tff.org/" target="_blank" rel="noopener nofollow">TFF Fantezi Lig (Turkish Süper Lig)</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">An automobile for the overall season champion + weekly/monthly rewards</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;An automobile for the overall season champion + weekly/monthly rewards&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://en.shiftdelete.net/tff-launches-official-fantasy-league-mobile-game-for-super-lig/" target="_blank" rel="noopener nofollow">TFF launches official Fantasy League (secondary news)</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://agentmma.com/contests/next" target="_blank" rel="noopener nofollow">AgentMMA UFC Fantasy Contest</a>
+            <div class="small muted">sports · live</div></td>
+          <td class="prize"><span class="small muted">Prizes for top finishers (amount not specified on the public page)</span></td>
+          <td class="notes">No dollar amount is stated in the prize field (&quot;Prizes for top finishers (amount not specified on the public page)&quot;). Left blank on the site rather than estimated.</td>
+          <td class="nowrap"><a href="https://agentmma.com/contests/next" target="_blank" rel="noopener nofollow">AgentMMA — UFC fantasy contest (official)</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-low" id="under_tiered">
+        <header>
+          <h3>UNDER_TIERED <span class="count">2</span></h3>
+          <p class="flag-meta"><code>UNDER_TIERED</code> · severity low</p>
+        </header>
+        <p class="small"></p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="https://www.herox.com/challenges" target="_blank" rel="noopener nofollow">HeroX / Challenge.gov</a>
+            <div class="small muted">tech · live</div></td>
+          <td class="prize"><strong>$500,000</strong><br><span class="small muted">Per challenge — federal pots often $25,000–$500,000+</span></td>
+          <td class="notes">1 source(s) sit on the operator's own domain but are graded &quot;forum&quot; rather than &quot;official&quot;. The evidence is stronger than its label; the tier is simply wrong in the conservative direction.</td>
+          <td class="nowrap"><a href="https://www.challenge.gov/" target="_blank" rel="noopener nofollow">Challenge.gov</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+<tr>
+          <td class="name"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a>
+            <div class="small muted">sports · ended</div></td>
+          <td class="prize"><span class="small muted">Not confirmed for 2026</span></td>
+          <td class="notes">1 source(s) sit on the operator's own domain but are graded &quot;affiliate&quot; rather than &quot;official&quot;. The evidence is stronger than its label; the tier is simply wrong in the conservative direction.</td>
+          <td class="nowrap"><a href="https://www.thelines.com/free-nfl-contest-pools-games-week-1-2024/" target="_blank" rel="noopener nofollow">TheLines Free NFL Survivor</a><div class="small muted"><span class="tier affiliate">affiliate</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<section class="flag-group sev-low" id="http_only">
+        <header>
+          <h3>Insecure URL <span class="count">1</span></h3>
+          <p class="flag-meta"><code>HTTP_ONLY</code> · severity low</p>
+        </header>
+        <p class="small">At least one link uses plain http://.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Competition</th><th scope="col">Prize as stated</th><th scope="col">Why it is flagged</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+<tr>
+          <td class="name"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool.com</a>
+            <div class="small muted">pools · live</div></td>
+          <td class="prize"><span class="small muted">Prizes decided by your group</span></td>
+          <td class="notes">Uses plain http:// instead of https://: http://www.squarespool.com/</td>
+          <td class="nowrap"><a href="http://www.squarespool.com/" target="_blank" rel="noopener nofollow">SquaresPool</a><div class="small muted"><span class="tier official">official</span></div></td>
+        </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Independent research compilation.</strong> Not affiliated with, endorsed by or sponsored by any listed operator. No link here is an affiliate or referral link. Prizes are described only as the operator describes them; where the operator does not state a figure, the field is blank rather than estimated.</p>
+    <p>Play only where it is legal for you. Age limits are set by each operator — 18+ or 21+ depending on the contest and your jurisdiction. Prize winnings may be taxable; in the US, operators commonly issue a 1099 for prizes of $600 or more. Nothing here is legal, tax or financial advice.</p>
+    <p class="small">Dataset snapshot: upstream ledger reviewed 2026-08-19 (commit <code>466f7c1</code>). Structural audit and page verification re-run 2026-11-01.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="competitions.html">All 206 competitions</a></li>
+      <li><a href="all-entries.html">Full listing (static)</a></li>
+      <li><a href="flagged.html">Flagged for review</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="executive-summary.html">Executive summary</a></li>
+      <li><a href="methodology.html">Method &amp; sources</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/js/app.js" defer></script>
+
+</body>
+</html>
