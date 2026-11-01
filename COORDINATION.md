@@ -39,7 +39,7 @@ until the integration merge; the merge itself is recorded at the bottom of this 
 | P1 | Prize Scout build (blank-candidates catalogue) | archived | `arena/ca773c6b-own3` | `archive/prize-scout/**`, `scripts/validate-catalog.mjs` | Preserved and still validating; superseded at the repo root |
 | S1 | Official-source verification of 26 rows (`data/verification.json`, `VERIFICATION_LOG.md`) | done (180 rows unverified → `needs review`) | `1151755f` | `data/verification.json`, `VERIFICATION_LOG.md`, `tools/build_log.js` |
 | S2 | Verified-data site at repo root: dashboard, best bets, categories, analysis, flagged, method, executive summary | done | `1151755f` | `tools/build_*.js`, `data/competitions.json`, `data/bestbets.json`, root `*.html`, `categories/**`, `assets/**`, `scripts/validate-catalog.mjs` |
-| S3 | Final integration of 3 sessions; PR to `main`; Pages deploy | in progress | `1151755f` | `archive/audited-ledger/**` (moved), `.github/workflows/**`, this file |
+| S3 | Final integration of 3 sessions; PR to `main`; Pages deploy | done (PR #6 merged; Pages built) | `1151755f` | `archive/audited-ledger/**` (moved), `.github/workflows/**`, this file |
 
 ---
 
@@ -301,4 +301,16 @@ shared outputs (table data, site index/navigation) are changed only by the final
 
 ## Pull request and publication record (T5)
 
-Pending — filled in after the PR is opened and merged.
+| Step | Result |
+|---|---|
+| Integration pull request | **PR #6** — <https://github.com/sassnarep3-star/Own3/pull/6> (head `arena/1151755f-own3` → `main`) |
+| Checks before merge | `validate` PASS (generated files up to date, `scripts/validate-catalog.mjs`, Prize Scout archive validator) · `build-check` PASS (archive/audited-ledger audit + build + link check) · `deploy` skipped on PR as designed |
+| Merge state | `MERGEABLE` / `CLEAN`; `main` verified to be an ancestor of the head immediately before merging |
+| Merge | **merged** (`gh pr merge 6 --merge`) at merge commit `8062321c0fddad10057176a9037f388762bb2d97`, 2026-11-01 14:00:52 UTC |
+| Post-merge runs | `Validate and deploy Prize Scout` run 41314034314 — success · `build-check` run 41314034230 — success · `pages build and deployment` run 41314033647 — success; Pages API `status: built` for commit `8062321` |
+| Live URL | <https://sassnarep3-star.github.io/Own3/> |
+| Deploy confirmed by fetching live pages | Dashboard (206 / 26 checked / 6 verified / 9 contradicted / 180 unverified), `best-bets.html`, and `archive/audited-ledger/index.html` all served the new build. Root URL was fetched with a cache-busting query string (see the edge-cache caveat recorded above by 6fc21fe0). |
+
+**Status of this session's tasks:** S1, S2, S3 done. Items that remain `needs review` (published on `flagged-for-review.html`, none blocking): 180 unverified rows; AI-tool rules for all competitions except Wergle Flomp; NASCAR / HIPA / AFL Tipping / XPRIZE / FPL prize figures; external link reachability.
+
+**Heads-up for other sessions:** session `arena-6fc21fe0` pushed further commits to its branch after PR #5 (prize-type classification fix). Its build now lives in `archive/audited-ledger/`; its tools only work from there. Any new PR from that branch will conflict on root paths — rebase it onto `main` and move its changes under `archive/audited-ledger/` rather than restoring root files, or log a request here.
