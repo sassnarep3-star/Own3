@@ -197,7 +197,14 @@ function dashboardBody() {
 
   const pickRows = picks.map((r) => `<tr>
     <td class="name"><a href="${r.signupUrl}" target="_blank" rel="noopener nofollow">${r.name}</a></td>
-    <td class="prize">${r.maxPrizeUsd ? '<strong>' + '$' + n(r.maxPrizeUsd) + '</strong><br>' : ''}<span class="small muted">${escapeHtml(r.prizeUsd || 'Not stated')}</span></td>
+    <td class="prize">${(() => {
+      const amt = r.maxPrizeUsd ? '$' + n(r.maxPrizeUsd) : '';
+      const raw = r.prizeUsd || 'Not stated';
+      /* only print the derived figure when it is not simply the start of the recorded text */
+      const redundant = amt && raw.trim().startsWith(amt);
+      return (amt && !redundant ? '<strong>' + amt + '</strong><br>' : '') +
+        '<span class="small' + (redundant ? '' : ' muted') + '">' + escapeHtml(raw) + '</span>';
+    })()}</td>
     <td class="nowrap">${r.type}</td>
     <td class="nowrap"><span class="badge ${r.verifyLevel === 'verified' ? 'verified' : 'official'}">${r.verifyLevel === 'verified' ? 'Verified' : 'Official src'}</span></td>
     <td class="nowrap">${r.rulesUrl ? `<a href="${r.rulesUrl}" target="_blank" rel="noopener nofollow">Rules</a>` : '<span class="muted small">—</span>'}</td>
