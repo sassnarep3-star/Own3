@@ -60,7 +60,7 @@ for (const p of best.picks) {
 // HTML
 const htmlFiles = [];
 (function walk(d) { for (const e of fs.readdirSync(path.join(root, d), { withFileTypes: true })) {
-  if (['.git', 'node_modules', 'data', 'tools', 'scripts', '.github'].includes(e.name)) continue;
+  if (['.git', 'node_modules', 'data', 'tools', 'scripts', '.github', 'archive'].includes(e.name)) continue;
   const rel = path.posix.join(d, e.name);
   if (e.isDirectory()) walk(rel); else if (e.name.endsWith('.html')) htmlFiles.push(rel); } })('.');
 const idsByFile = {};

@@ -28,6 +28,15 @@ The validator enforces: an https official link on every table row (never a known
 
 To verify more rows: read the operator's official page, add an entry to `data/verification.json` with only the values actually seen, then rebuild.
 
+## Other builds kept in this repository
+
+Parallel sessions produced two earlier builds. Both are preserved intact and still validated in CI, but **neither is the published root site**:
+
+- [`archive/audited-ledger/`](archive/audited-ledger/index.html) — flat-page ledger that shows the upstream values "as stated" with verification labels, plus its own structural audit ([flag list](archive/audited-ledger/flagged.html)).
+- [`archive/prize-scout/`](archive/prize-scout/index.html) — first build, every claim field blank, 0 verified rows.
+
+The reason the root uses the strict build is logged in [COORDINATION.md](COORDINATION.md).
+
 ## Deployment
 
 `.github/workflows/pages.yml` builds/validates the static files and publishes the repository root to GitHub Pages after changes land on `main`. Pull requests run the validation job. Enable GitHub Pages with **GitHub Actions** as the build and deployment source in repository settings if it is not already enabled.

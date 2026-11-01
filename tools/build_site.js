@@ -386,7 +386,10 @@ ${flagSections}
 <h2 id="unverified">G. Unverified rows (${counts.unverified})</h2>
 <p>These rows have prize, free-entry, dates, eligibility and status left blank. They are visible in <a href="all-entries.html">All entries</a> (use “Unverified only”), each with the operator link the old ledger cites, marked <em>unchecked</em>.</p>
 
-<h2 id="limits">H. What could not be checked in this pass</h2>
+<h2 id="other-audits">H. Other audits in this repository</h2>
+<p>A parallel session's structural audit of all ${counts.total} rows (URL shape, source tiers, prize-type classification, duplicates) is preserved at <a href="archive/audited-ledger/flagged.html">archive/audited-ledger/flagged.html</a> (118 rows raising at least one issue) with its <a href="archive/audited-ledger/methodology.html">methodology</a>. It is a different, looser check: it does not blank unverified values. Treat it as additional review leads.</p>
+
+<h2 id="limits">I. What could not be checked in this pass</h2>
 <ul>
 <li>Only ${counts.checked} of ${counts.total} rows were read on an official page; ${counts.unverified} remain unverified.</li>
 <li>For long official rules (CBS, MLB, NASCAR, TradingView) only the pages needed for the fields shown were read; fields not seen are blank.</li>
@@ -430,6 +433,7 @@ function buildMethod() {
 <li>Original site: <a href="${D.provenance.referencePage}">${D.provenance.referencePage}</a></li>
 <li>Original repository: <a href="${UP_REPO}">${UP_REPO}</a>, commit <code>${UP_COMMIT}</code></li>
 <li>Coordination log and PR record: <a href="${REPO_URL}/blob/main/COORDINATION.md">COORDINATION.md</a></li>
+<li>Other builds from parallel sessions, preserved unchanged: <a href="archive/audited-ledger/index.html">audited ledger (shows the old ledger's values "as stated"; includes its own structural audit)</a> and its <a href="archive/audited-ledger/flagged.html">118-row flag list</a>; <a href="archive/prize-scout/index.html">first Prize Scout build (every field blank)</a>. Their values are <b>not</b> part of this site's verified tables.</li>
 </ul>`;
   page({ file: 'method.html', title: 'Method & sources', desc: 'How the data was verified, with a log of every official page read.', body, active: 'method' });
 }

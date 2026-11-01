@@ -1,0 +1,38 @@
+name: build-check
+
+# Regenerates and link-checks the archived "audited ledger" build (session arena-6fc21fe0),
+# which lives self-contained in archive/audited-ledger/. The published root site is checked by pages.yml.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Audit, build and link-check (archive/audited-ledger)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: archive/audited-ledger
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate data, pages and docs
+        run: node tools/audit.mjs && node tools/build-site.mjs
+
+      - name: Fail if generated output is out of date
+        run: |
+          if [ -n "$(git status --porcelain .)" ]; then
+            echo "::error::Generated files are stale. Run 'npm run build' in archive/audited-ledger and commit the result."
+            git status --porcelain .
+            git diff --stat .
+            exit 1
+          fi
+
+      - name: Link check (publish gate)
+        run: node tools/check-links.mjs

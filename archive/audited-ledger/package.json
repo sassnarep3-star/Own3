@@ -1,0 +1,13 @@
+{
+  "name": "free-cash-competitions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Audited ledger of free-to-enter competitions that pay real money.",
+  "scripts": {
+    "audit": "node tools/audit.mjs",
+    "build": "node tools/audit.mjs && node tools/build-site.mjs && node tools/check-links.mjs",
+    "check": "node tools/check-links.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": { "node": ">=18" }
+}
