@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A source-conscious directory of free-to-enter cash-prize competition candidates, with every unverified claim clearly flagged.">
+  <title>Prize Scout — Competition dashboard</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-data="data/competitions.json" data-page="home">
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">PS</span><span><strong>Prize Scout</strong><small>Free-entry competition research</small></span></a>
+    <nav aria-label="Main navigation"><a aria-current="page" href="index.html">Dashboard</a><a href="executive-summary.html">Executive summary</a><a href="flagged-for-review.html">Flagged for review <span class="nav-count">206</span></a></nav>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Research dashboard · evidence before effort</div>
+      <h1>Find competitions worth your time.</h1>
+      <p class="hero-copy">A mobile-friendly working catalog of cash-prize competition candidates. Prize amounts, entry costs, eligibility, current status, payout and effort are left blank until checked against current official rules.</p>
+      <div class="notice notice-warning"><span class="notice-icon">!</span><div><strong>Evidence status: not yet verified</strong><p>The source catalog is a discovery lead, not proof. Every candidate below is flagged pending an independent check of its official operator rules. Do not pay, deposit or submit personal data based on this catalog.</p></div></div>
+      <div class="stats" id="stats" aria-label="Catalog status"></div>
+    </section>
+
+    <section class="section-head"><div><div class="eyebrow">Browse the catalog</div><h2>By competition type</h2></div><p>All 206 names are carried over as candidates only.</p></section>
+    <section class="category-grid" id="category-grid" aria-label="Competition categories"></section>
+
+    <section class="section-head section-head-table"><div><div class="eyebrow">Candidate register</div><h2>All listings</h2></div><span class="small-note">No ranking until the source evidence is checked.</span></section>
+    <div class="filters"><label class="search-label">Search candidates<input id="search" type="search" placeholder="Name or category" autocomplete="off"></label><label>Category<select id="category-filter"><option value="">All categories</option></select></label><span class="filter-count" id="result-count" aria-live="polite"></span></div>
+    <div class="table-wrap" id="table-mount"></div>
+    <p class="table-footnote">A dash means the value is deliberately blank—not zero, free, or unavailable. Use the source link as a research starting point, then inspect the current official rules.</p>
+
+    <section class="how-section"><div><div class="eyebrow">How to choose wisely</div><h2>We won’t rank what we can’t substantiate.</h2></div><p>Before recommending a competition, we need official confirmation of a genuinely free entry path, prize terms, active dates, geographic and age eligibility, payout mechanics, and time/skill demands. Expected value also requires odds or field size. Those inputs are currently unverified, so the dashboard makes no “best bet” or earnings promise.</p></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span>Independent research project · not affiliated with listed operators.</span><span><a href="executive-summary.html">Summary</a> · <a href="flagged-for-review.html">Review log</a> · <a href="COORDINATION.md">Sources &amp; coordination</a></span></div></footer>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
