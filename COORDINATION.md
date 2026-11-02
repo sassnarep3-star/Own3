@@ -319,6 +319,10 @@ shared outputs (table data, site index/navigation) are changed only by the final
 
 | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|
-| M1 | Mobile navigation discoverability and validation | in progress | `arena/6a7094eb-own3` | `assets/css/site.css`, `COORDINATION.md` | Prior site already published; improve horizontal navigation affordance and run existing validators. No competition claims changed. |
+| M1 | Mobile navigation discoverability and validation | done | `arena/6a7094eb-own3` | `assets/css/site.css`, `COORDINATION.md` | Prior site already published; improve horizontal navigation affordance and run existing validators. No competition claims changed. |
 
 This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it cannot create the separately named session branch requested in the general coordination protocol. Scope is limited to the two files above.
+
+### 2026-11-02 — M1 complete
+
+**Status:** done. The mobile navigation now exposes a visible horizontal scroll indicator (rather than hiding it) and its links have 44px minimum touch height. Scope: CSS only; no listing data, operator facts, or source links changed. Verification: rebuilt all generated files with `node tools/build_data.js`, `node tools/build_log.js`, `node tools/build_site.js`; `node scripts/validate-catalog.mjs` passed (206 listings, 192 official-linked table rows, 14 quarantined, 16 pages, internal links/anchors resolve); `node scripts/validate-prize-scout-archive.mjs` passed. Existing official-source evidence and limits remain recorded in `VERIFICATION_LOG.md`. External reachability and 180 unchecked rows remain needs review. Initial `git pull --rebase origin arena/6a7094eb-own3` could not find a remote ref before its first push; rebased against `origin/main` instead, then pushed this branch; no conflict.
