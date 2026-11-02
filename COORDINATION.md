@@ -363,3 +363,5 @@ C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `t
 
 
 C1 integration note: main advanced via PRs #9, #12 and #13 during PR #10 checks; conflict resolved by preserving main’s V2 updates, its mobile change, and adding the Rams row only. Generated outputs rebuilt from combined source.
+
+**C1 publication:** [PR #10](https://github.com/sassnarep3-star/Own3/pull/10) merged to `main` at `778bf645ae1c078a99ecd5cd62511019da76b0c1` on 2026-11-02 17:53 UTC after `validate` and archived-ledger build checks passed. [Pages run 41495422880](https://github.com/sassnarep3-star/Own3/actions/runs/41495422880) completed successfully (validate and deploy). Live URL: <https://sassnarep3-star.github.io/Own3/>. This after-merge publication record requires a follow-up documentation-only PR.
