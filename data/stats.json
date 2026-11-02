@@ -41,7 +41,7 @@
   "NO_OFFICIAL_SOURCE": 14,
   "SIGNUP_THIRD_PARTY": 7,
   "NON_CASH_OR_MIXED": 65,
-  "CONTRADICTED": 15,
+  "CONTRADICTED": 16,
   "SIGNUP_DOMAIN_MISMATCH": 13,
   "NON_USD": 30,
   "CAUTION_UPSTREAM": 11,
@@ -50,11 +50,11 @@
  "rowsWithAnyFlag": 206,
  "quarantined": 14,
  "verifiedLevels": {
-  "unverified": 180,
+  "unverified": 179,
   "partial": 11,
-  "contradicted": 9,
+  "contradicted": 10,
   "verified": 6
  },
- "rowsWithVerifiedPrize": 16,
+ "rowsWithVerifiedPrize": 17,
  "rowsWithOfficialLink": 192
 }

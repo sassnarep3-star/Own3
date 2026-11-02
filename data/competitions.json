@@ -1910,27 +1910,27 @@
    "platforms": [
     "web"
    ],
-   "verificationStatus": "Unverified",
-   "verificationLevel": "unverified",
+   "verificationStatus": "Contradicted by official source",
+   "verificationLevel": "contradicted",
    "official": {
     "url": "https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions",
-    "label": "LA Rams Pick'em",
-    "checked": false,
-    "kind": "official-source"
+    "label": "Los Angeles Rams 2026 Pick’em announcement",
+    "checked": true,
+    "kind": "verified-page"
    },
    "quarantined": false,
-   "checkedOn": null,
+   "checkedOn": "2026-11-02",
    "freeEntry": null,
-   "prize": null,
+   "prize": "Non-cash: season grand prize is a two-night Pechanga stay, $250 resort credit and a hot-air balloon ride for two; weekly prizes are tickets, signed merchandise and $75 resort credit.",
    "eligibility": null,
-   "dates": null,
+   "dates": "Season predictions available until August 31, 2026; weekly predictions begin Week 1 and can be edited until kickoff.",
    "status": null,
-   "notes": [],
+   "notes": [
+    "The operator announcement does not explicitly say entry is free, establish eligibility, or confirm current availability. Resort credit is not verified as withdrawable cash. The article headline mentions season tickets but its prize list does not include them."
+   ],
    "unverifiedFields": [
     "freeEntry",
-    "prize",
     "eligibility",
-    "dates",
     "status"
    ],
    "flags": [
@@ -1941,6 +1941,10 @@
     {
      "code": "STALE",
      "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+    },
+    {
+     "code": "CONTRADICTED",
+     "text": "prize: upstream said \"Stamped Free USD path despite listing resort credit, stay, tickets and merchandise.\" — official source says: Operator lists only non-cash prizes and resort credit; no withdrawable cash prize stated."
     }
    ],
    "upstream": {

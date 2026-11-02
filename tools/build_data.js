@@ -54,7 +54,7 @@ const rows = U.listings.map(x => {
 
   // ---- verified fields only (blank when unverified) ----
   const verification = v ? {
-    level: v.level, checkedOn: V._meta.checkedOn,
+    level: v.level, checkedOn: v.checkedOn || V._meta.checkedOn,
     freeEntry: v.freeEntry, prize: v.prize, eligibility: v.eligibility, dates: v.dates, status: v.status, notes: v.notes
   } : { level: 'unverified', checkedOn: null, freeEntry: null, prize: null, eligibility: null, dates: null, status: null, notes: [] };
 
