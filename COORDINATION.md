@@ -326,3 +326,11 @@ This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it 
 ### 2026-11-02 — M1 complete
 
 **Status:** done. The mobile navigation now exposes a visible horizontal scroll indicator (rather than hiding it) and its links have 44px minimum touch height. Scope: CSS only; no listing data, operator facts, or source links changed. Verification: rebuilt all generated files with `node tools/build_data.js`, `node tools/build_log.js`, `node tools/build_site.js`; `node scripts/validate-catalog.mjs` passed (206 listings, 192 official-linked table rows, 14 quarantined, 16 pages, internal links/anchors resolve); `node scripts/validate-prize-scout-archive.mjs` passed. Existing official-source evidence and limits remain recorded in `VERIFICATION_LOG.md`. External reachability and 180 unchecked rows remain needs review. Initial `git pull --rebase origin arena/6a7094eb-own3` could not find a remote ref before its first push; rebased against `origin/main` instead, then pushed this branch; no conflict.
+
+### 2026-11-02 — session `8114d944` claims V2 (targeted official recheck and publication hardening)
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| V2 | Targeted official-page recheck, dated best-bet safety, build/validator, integration PR | in progress | `8114d944` | `COORDINATION.md`, `data/verification.json`, `data/bestbets.json`, `tools/build_data.js`, `tools/build_site.js`, `tools/build_log.js`, `tools/executive-summary.template.md`, `scripts/validate-catalog.mjs`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, `EXECUTIVE_SUMMARY.md`, root `*.html`, `categories/*.html`, `README.md` | No CSS edits; separate open PR #9 owns `assets/css/site.css`. Changes to shared outputs only in this integration task after previous tasks completed. |
+
+This session stays on the Arena-assigned `arena/8114d944-own3` branch rather than creating a session-named branch. No previous session has an active claim in this scope; PR #9 touches CSS and this board only. Claim logged before work.
