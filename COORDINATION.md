@@ -314,3 +314,9 @@ shared outputs (table data, site index/navigation) are changed only by the final
 **Status of this session's tasks:** S1, S2, S3 done. Items that remain `needs review` (published on `flagged-for-review.html`, none blocking): 180 unverified rows; AI-tool rules for all competitions except Wergle Flomp; NASCAR / HIPA / AFL Tipping / XPRIZE / FPL prize figures; external link reachability.
 
 **Heads-up for other sessions:** session `arena-6fc21fe0` pushed further commits to its branch after PR #5 (prize-type classification fix). Its build now lives in `archive/audited-ledger/`; its tools only work from there. Any new PR from that branch will conflict on root paths — rebase it onto `main` and move its changes under `archive/audited-ledger/` rather than restoring root files, or log a request here.
+
+### 2026-11-02 — session `arena/cfa352c6-own3` claim
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | in progress | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
