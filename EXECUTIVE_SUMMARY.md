@@ -1,6 +1,6 @@
 # Executive summary
 
-> Data as of 2026-11-01. Every figure below comes from `data/competitions.json` / `data/stats.json`; values not confirmed on an official page are blank, never estimated.
+> Data as of 2026-11-02. Every figure below comes from `data/competitions.json` / `data/stats.json`; values not confirmed on an official page are blank, never estimated.
 
 ## The short version
 
@@ -12,14 +12,14 @@
 ## What to do first
 
 1. Open [Best bets](best-bets.html) and start with Tier A; check each competition's rules before entering.
-2. Time-sensitive: FundedFast championship joining runs 2026-11-04 to 2026-11-09; NASCAR Fantasy Live closes 2026-11-08; Sony World Photography Student category closes 2026-11-27; ESPN College Pick'em ends 2026-12-06.
+2. Time-sensitive: FundedFast championship sign-ups run 2026-11-04 to 2026-11-18 (operator changed the deadline between 11-01 and 11-02; recheck); NASCAR Fantasy Live closes 2026-11-08; Sony World Photography Student category closes 2026-11-27; ESPN College Pick'em ends 2026-12-06.
 3. **AI-agent rule check:** the only AI rule read on an official page is Winning Writers' ban on AI-generated text (Wergle Flomp). All other competitions' AI-tool policies are unverified.
 
 ## Key findings
 
 | Finding | Detail |
 |---|---|
-| Ledger is stale | All 206 rows carry a 2026-08-19 check date, 74 days before this review. |
+| Ledger is stale | All 206 rows carry a 2026-08-19 check date, 75 days before this review. |
 | Contradictions | 10 of 27 checked rows contradict their official page: a fee, an ended contest, a different prize or a dead link. [Details](flagged-for-review.html#contradicted). |
 | "Free USD cash" overstated | 65 rows stamped free mention non-cash prizes and 30 use non-USD currency (keyword flags). |
 | Source quality | 20 rows tag a third-party site (news, press release, social, aggregator) as "official". These are not accepted as official links. |
@@ -30,9 +30,9 @@
 
 ## Scope and honesty
 
-- Verified means read on the operator's official page on 2026-11-01. Method and the full log of pages read: [Method & sources](method.html).
+- Verified means read on the operator's official page (mostly 2026-11-01; four rows rechecked on 2026-11-02). Method and the full log of pages read: [Method & sources](method.html).
 - Win odds are not published on the pages read, so "best" means largest verified prize with free entry and open status, not expected value.
-- External link reachability could not be machine-tested from the build environment; internal links are validated in CI.
+- A targeted sample of official links was opened on 2026-11-02; remaining external links were not machine-tested. Internal links are validated in CI.
 - Source repository pinned at commit `466f7c1`.
 
 ## Where to go next

@@ -33,6 +33,7 @@ for (const l of data.listings) {
   const v = ver.entries[l.id];
   if (!v && l.verificationLevel !== 'unverified') fail(`${l.id}: marked ${l.verificationLevel} without a verification record`);
   if (v && l.verificationLevel !== v.level) fail(`${l.id}: level mismatch with verification.json`);
+  if (v && l.checkedOn !== (v.checkedOn || ver._meta.checkedOn)) fail(`${l.id}: check date mismatch with verification.json`);
   if (l.verificationLevel === 'unverified') for (const k of CLAIMS) if (l[k] != null) fail(`${l.id}: unverified row has ${k} filled in`);
   if (v) for (const k of CLAIMS) if ((l[k] ?? null) !== (v[k] ?? null)) fail(`${l.id}: ${k} differs from verification record`);
   for (const k of CLAIMS) if (l[k] != null && !(l.official && l.official.checked)) fail(`${l.id}: ${k} filled but official page not checked`);
@@ -45,10 +46,13 @@ for (const l of data.listings) {
   if (l.official.checked !== !!v) fail(`${l.id}: official.checked inconsistent`);
 }
 
+// Best-bet dates must match their own research snapshot, not imply already-closed entries are open.
+if (best._meta.asOf !== JSON.parse(read('data/stats.json')).generatedOn) fail('bestbets asOf differs from site generatedOn');
 // best bets
 for (const p of best.picks) {
   const l = data.listings.find(x => x.id === p.id);
   if (!l) { fail(`bestbets: unknown id ${p.id}`); continue; }
+  if (['A', 'B'].includes(p.tier) && p.deadline && p.deadline < best._meta.asOf) fail(`bestbets: ${p.id} has expired deadline ${p.deadline}`);
   if (l.quarantined || !l.official?.checked) fail(`bestbets: ${p.id} not checked on official page`);
   if (['A', 'B'].includes(p.tier)) {
     if (!l.prize) fail(`bestbets: ${p.id} lacks verified prize`);

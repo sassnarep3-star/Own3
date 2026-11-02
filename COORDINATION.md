@@ -315,18 +315,6 @@ shared outputs (table data, site index/navigation) are changed only by the final
 
 **Heads-up for other sessions:** session `arena-6fc21fe0` pushed further commits to its branch after PR #5 (prize-type classification fix). Its build now lives in `archive/audited-ledger/`; its tools only work from there. Any new PR from that branch will conflict on root paths — rebase it onto `main` and move its changes under `archive/audited-ledger/` rather than restoring root files, or log a request here.
 
-### 2026-11-02 — session `arena/cfa352c6-own3` claim
-
-| Task | Status | Owner | File scope | Notes |
-|---|---|---|---|---|
-| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | done (prize discrepancy needs review) | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
-
-C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `tools/build_site.js` to support per-row check dates; previous tasks are done and no active owner conflicts.
-
-### 2026-11-02 — C1 completed
-
-**Official source read:** [Rams 2026 Pick'em announcement](https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions), published July 30, 2026; checked November 2. Its itemized prizes are a resort stay, $250 resort credit and a balloon ride; weekly tickets, signed merchandise, and $75 resort credit. It does **not** state a withdrawable cash prize. The source ledger classified this as a "Free USD path"; that classification is contradicted. Free entry, eligibility and current status were not confirmed by this announcement and remain blank. Headline says "season tickets" but itemized prizes do not include season tickets: review the live rules before relying on either. The original November 1 verification baseline remains intact; per-row check dates show November 2 for this addition. Regenerated pages and log; catalog validator checks all 192 table rows, 16 pages and local anchors (PASS). External reachability of other URLs remains untested. C1 done; Rams prize discrepancy remains `needs review` on Flagged for Review and does not block publication.
-
 ### 2026-11-02 — session `arena/6a7094eb-own3` claims mobile navigation audit
 
 | Task | Status | Owner | File scope | Notes |
@@ -339,4 +327,39 @@ This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it 
 
 **Status:** done. The mobile navigation now exposes a visible horizontal scroll indicator (rather than hiding it) and its links have 44px minimum touch height. Scope: CSS only; no listing data, operator facts, or source links changed. Verification: rebuilt all generated files with `node tools/build_data.js`, `node tools/build_log.js`, `node tools/build_site.js`; `node scripts/validate-catalog.mjs` passed (206 listings, 192 official-linked table rows, 14 quarantined, 16 pages, internal links/anchors resolve); `node scripts/validate-prize-scout-archive.mjs` passed. Existing official-source evidence and limits remain recorded in `VERIFICATION_LOG.md`. External reachability and 180 unchecked rows remain needs review. Initial `git pull --rebase origin arena/6a7094eb-own3` could not find a remote ref before its first push; rebased against `origin/main` instead, then pushed this branch; no conflict.
 
-C1 integration note: `origin/main` advanced via PR #9 during PR #10 checks; merging main conflicted only in this append-only coordination log. Both sessions’ entries were retained, with no data or CSS conflicts.
+### 2026-11-02 — session `8114d944` claims V2 (targeted official recheck and publication hardening)
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| V2 | Targeted official-page recheck, dated best-bet safety, build/validator, integration PR | in progress | `8114d944` | `COORDINATION.md`, `data/verification.json`, `data/bestbets.json`, `tools/build_data.js`, `tools/build_site.js`, `tools/build_log.js`, `tools/executive-summary.template.md`, `scripts/validate-catalog.mjs`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, `EXECUTIVE_SUMMARY.md`, root `*.html`, `categories/*.html`, `README.md` | No CSS edits; separate open PR #9 owns `assets/css/site.css`. Changes to shared outputs only in this integration task after previous tasks completed. |
+
+This session stays on the Arena-assigned `arena/8114d944-own3` branch rather than creating a session-named branch. No previous session has an active claim in this scope; PR #9 touches CSS and this board only. Claim logged before work.
+
+### 2026-11-02 — V2 verification and integration results (`8114d944`)
+
+**Sources opened directly:** [FundedFast competition](https://fundedfast.com/trading-competition) (both text chunks), [FundedFast Competition Terms](https://fundedfast.com/terms-conditions-competition) (first chunk only), [Metaculus tournaments](https://www.metaculus.com/tournaments/), [Metaculus FutureEval event](https://www.metaculus.com/tournament/fall-futureeval-2026/), [Sony World Photography Awards](https://www.worldphoto.org/sony-world-photography-awards) (first chunk), [CBS 2026 rules](https://www.cbssports.com/fantasy/football/games/pickem/rules) (first chunk). These four previously verified rows (FundedFast, Metaculus, Sony, CBS) have their own 2026-11-02 check dates; the other 22 retain 2026-11-01. No claim of rechecking all 206 rows or of live-testing every external link.
+
+**Material irregularity:** The FundedFast operator page *changed* since the prior session: joining now closes **2026-11-18 21:00 UTC**, not Nov 9; first prize is **$500**, not $400; places 11–20 receive **$50**, not $60. The official $2,000 total and free entry remain. The difference and both snapshots are published in the FundedFast row on Flagged for Review, along with the operator link; complete eligibility and binding Official Rules remain unconfirmed. Its Terms page effective 2026-11-02 lists jurisdiction exclusions; because full eligibility was not established on the linked competition page, eligibility remains blank. Metaculus' advertised $50,000 FutureEval event is expressly **bot-only** on its own event page; this limitation is disclosed in the shortlist and log. Sony/CBS still support the values displayed. The old upstream ledger remains dated 2026-08-19 (75 days before this pass); 180 rows remain unverified and 14 remain quarantined.
+
+**Verification performed:** Rebuilt `data/competitions.json`, stats, log, all 16 root/category HTML pages and summary; `node scripts/validate-catalog.mjs` PASS (206 rows, 192 official-linked table rows, 14 quarantined, internal links and anchors); archived audited ledger audit/build/link-check PASS (17 pages, with its pre-existing 41 JS-table URL warning); archived Prize Scout validator PASS (206 candidates); `git diff --check` PASS. Validator now checks per-row check dates and dated shortlist consistency. These are static/link-shape tests, **not** proof that 192 external URLs resolve or that unchecked rows' contests exist. PR/deployment result to follow.
+
+**2026-11-02 rebase conflict log:** Before pushing V2, `git pull --rebase origin main` found main had advanced via M1 PR #9 (merged at `2573ac7`). Conflict was confined to `COORDINATION.md`'s appended tail. Resolved by retaining M1's entire log and this session's claim/log in order; did not modify or discard the M1 CSS change. Rebase completed, no other conflicting files.
+
+**M1 publication:** [PR #9](https://github.com/sassnarep3-star/Own3/pull/9) merged into `main` at `2573ac768e62ed31aafb491bb08ddee8e6deedc0` on 2026-11-02 17:49 UTC. PR validation and archived ledger checks passed. [Pages run 41494755408](https://github.com/sassnarep3-star/Own3/actions/runs/41494755408) completed successfully (validate and deploy jobs). Live URL: <https://sassnarep3-star.github.io/Own3/>. This record is appended after merge so requires its own documentation-only PR.
+
+**2026-11-02 documentation conflict:** While recording the M1 deployment, `main` advanced with V2 PR #12. The append-only `COORDINATION.md` tail conflicted during rebase; both V2 and M1 records were retained without dropping either.
+
+### 2026-11-02 — session `arena/cfa352c6-own3` claim
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | done (prize discrepancy needs review) | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
+
+C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `tools/build_site.js` to support per-row check dates; previous tasks are done and no active owner conflicts.
+
+### 2026-11-02 — C1 completed
+
+**Official source read:** [Rams 2026 Pick'em announcement](https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions), published July 30, 2026; checked November 2. Its itemized prizes are a resort stay, $250 resort credit and a balloon ride; weekly tickets, signed merchandise, and $75 resort credit. It does **not** state a withdrawable cash prize. The source ledger classified this as a "Free USD path"; that classification is contradicted. Free entry, eligibility and current status were not confirmed by this announcement and remain blank. Headline says "season tickets" but itemized prizes do not include season tickets: review the live rules before relying on either. The original November 1 verification baseline remains intact; per-row check dates show November 2 for this addition. Regenerated pages and log; catalog validator checks all 192 table rows, 16 pages and local anchors (PASS). External reachability of other URLs remains untested. C1 done; Rams prize discrepancy remains `needs review` on Flagged for Review and does not block publication.
+
+
+C1 integration note: main advanced via PRs #9, #12 and #13 during PR #10 checks; conflict resolved by preserving main’s V2 updates, its mobile change, and adding the Rams row only. Generated outputs rebuilt from combined source.

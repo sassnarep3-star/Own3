@@ -1,149 +1,149 @@
 {
- "_meta": {
-  "asOf": "2026-11-01",
-  "criteria": [
-   "Only rows whose OFFICIAL page was read on 2026-11-01 are eligible (verification level verified or partial). Unverified rows are never ranked.",
-   "The official page must show the contest as open (or opening within days) and show a cash prize figure.",
-   "Tier A = free entry is explicitly stated on the official page. Tier B = prize and open status confirmed, but the page read did not state the entry fee. Tier C = free entry confirmed but prize or open status not confirmed.",
-   "Inside a tier, rows are ordered by the largest prize figure verified on the official page (field headlineUsd in data/bestbets.json). Headline prize is NOT expected value: field sizes and odds were not published on the pages read, so no win probability is claimed."
-  ],
-  "analystNoteLabel": "Analyst note (judgment, not verified data)"
- },
- "picks": [
-  {
-   "id": "espn-pickem",
-   "tier": "A",
-   "prizeShort": "$102,000 total (58 prizes)",
-   "whenLabel": "Runs 09/09/2026 – 01/10/2027",
-   "deadline": "2027-01-10",
-   "note": "Pick'em with 4 game modes and up to 10 entries. Large public field; odds not published on the page.",
-   "headlineUsd": 102000
+  "_meta": {
+    "asOf": "2026-11-02",
+    "criteria": [
+      "Only rows whose OFFICIAL page was read on 2026-11-01 or rechecked on 2026-11-02 are eligible (verification level verified or partial). Unverified rows are never ranked.",
+      "The official page must show the contest as open (or opening within days) and show a cash prize figure.",
+      "Tier A = free entry is explicitly stated on the official page. Tier B = prize and open status confirmed, but the page read did not state the entry fee. Tier C = free entry confirmed but prize or open status not confirmed.",
+      "Inside a tier, rows are ordered by the largest prize figure verified on the official page (field headlineUsd in data/bestbets.json). Headline prize is NOT expected value: field sizes and odds were not published on the pages read, so no win probability is claimed."
+    ],
+    "analystNoteLabel": "Analyst note (judgment, not verified data)"
   },
-  {
-   "id": "streak-contest",
-   "tier": "A",
-   "prizeShort": "Ladder $5 → $100,000 (5 to 25 correct picks)",
-   "whenLabel": "Ongoing (no end date on listing)",
-   "deadline": null,
-   "note": "Pays above $5 only after 10+ correct picks. NY and FL excluded per listing; the same listing also says 'all 50 states'.",
-   "headlineUsd": 100000
-  },
-  {
-   "id": "cbs-pro-pickem",
-   "tier": "A",
-   "prizeShort": "$1,000 weekly × 18; $5,000 season; $100,000 (perfect week + exact tiebreaker scores)",
-   "whenLabel": "Runs 2026-09-09 – 2027-01-10",
-   "deadline": "2027-01-10",
-   "note": "Weekly $1,000 prizes are the realistic target; the $100,000 needs a perfect week and exact scores.",
-   "headlineUsd": 100000
-  },
-  {
-   "id": "espn-cfb",
-   "tier": "A",
-   "prizeShort": "$86,000 total (46 prizes)",
-   "whenLabel": "Runs 09/05/2026 – 12/06/2026",
-   "deadline": "2026-12-06",
-   "note": "Ends first of the ESPN pick'em games. Up to 5 entries.",
-   "headlineUsd": 86000
-  },
-  {
-   "id": "metaculus",
-   "tier": "A",
-   "prizeShort": "$3,400 – $50,000 prize pools across tournaments",
-   "whenLabel": "Per tournament (e.g. US Midterms 2026 ends in 3 days)",
-   "deadline": null,
-   "note": "Forecasting scored on accuracy. One listed tournament (Fall 2026 FutureEval, $50,000) is a bot tournament. Per-tournament rules on AI/bots not read.",
-   "headlineUsd": 50000
-  },
-  {
-   "id": "sony-world-photo",
-   "tier": "A",
-   "prizeShort": "$25,000 (Series); $5,000 (Single Image)",
-   "whenLabel": "Student closes 2026-11-27; Single Image/Youth 2027-01-05; Series 2027-01-12",
-   "deadline": "2026-11-27",
-   "note": "Judged photography, free to enter per official page. Rules on AI-generated images were not read.",
-   "headlineUsd": 25000
-  },
-  {
-   "id": "wergle-flomp",
-   "tier": "A",
-   "prizeShort": "$5,100 stated total (1st $2,000)",
-   "whenLabel": "Submit 2026-08-15 – 2027-04-01",
-   "deadline": "2027-04-01",
-   "note": "Official rules forbid AI-generated text: an AI coding agent must NOT write the poem.",
-   "headlineUsd": 5100
-  },
-  {
-   "id": "fundedfast-open",
-   "tier": "A",
-   "prizeShort": "$2,000 pool for top 20 (1st $400)",
-   "whenLabel": "Joining 2026-11-04 21:00 UTC – 2026-11-09 21:00 UTC",
-   "deadline": "2026-11-09",
-   "note": "Simulated trading, ranked on steady results. Binding rules not yet published; ID check before payout.",
-   "headlineUsd": 2000
-  },
-  {
-   "id": "checkmate-gaming",
-   "tier": "A",
-   "prizeShort": "$40 – $120 per free-entry event",
-   "whenLabel": "New events daily",
-   "deadline": null,
-   "note": "Live head-to-head lobbies (human play). Small prizes.",
-   "headlineUsd": 120
-  },
-  {
-   "id": "arcprize",
-   "tier": "B",
-   "prizeShort": "$2,000,000 headline (3 tracks, with Kaggle)",
-   "whenLabel": "Entry open per homepage; deadlines not on page",
-   "deadline": null,
-   "note": "ML/code competition — the kind of task an AI coding agent can help with. Entry fee, rules on AI tools, team limits not read.",
-   "headlineUsd": 2000000
-  },
-  {
-   "id": "devpost",
-   "tier": "B",
-   "prizeShort": "Up to $1,000,000 (Meta VR Start); also $120,000, $100,000, $67,500",
-   "whenLabel": "Meta VR: 17 days left; PayPal AI: 11 days left (as of 2026-11-01)",
-   "deadline": "2026-11-18",
-   "note": "Many open hackathons; entry fee and eligibility are set per hackathon and were not read.",
-   "headlineUsd": 1000000
-  },
-  {
-   "id": "kaggle",
-   "tier": "B",
-   "prizeShort": "$450,000 (ARC Paper Track), $100,000 (NFL Big Data Bowl 2027), $35,000 (Gemma 4 Paper Track)",
-   "whenLabel": "ARC Paper Track: 8 days to go; Gemma 4 paper track: 11 days; NFL BDB: 2 months (as of 2026-11-01)",
-   "deadline": "2026-11-09",
-   "note": "Hackathon/paper tracks and ML contests. Per-competition rules not read.",
-   "headlineUsd": 450000
-  },
-  {
-   "id": "drivendata",
-   "tier": "B",
-   "prizeShort": "$300,000 (DOE GEMS Prize Challenge)",
-   "whenLabel": "4 weeks left (as of 2026-11-01)",
-   "deadline": "2026-11-29",
-   "note": "Data-science challenge. Competition page (entry terms, eligibility) not read.",
-   "headlineUsd": 300000
-  },
-  {
-   "id": "mlb-beat-the-streak",
-   "tier": "C",
-   "prizeShort": "$5,600,000 only for a 57-game streak; else $10,000 for best streak ≥ 20",
-   "whenLabel": "Entry period ends with the final game of the 2026 MLB regular season (per official rules); the 2026 season has likely finished, so confirm on the official page",
-   "deadline": null,
-   "note": "Free, 21+. Pays nothing unless a streak of 20+ is reached. Check the official page for whether entries are still open.",
-   "headlineUsd": 5600000
-  },
-  {
-   "id": "nascar-fantasy-live",
-   "tier": "C",
-   "prizeShort": "Prize amounts not confirmed",
-   "whenLabel": "Registration closes 2026-11-08, 5 min before the last race",
-   "deadline": "2026-11-08",
-   "note": "Free entry and eligibility confirmed; the season ends in a week and dollar prizes were not seen.",
-   "headlineUsd": 0
-  }
- ]
+  "picks": [
+    {
+      "id": "espn-pickem",
+      "tier": "A",
+      "prizeShort": "$102,000 total (58 prizes)",
+      "whenLabel": "Runs 09/09/2026 – 01/10/2027",
+      "deadline": "2027-01-10",
+      "note": "Pick'em with 4 game modes and up to 10 entries. Large public field; odds not published on the page.",
+      "headlineUsd": 102000
+    },
+    {
+      "id": "streak-contest",
+      "tier": "A",
+      "prizeShort": "Ladder $5 → $100,000 (5 to 25 correct picks)",
+      "whenLabel": "Ongoing (no end date on listing)",
+      "deadline": null,
+      "note": "Pays above $5 only after 10+ correct picks. NY and FL excluded per listing; the same listing also says 'all 50 states'.",
+      "headlineUsd": 100000
+    },
+    {
+      "id": "cbs-pro-pickem",
+      "tier": "A",
+      "prizeShort": "$1,000 weekly × 18; $5,000 season; $100,000 (perfect week + exact tiebreaker scores)",
+      "whenLabel": "Runs 2026-09-09 – 2027-01-10",
+      "deadline": "2027-01-10",
+      "note": "Weekly $1,000 prizes are the realistic target; the $100,000 needs a perfect week and exact scores.",
+      "headlineUsd": 100000
+    },
+    {
+      "id": "espn-cfb",
+      "tier": "A",
+      "prizeShort": "$86,000 total (46 prizes)",
+      "whenLabel": "Runs 09/05/2026 – 12/06/2026",
+      "deadline": "2026-12-06",
+      "note": "Ends first of the ESPN pick'em games. Up to 5 entries.",
+      "headlineUsd": 86000
+    },
+    {
+      "id": "metaculus",
+      "tier": "A",
+      "prizeShort": "$3,400 – $50,000 prize pools across tournaments",
+      "whenLabel": "Per tournament (US Midterms listed as ending in 2 days on 2026-11-02)",
+      "deadline": null,
+      "note": "The $50,000 FutureEval event is bot-only. Other cash tournaments exist; individual entry/payout rules not read.",
+      "headlineUsd": 50000
+    },
+    {
+      "id": "sony-world-photo",
+      "tier": "A",
+      "prizeShort": "$25,000 (Series); $5,000 (Single Image)",
+      "whenLabel": "Student closes 2026-11-27; Single Image/Youth 2027-01-05; Series 2027-01-12",
+      "deadline": "2026-11-27",
+      "note": "Judged photography, free to enter per official page. Rules on AI-generated images were not read.",
+      "headlineUsd": 25000
+    },
+    {
+      "id": "wergle-flomp",
+      "tier": "A",
+      "prizeShort": "$5,100 stated total (1st $2,000)",
+      "whenLabel": "Submit 2026-08-15 – 2027-04-01",
+      "deadline": "2027-04-01",
+      "note": "Official rules forbid AI-generated text: an AI coding agent must NOT write the poem.",
+      "headlineUsd": 5100
+    },
+    {
+      "id": "fundedfast-open",
+      "tier": "A",
+      "prizeShort": "$2,000 pool for top 20 (1st $500)",
+      "whenLabel": "Sign-ups 2026-11-04 12:00 UTC – 2026-11-18 21:00 UTC",
+      "deadline": "2026-11-18",
+      "note": "Simulated trading, ranked on steady results. The operator changed the joining deadline and prize split between 2026-11-01 and 2026-11-02. Complete binding rules not yet seen; recheck before entry.",
+      "headlineUsd": 2000
+    },
+    {
+      "id": "checkmate-gaming",
+      "tier": "A",
+      "prizeShort": "$40 – $120 per free-entry event",
+      "whenLabel": "New events daily",
+      "deadline": null,
+      "note": "Live head-to-head lobbies (human play). Small prizes.",
+      "headlineUsd": 120
+    },
+    {
+      "id": "arcprize",
+      "tier": "B",
+      "prizeShort": "$2,000,000 headline (3 tracks, with Kaggle)",
+      "whenLabel": "Entry open per homepage; deadlines not on page",
+      "deadline": null,
+      "note": "ML/code competition — the kind of task an AI coding agent can help with. Entry fee, rules on AI tools, team limits not read.",
+      "headlineUsd": 2000000
+    },
+    {
+      "id": "devpost",
+      "tier": "B",
+      "prizeShort": "Up to $1,000,000 (Meta VR Start); also $120,000, $100,000, $67,500",
+      "whenLabel": "Meta VR: 17 days left; PayPal AI: 11 days left (as of 2026-11-01)",
+      "deadline": "2026-11-18",
+      "note": "Many open hackathons; entry fee and eligibility are set per hackathon and were not read.",
+      "headlineUsd": 1000000
+    },
+    {
+      "id": "kaggle",
+      "tier": "B",
+      "prizeShort": "$450,000 (ARC Paper Track), $100,000 (NFL Big Data Bowl 2027), $35,000 (Gemma 4 Paper Track)",
+      "whenLabel": "ARC Paper Track: 8 days to go; Gemma 4 paper track: 11 days; NFL BDB: 2 months (as of 2026-11-01)",
+      "deadline": "2026-11-09",
+      "note": "Hackathon/paper tracks and ML contests. Per-competition rules not read.",
+      "headlineUsd": 450000
+    },
+    {
+      "id": "drivendata",
+      "tier": "B",
+      "prizeShort": "$300,000 (DOE GEMS Prize Challenge)",
+      "whenLabel": "4 weeks left (as of 2026-11-01)",
+      "deadline": "2026-11-29",
+      "note": "Data-science challenge. Competition page (entry terms, eligibility) not read.",
+      "headlineUsd": 300000
+    },
+    {
+      "id": "mlb-beat-the-streak",
+      "tier": "C",
+      "prizeShort": "$5,600,000 only for a 57-game streak; else $10,000 for best streak ≥ 20",
+      "whenLabel": "Entry period ends with the final game of the 2026 MLB regular season (per official rules); the 2026 season has likely finished, so confirm on the official page",
+      "deadline": null,
+      "note": "Free, 21+. Pays nothing unless a streak of 20+ is reached. Check the official page for whether entries are still open.",
+      "headlineUsd": 5600000
+    },
+    {
+      "id": "nascar-fantasy-live",
+      "tier": "C",
+      "prizeShort": "Prize amounts not confirmed",
+      "whenLabel": "Registration closes 2026-11-08, 5 min before the last race",
+      "deadline": "2026-11-08",
+      "note": "Free entry and eligibility confirmed; the season ends in a week and dollar prizes were not seen.",
+      "headlineUsd": 0
+    }
+  ]
 }

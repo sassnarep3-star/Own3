@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { ROOT, loadUpstream, regDomain, THIRD_PARTY, NON_CASH_RE, NON_USD_RE } = require('./lib');
 
-const TODAY = '2026-11-01';
+const TODAY = '2026-11-02';
 const U = loadUpstream();
 const V = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/verification.json'), 'utf8'));
 const daysBetween = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);

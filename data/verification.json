@@ -2,7 +2,7 @@
   "_meta": {
     "checkedOn": "2026-11-01",
     "session": "1151755f",
-    "method": "Each page below was fetched on 2026-11-01 and read directly. A field is filled in ONLY if the exact value appears on the cited official page. Fields not seen on the page are left blank (null) and shown as unverified on the site. Nothing is inferred.",
+    "method": "The initial 26 operator pages were fetched on 2026-11-01; rows with their own checkedOn date were re-read on that date. A field is filled in ONLY if its value appeared on the cited official page on the row check date. Fields not seen are left blank (null). Rechecks do not certify other rows or linked pages.",
     "levels": {
       "verified": "Free-entry, prize and open/closed status were all read from the cited official page.",
       "partial": "At least one field was read from the official page; one or more fields are still blank/unverified.",
@@ -56,7 +56,8 @@
           "upstream": "$1K/week + $5K season + $100K perfect",
           "official": "Matches, but the $100K requires a perfect week AND exact scores for both tiebreaker games (Section 3, Contingency Prize)."
         }
-      ]
+      ],
+      "checkedOn": "2026-11-02"
     },
     "mlb-beat-the-streak": {
       "level": "partial",
@@ -111,25 +112,31 @@
       "sourceUrl": "https://fundedfast.com/trading-competition",
       "sourceLabel": "FundedFast — Free trading competition",
       "freeEntry": "Yes — \"There is no entry fee at any point and you never need a card.\"",
-      "prize": "$2,000 cash pool for the top 20: 1st $400, 2nd $250, 3rd $175, 4th $125, 5th $100, 6th–10th $70 each, 11th–20th $60 each. Paid after an identity check; no funded account.",
+      "prize": "$2,000 cash pool for the top 20: 1st $500, 2nd $250, 3rd $175, 4th $125, 5th $100, 6th–10th $70 each, 11th–20th $50 each. Paid after an identity check; no funded account.",
       "eligibility": null,
-      "dates": "November 2026 championship opens Wed 2026-11-04 21:00 UTC; joining closes Mon 2026-11-09 21:00 UTC; leaderboard freezes 2026-12-02; final standings 2026-12-04",
+      "dates": "November 2026: sign-ups open Wed 2026-11-04 12:00 UTC; trading opens 21:00 UTC; joining closes Wed 2026-11-18 21:00 UTC; leaderboard freezes 2026-12-02 21:00 UTC; final standings 2026-12-04 21:00 UTC",
       "status": "upcoming",
       "notes": [
-        "Page says the binding official rules (eligibility, scoring) are published before the championship opens — not yet seen."
+        "Competition page says binding Official Rules (eligibility, scoring) are published before the championship opens; not yet seen. Competition Terms (https://fundedfast.com/terms-conditions-competition) effective 2026-11-02 list restricted jurisdictions, but complete eligibility was not confirmed on the page read; eligibility remains blank."
       ],
       "discrepancies": [
         {
           "field": "prize",
           "upstream": "1st $25, 2nd $20, 3rd $15 (cash) per two-week round",
-          "official": "Monthly 30-day championship; $2,000 pool for top 20 (1st $400)."
+          "official": "Monthly 30-day championship; $2,000 pool for top 20 (1st $500) on 2026-11-02."
         },
         {
           "field": "format",
           "upstream": "two-week round",
           "official": "30 days / 22 trading days, monthly"
+        },
+        {
+          "field": "page changed since prior check",
+          "upstream": "Prior official-page read on 2026-11-01 recorded 1st $400, 11th–20th $60 and joining closes Mon 2026-11-09 21:00 UTC.",
+          "official": "On 2026-11-02 the same operator page states 1st $500, 11th–20th $50 and joining closes Wed 2026-11-18 21:00 UTC. Recheck before joining."
         }
-      ]
+      ],
+      "checkedOn": "2026-11-02"
     },
     "wergle-flomp": {
       "level": "verified",
@@ -216,12 +223,13 @@
       "sourceUrl": "https://www.metaculus.com/tournaments/",
       "sourceLabel": "Metaculus — Tournaments",
       "freeEntry": "Yes — \"You can participate for free and win cash prizes for being accurate.\"",
-      "prize": "19 tournaments listed. Prize pools shown range from $3,400 to $50,000, e.g. Fall 2026 FutureEval Bot Tournament $50,000; US Midterms 2026 $10,000 (ends in 3 days); ACX 2026 Prediction Contest $10,000; Metaculus Cup Fall 2026 $5,000. Several tournaments show \"NO PRIZE POOL\".",
+      "prize": "19 tournaments listed. Prize pools shown range from $3,400 to $50,000, e.g. Fall 2026 FutureEval Bot Tournament $50,000; US Midterms 2026 $10,000 (listed as ending in 2 days on 2026-11-02); ACX 2026 Prediction Contest $10,000; Metaculus Cup Fall 2026 $5,000. Several tournaments show \"NO PRIZE POOL\".",
       "eligibility": null,
       "dates": "Per tournament (see listing)",
       "status": "open",
       "notes": [
-        "Prize eligibility and payment method per tournament were not on the listing page. At least one tournament is a bot tournament (FutureEval)."
+        "Prize eligibility and payment method per tournament were not on the listing page. At least one tournament is a bot tournament (FutureEval).",
+        "The $50,000 Fall 2026 FutureEval event is bot-only (https://www.metaculus.com/tournament/fall-futureeval-2026/); not a general human forecasting prize. The listing also contains ended/pending-resolution tournaments."
       ],
       "discrepancies": [
         {
@@ -229,7 +237,8 @@
           "upstream": "Per tournament — $3,000 to $50,000 prize pools",
           "official": "Listing shows $3,400 to $50,000 (no pool at $3,000 seen)."
         }
-      ]
+      ],
+      "checkedOn": "2026-11-02"
     },
     "drivendata": {
       "level": "partial",
@@ -289,7 +298,8 @@
           "upstream": "$25,000 (Professional Photographer of the Year); $5,000 (Open)",
           "official": "Series competition (previously Professional) $25,000; Single Image competition (previously Open) $5,000."
         }
-      ]
+      ],
+      "checkedOn": "2026-11-02"
     },
     "streak-contest": {
       "level": "verified",

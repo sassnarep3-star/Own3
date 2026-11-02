@@ -2,10 +2,10 @@
 
 A mobile-friendly GitHub Pages research dashboard for free-entry cash-prize competition candidates. It is intentionally evidence-first: a listing is not a recommendation, and unverified facts are left blank rather than guessed.
 
-## Current catalog status (2026-11-01)
+## Current catalog status (2026-11-02)
 
 - 206 candidate records from the reference ledger; 192 have an official-source link and appear in the nine category pages and the all-entries table. 14 have no usable official source and are held out on the [Flagged for Review](flagged-for-review.html) page.
-- **26 rows were read on an official page on 2026-11-01**: 6 fully verified, 11 partially verified, 9 contradicted by the operator's own page. **180 rows remain unverified**, with prize, entry, dates and eligibility left blank by design.
+- **26 rows were read on an official page on 2026-11-01; four were rechecked on 2026-11-02**: 6 fully verified, 11 partially verified, 9 contradicted by the operator's own page. **180 rows remain unverified**, with prize, entry, dates and eligibility left blank by design.
 - A value appears in a table only if it was read on the official page named in the row. Nothing is inferred. The reference ledger's own claims are kept in `data/competitions.json` under `upstream` for audit only.
 - Pages: [Dashboard](index.html), [Best bets](best-bets.html), [All entries](all-entries.html), nine category pages, [Analysis](analysis.html), [Executive summary](executive-summary.html), [Flagged for Review](flagged-for-review.html), [Method & sources](method.html). Full log of pages read: [VERIFICATION_LOG.md](VERIFICATION_LOG.md).
 
@@ -24,7 +24,7 @@ node tools/build_site.js      # -> all HTML pages and EXECUTIVE_SUMMARY.md
 node scripts/validate-catalog.mjs
 ```
 
-The validator enforces: an https official link on every table row (never a known news/affiliate/social domain); no value filled in unless the row was read on its official page and matches `data/verification.json`; quarantined rows never in a table; all internal links and anchors resolve; best-bets rows are verified, open and carry a verified prize. It does **not** test whether external websites are reachable (the build environment cannot reach them) — see the Method page.
+The validator enforces: an https official link on every table row (never a known news/affiliate/social domain); no value filled in unless the row was read on its official page and matches `data/verification.json`; quarantined rows never in a table; all internal links and anchors resolve; best-bets rows are verified, open and carry a verified prize. It does **not** test whether every external website is reachable (a handful of operator pages were manually fetched) — see the Method page.
 
 To verify more rows: read the operator's official page, add an entry to `data/verification.json` with only the values actually seen, then rebuild.
 

@@ -1,5 +1,5 @@
 {
- "generatedOn": "2026-11-01",
+ "generatedOn": "2026-11-02",
  "upstreamCommit": "466f7c1e7a14b52b4a0d36beb84a00d68fd409b7",
  "totalRows": 206,
  "byType": {
@@ -41,7 +41,7 @@
   "NO_OFFICIAL_SOURCE": 14,
   "SIGNUP_THIRD_PARTY": 7,
   "NON_CASH_OR_MIXED": 65,
-  "CONTRADICTED": 16,
+  "CONTRADICTED": 17,
   "SIGNUP_DOMAIN_MISMATCH": 13,
   "NON_USD": 30,
   "CAUTION_UPSTREAM": 11,
