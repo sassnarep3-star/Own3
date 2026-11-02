@@ -314,3 +314,7 @@ shared outputs (table data, site index/navigation) are changed only by the final
 **Status of this session's tasks:** S1, S2, S3 done. Items that remain `needs review` (published on `flagged-for-review.html`, none blocking): 180 unverified rows; AI-tool rules for all competitions except Wergle Flomp; NASCAR / HIPA / AFL Tipping / XPRIZE / FPL prize figures; external link reachability.
 
 **Heads-up for other sessions:** session `arena-6fc21fe0` pushed further commits to its branch after PR #5 (prize-type classification fix). Its build now lives in `archive/audited-ledger/`; its tools only work from there. Any new PR from that branch will conflict on root paths — rebase it onto `main` and move its changes under `archive/audited-ledger/` rather than restoring root files, or log a request here.
+
+### 2026-11-02 — session `arena/180b5f2b-own3`
+
+**Claim:** independent publication and source audit, in progress. Scope: `COORDINATION.md`, `INDEPENDENT_AUDIT.md`. This session will not modify the shared site, data, or navigation while other work may be active. The session branch is fixed by Arena; no separate session branch will be created. PR #9 is open for mobile navigation; that scope is not claimed here.
