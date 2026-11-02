@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { ROOT, loadUpstream, regDomain, THIRD_PARTY, NON_CASH_RE, NON_USD_RE } = require('./lib');
 
-const TODAY = '2026-11-01';
+const TODAY = '2026-11-02';
 const U = loadUpstream();
 const V = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/verification.json'), 'utf8'));
 const daysBetween = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
@@ -54,7 +54,7 @@ const rows = U.listings.map(x => {
 
   // ---- verified fields only (blank when unverified) ----
   const verification = v ? {
-    level: v.level, checkedOn: V._meta.checkedOn,
+    level: v.level, checkedOn: v.checkedOn || V._meta.checkedOn,
     freeEntry: v.freeEntry, prize: v.prize, eligibility: v.eligibility, dates: v.dates, status: v.status, notes: v.notes
   } : { level: 'unverified', checkedOn: null, freeEntry: null, prize: null, eligibility: null, dates: null, status: null, notes: [] };
 
