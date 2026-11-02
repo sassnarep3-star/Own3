@@ -9,7 +9,7 @@ const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/competitions.json'), 
 const S = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/stats.json'), 'utf8'));
 const B = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/bestbets.json'), 'utf8'));
 const V = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/verification.json'), 'utf8'));
-const ASOF = V._meta.checkedOn;
+const ASOF = S.generatedOn;
 const REPO_URL = 'https://github.com/sassnarep3-star/Own3';
 const UP_REPO = D.provenance.referenceRepository;
 const UP_COMMIT = D.provenance.sourceCommit;
@@ -155,7 +155,7 @@ ${bestBetRows(tier, limit)}
 
 // ---- index ----
 function buildIndex() {
-  const closing = B.picks.filter(p => p.deadline && p.tier !== 'C' || p.id === 'nascar-fantasy-live').sort((a, b) => (a.deadline || '9').localeCompare(b.deadline || '9')).slice(0, 6);
+  const closing = B.picks.filter(p => p.deadline && p.deadline >= ASOF && (p.tier !== 'C' || p.id === 'nascar-fantasy-live')).sort((a, b) => (a.deadline || '9').localeCompare(b.deadline || '9')).slice(0, 6);
   const cats = D.categories.map(c => {
     const rows = D.listings.filter(l => l.category === c.id);
     const chk = rows.filter(l => l.verificationLevel !== 'unverified').length;
@@ -178,7 +178,7 @@ function buildIndex() {
 
 <section>
   <div class="sec-head"><div><div class="eyebrow">Start here</div><h2>Best bets right now</h2></div><a class="back" href="best-bets.html">All best bets →</a></div>
-  <p class="lead">Open now, cash prize read from the official page, and free entry stated on that page. Headline prize is not expected value — odds were not published.</p>
+  <p class="lead">Open or opening soon as of ${ASOF}, cash prize and free entry read from the official page. Headline prize is not expected value — odds were not published.</p>
   ${bestTable('A', 5)}
 </section>
 
@@ -212,10 +212,10 @@ function buildBest() {
   const body = `
 <div class="eyebrow">Shortlist · data as of ${ASOF}</div>
 <h1>Best bets</h1>
-<p class="lead">The competitions worth your time <b>today</b>, using only facts read from official pages. This is a shortlist, not a promise of winnings.</p>
+<p class="lead">A dated research shortlist (last refreshed ${ASOF}), using only facts read from official pages. Recheck deadlines and terms before entering. This is a shortlist, not a promise of winnings.</p>
 <div class="panel"><h2>How these were chosen</h2><ol>${B._meta.criteria.map(c => `<li>${esc(c)}</li>`).join('')}</ol></div>
 
-<h2 class="tier">Tier A — free entry stated on the official page · open now</h2>
+<h2 class="tier">Tier A — free entry stated on the official page · open or opening soon</h2>
 ${bestTable('A')}
 <h2 class="tier">Tier B — prize and open status confirmed · entry fee not stated on the page read</h2>
 <p class="foot">Larger prizes, mostly code/ML competitions. Read each competition's own rules for entry terms, AI-tool policy and team size before investing time.</p>
@@ -295,7 +295,7 @@ ${contra.map(l => { const d = l.flags.filter(f => f.code === 'CONTRADICTED').map
 <tr><th scope="row" data-label="Old headline">Free "USD path"</th><td data-label="Data file shows">${flagCount('NON_CASH_OR_MIXED')} rows stamped "full" mention non-cash items (trips, vouchers, gift cards, equipment…) in their prize text; ${flagCount('NON_USD')} rows use non-USD currency in a field named "prizeUsd".</td><td data-label="Issue">The "Free USD path" label overstates cash prizes. (Keyword match on the old text — a flag for review, not a verdict per row.)</td></tr>
 <tr><th scope="row" data-label="Old headline">"62 iOS options"</th><td data-label="Data file shows">${h.upstreamIos62} rows list iOS and are not ended, but only ${h.listingsWithIosUrl} rows carry an App Store link.</td><td data-label="Issue">Most "iOS" labels are not backed by a store link. The old page's script also renders every non-iOS platform (including ${h.listingsListingAndroid} that list Android) as "Browser".</td></tr>
 <tr><th scope="row" data-label="Old headline">"60 added this pass"</th><td data-label="Data file shows">The counter reads the length of the pass-C list (${h.addedThisPassCLength}); the data file's latest pass (S) lists 10 additions.</td><td data-label="Issue">The "added" counter is stale relative to the pass it names.</td></tr>
-<tr><th scope="row" data-label="Old headline">Last checked 2026-08-19</th><td data-label="Data file shows">All ${counts.total} rows carry the same date, 74 days before this review.</td><td data-label="Issue">Seasonal contests change quickly; several verified rows contradict a 2026-08-19 "live" status.</td></tr>
+<tr><th scope="row" data-label="Old headline">Last checked 2026-08-19</th><td data-label="Data file shows">All ${counts.total} upstream rows carry the same date, ${Math.round((new Date(ASOF) - new Date("2026-08-19")) / 864e5)} days before this review.</td><td data-label="Issue">Seasonal contests change quickly; several verified rows contradict a 2026-08-19 "live" status.</td></tr>
 </tbody></table></div>
 
 <h2>4. Source quality</h2>
@@ -350,12 +350,12 @@ function buildFlagged() {
 
 <h2 id="summary">A. Flag summary</h2>
 <div class="table-wrap"><table class="grid responsive narrow"><thead><tr><th>Flag</th><th>Rows</th></tr></thead><tbody>${flagSummary}</tbody></table></div>
-<p class="foot">The "last-checked older than 60 days" flag applies to all ${counts.total} rows (every upstream row says 2026-08-19, 74 days before ${ASOF}); it is shown in the table above but not repeated per row.</p>
+<p class="foot">The "last-checked older than 60 days" flag applies to all ${counts.total} rows (every upstream row says 2026-08-19, ${Math.round((new Date(ASOF) - new Date("2026-08-19")) / 864e5)} days before ${ASOF}); it is shown in the table above but not repeated per row.</p>
 
 <h2 id="contradicted">B. Contradicted by an official source (${contraRows.length})</h2>
-<p>Each row below was read on an official page on ${ASOF}. Review the linked page to confirm.</p>
+<p>Rows were checked on 2026-11-01; selected rows were rechecked on 2026-11-02. The source may have changed since its check date; review the linked page to confirm.</p>
 <div class="table-wrap"><table class="grid responsive"><thead><tr><th>Competition</th><th>Field</th><th>Old ledger said</th><th>Official page says</th><th>Source</th></tr></thead><tbody>
-${contraRows.map(l => V.entries[l.id].discrepancies.map((d, i) => `<tr><th scope="row" data-label="Competition">${i === 0 ? esc(l.name) : ''}</th><td data-label="Field">${esc(d.field)}</td><td data-label="Old ledger said">${esc(d.upstream)}</td><td data-label="Official page says">${esc(d.official)}</td><td data-label="Source" class="src">${i === 0 ? extLink(l.official.url, 'Official page') : ''}</td></tr>`).join('')).join('\n')}
+${contraRows.map(l => V.entries[l.id].discrepancies.map((d, i) => `<tr><th scope="row" data-label="Competition">${i === 0 ? esc(l.name) : ''}</th><td data-label="Field">${esc(d.field)}</td><td data-label="Old ledger said">${esc(d.upstream)}</td><td data-label="Official page says">${esc(d.official)}</td><td data-label="Source" class="src">${extLink(l.official.url, 'Official page')}</td></tr>`).join('')).join('\n')}
 </tbody></table></div>
 <p class="foot">Also noted: ${D.listings.filter(l => l.verificationLevel !== 'contradicted' && V.entries[l.id] && V.entries[l.id].discrepancies.length).map(l => esc(l.name)).join('; ')} — differences from the old ledger recorded in each row's notes (see All entries).</p>
 
@@ -401,13 +401,13 @@ ${flagSections}
 
 // ---- method ----
 function buildMethod() {
-  const log = Object.entries(V.entries).map(([id, e]) => `<tr><th scope="row" data-label="Competition">${esc(byId[id].name)}</th><td data-label="Page read" class="src">${extLink(e.sourceUrl, e.sourceLabel)}</td><td data-label="Result">${badge(byId[id])}</td><td data-label="Fields confirmed">${['freeEntry', 'prize', 'eligibility', 'dates', 'status'].filter(f => e[f]).map(f => ({ freeEntry: 'free entry', prize: 'prize', eligibility: 'eligibility', dates: 'dates', status: 'status' }[f])).join(', ') || 'none'}</td></tr>`).join('');
+  const log = Object.entries(V.entries).map(([id, e]) => `<tr><th scope="row" data-label="Competition">${esc(byId[id].name)}</th><td data-label="Page read" class="src">${extLink(e.sourceUrl, e.sourceLabel)}</td><td data-label="Result">${badge(byId[id])}<small>checked ${e.checkedOn || V._meta.checkedOn}</small></td><td data-label="Fields confirmed">${['freeEntry', 'prize', 'eligibility', 'dates', 'status'].filter(f => e[f]).map(f => ({ freeEntry: 'free entry', prize: 'prize', eligibility: 'eligibility', dates: 'dates', status: 'status' }[f])).join(', ') || 'none'}</td></tr>`).join('');
   const body = `
 <div class="eyebrow">Method · data as of ${ASOF}</div>
 <h1>Method &amp; sources</h1>
 <h2>Rules this site follows</h2>
 <ol>
-<li>A value is shown only if it was read on an official page on ${ASOF}. Otherwise the cell is <b>blank</b> and the row says <b>unverified</b>. Nothing is inferred or filled in.</li>
+<li>A value is shown only if it was read on the linked official page on the row’s displayed check date (2026-11-01 or 2026-11-02). Otherwise the cell is <b>blank</b> and the row says <b>unverified</b>. Nothing is inferred or filled in.</li>
 <li>Every table row carries an official link. Links on news, press-release, social, affiliate or forum domains are never accepted as official; rows with no other source are held out and flagged.</li>
 <li>The old ledger's own claims are kept only in <code>data/competitions.json → upstream</code> for audit; the site never renders them as facts.</li>
 <li>Contradictions between the old ledger and an official page are published on the Flagged for Review page.</li>
@@ -419,13 +419,13 @@ function buildMethod() {
 <li><b>Audit:</b> <code>tools/build_data.js</code> computes automatic flags and writes <code>data/competitions.json</code>.</li>
 <li><b>Site:</b> <code>tools/build_site.js</code> writes the static HTML; <code>scripts/validate-catalog.mjs</code> checks it (CI runs it on every push and pull request).</li>
 </ol>
-<h2>Verification log (${Object.keys(V.entries).length} pages read on ${ASOF})</h2>
+<h2>Verification log (${Object.keys(V.entries).length} official pages checked 2026-11-01; select rows rechecked 2026-11-02)</h2>
 <div class="table-wrap"><table class="grid responsive"><thead><tr><th>Competition</th><th>Official page read</th><th>Result</th><th>Fields confirmed</th></tr></thead><tbody>${log}</tbody></table></div>
 <h2>Limits</h2>
 <ul>
 <li>Pages were read with a page-text fetcher; scripts did not run, so values rendered by JavaScript may be missing (these are left blank, not guessed).</li>
 <li>Long rules were read in parts. Fields in unread parts are blank.</li>
-<li>"Closing soon" labels such as "8 days to go" are quoted from the official listing as of ${ASOF}.</li>
+<li>Relative countdowns quoted from the operator were captured on the row’s own checked date; they are not live timers.</li>
 <li>Analyst notes on the Best bets page are judgment and are labelled as such.</li>
 </ul>
 <h2>Reference sources</h2>

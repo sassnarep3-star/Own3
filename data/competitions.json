@@ -8,7 +8,7 @@
   "leadCatalogReviewDate": "2026-08-19",
   "extractedRecordCount": 206,
   "verificationDate": "2026-11-01",
-  "verificationMethod": "Each page below was fetched on 2026-11-01 and read directly. A field is filled in ONLY if the exact value appears on the cited official page. Fields not seen on the page are left blank (null) and shown as unverified on the site. Nothing is inferred.",
+  "verificationMethod": "The initial 26 operator pages were fetched on 2026-11-01; rows with their own checkedOn date were re-read on that date. A field is filled in ONLY if its value appeared on the cited official page on the row check date. Fields not seen are left blank (null). Rechecks do not certify other rows or linked pages.",
   "note": "Fields freeEntry, prize, eligibility, dates and status are filled ONLY when read from the official page named in official.url on the verification date. Blank (null) means unverified. The \"upstream\" object keeps the lead catalog's own claims for audit comparison only; they are not facts and are never shown as facts on the site."
  },
  "categories": [
@@ -97,7 +97,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -163,7 +163,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -220,7 +220,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -277,7 +277,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -343,7 +343,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -416,7 +416,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -481,7 +481,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -537,7 +537,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -598,7 +598,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -672,7 +672,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -728,7 +728,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -794,7 +794,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -861,7 +861,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -918,7 +918,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -974,7 +974,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1032,7 +1032,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1090,7 +1090,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1148,7 +1148,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1210,7 +1210,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1266,7 +1266,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1306,7 +1306,7 @@
     "kind": "verified-page"
    },
    "quarantined": false,
-   "checkedOn": "2026-11-01",
+   "checkedOn": "2026-11-02",
    "freeEntry": "Yes — \"The Challenge is FREE to play. No purchase, wireless device or entry fee necessary.\"",
    "prize": "18 weekly prizes of $1,000 each (check); one $5,000 season-long prize; $100,000 contingency prize shared by anyone who picks every game correctly in a week AND predicts the exact scores of both tiebreaker games.",
    "eligibility": "Registered CBSI-network users who are legal residents of the 50 US states or DC (Puerto Rico and territories excluded) and 18+ (or age of majority). One entry per person.",
@@ -1319,7 +1319,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -1380,7 +1380,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1442,7 +1442,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1500,7 +1500,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1563,7 +1563,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1624,7 +1624,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1685,7 +1685,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1746,7 +1746,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1810,7 +1810,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1879,7 +1879,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -1940,7 +1940,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2006,7 +2006,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2072,7 +2072,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2133,7 +2133,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2190,7 +2190,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2247,7 +2247,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2312,7 +2312,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2374,7 +2374,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2431,7 +2431,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2488,7 +2488,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2549,7 +2549,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2614,7 +2614,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2671,7 +2671,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2728,7 +2728,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2797,7 +2797,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2866,7 +2866,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2927,7 +2927,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -2988,7 +2988,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3057,7 +3057,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3121,7 +3121,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3190,7 +3190,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3259,7 +3259,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3323,7 +3323,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3387,7 +3387,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3451,7 +3451,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3519,7 +3519,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3587,7 +3587,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3655,7 +3655,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3716,7 +3716,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3777,7 +3777,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3834,7 +3834,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3891,7 +3891,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -3952,7 +3952,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4017,7 +4017,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4078,7 +4078,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4135,7 +4135,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4193,7 +4193,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4250,7 +4250,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4307,7 +4307,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4364,7 +4364,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4421,7 +4421,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4481,7 +4481,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4538,7 +4538,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4595,7 +4595,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4649,7 +4649,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4694,14 +4694,15 @@
     "kind": "verified-page"
    },
    "quarantined": false,
-   "checkedOn": "2026-11-01",
+   "checkedOn": "2026-11-02",
    "freeEntry": "Yes — \"You can participate for free and win cash prizes for being accurate.\"",
-   "prize": "19 tournaments listed. Prize pools shown range from $3,400 to $50,000, e.g. Fall 2026 FutureEval Bot Tournament $50,000; US Midterms 2026 $10,000 (ends in 3 days); ACX 2026 Prediction Contest $10,000; Metaculus Cup Fall 2026 $5,000. Several tournaments show \"NO PRIZE POOL\".",
+   "prize": "19 tournaments listed. Prize pools shown range from $3,400 to $50,000, e.g. Fall 2026 FutureEval Bot Tournament $50,000; US Midterms 2026 $10,000 (listed as ending in 2 days on 2026-11-02); ACX 2026 Prediction Contest $10,000; Metaculus Cup Fall 2026 $5,000. Several tournaments show \"NO PRIZE POOL\".",
    "eligibility": null,
    "dates": "Per tournament (see listing)",
    "status": "open",
    "notes": [
-    "Prize eligibility and payment method per tournament were not on the listing page. At least one tournament is a bot tournament (FutureEval)."
+    "Prize eligibility and payment method per tournament were not on the listing page. At least one tournament is a bot tournament (FutureEval).",
+    "The $50,000 Fall 2026 FutureEval event is bot-only (https://www.metaculus.com/tournament/fall-futureeval-2026/); not a general human forecasting prize. The listing also contains ended/pending-resolution tournaments."
    ],
    "unverifiedFields": [
     "eligibility"
@@ -4709,7 +4710,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -4776,7 +4777,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -4843,7 +4844,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -4913,7 +4914,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -4974,7 +4975,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5031,7 +5032,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5088,7 +5089,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5150,7 +5151,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5212,7 +5213,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5267,7 +5268,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5328,7 +5329,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5398,7 +5399,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5465,7 +5466,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5531,7 +5532,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5599,7 +5600,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5667,7 +5668,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5729,7 +5730,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5791,7 +5792,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5848,7 +5849,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5905,7 +5906,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -5962,7 +5963,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6023,7 +6024,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6090,7 +6091,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6147,7 +6148,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -6218,7 +6219,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6280,7 +6281,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6342,7 +6343,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6407,7 +6408,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6466,7 +6467,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -6531,7 +6532,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6590,7 +6591,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6649,7 +6650,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6711,7 +6712,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6773,7 +6774,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6830,7 +6831,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6892,7 +6893,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -6955,7 +6956,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7012,7 +7013,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7082,7 +7083,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7148,7 +7149,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7213,7 +7214,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7276,7 +7277,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7344,7 +7345,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7411,7 +7412,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7484,7 +7485,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -7550,7 +7551,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7613,7 +7614,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7674,7 +7675,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7741,7 +7742,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7804,7 +7805,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7879,7 +7880,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -7941,7 +7942,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8002,7 +8003,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8064,7 +8065,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8126,7 +8127,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8194,7 +8195,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8261,7 +8262,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8324,7 +8325,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8392,7 +8393,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8457,7 +8458,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8524,7 +8525,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8586,7 +8587,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8655,7 +8656,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8718,7 +8719,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8781,7 +8782,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8846,7 +8847,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8909,7 +8910,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -8966,7 +8967,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9027,7 +9028,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9088,7 +9089,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9149,7 +9150,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9206,7 +9207,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9267,7 +9268,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9324,7 +9325,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9381,7 +9382,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9438,7 +9439,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9495,7 +9496,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9556,7 +9557,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9627,7 +9628,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9690,7 +9691,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9757,7 +9758,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9824,7 +9825,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9887,7 +9888,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -9950,7 +9951,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10013,7 +10014,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10076,7 +10077,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10139,7 +10140,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10204,7 +10205,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10266,7 +10267,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10323,7 +10324,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10380,7 +10381,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10448,7 +10449,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10511,7 +10512,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10574,7 +10575,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10633,7 +10634,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10701,7 +10702,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10768,7 +10769,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10829,7 +10830,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10891,7 +10892,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -10942,7 +10943,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -10999,7 +11000,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11066,7 +11067,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11124,7 +11125,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11187,7 +11188,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11244,7 +11245,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11305,7 +11306,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11364,7 +11365,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11435,7 +11436,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11502,7 +11503,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11559,7 +11560,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11624,7 +11625,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11685,7 +11686,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11755,7 +11756,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11816,7 +11817,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11882,7 +11883,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -11943,7 +11944,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12004,7 +12005,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12065,7 +12066,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12130,7 +12131,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12195,7 +12196,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12256,7 +12257,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12311,7 +12312,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -12376,7 +12377,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12416,14 +12417,14 @@
     "kind": "verified-page"
    },
    "quarantined": false,
-   "checkedOn": "2026-11-01",
+   "checkedOn": "2026-11-02",
    "freeEntry": "Yes — \"There is no entry fee at any point and you never need a card.\"",
-   "prize": "$2,000 cash pool for the top 20: 1st $400, 2nd $250, 3rd $175, 4th $125, 5th $100, 6th–10th $70 each, 11th–20th $60 each. Paid after an identity check; no funded account.",
+   "prize": "$2,000 cash pool for the top 20: 1st $500, 2nd $250, 3rd $175, 4th $125, 5th $100, 6th–10th $70 each, 11th–20th $50 each. Paid after an identity check; no funded account.",
    "eligibility": null,
-   "dates": "November 2026 championship opens Wed 2026-11-04 21:00 UTC; joining closes Mon 2026-11-09 21:00 UTC; leaderboard freezes 2026-12-02; final standings 2026-12-04",
+   "dates": "November 2026: sign-ups open Wed 2026-11-04 12:00 UTC; trading opens 21:00 UTC; joining closes Wed 2026-11-18 21:00 UTC; leaderboard freezes 2026-12-02 21:00 UTC; final standings 2026-12-04 21:00 UTC",
    "status": "upcoming",
    "notes": [
-    "Page says the binding official rules (eligibility, scoring) are published before the championship opens — not yet seen."
+    "Competition page says binding Official Rules (eligibility, scoring) are published before the championship opens; not yet seen. Competition Terms (https://fundedfast.com/terms-conditions-competition) effective 2026-11-02 list restricted jurisdictions, but complete eligibility was not confirmed on the page read; eligibility remains blank."
    ],
    "unverifiedFields": [
     "eligibility"
@@ -12431,15 +12432,19 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
-     "text": "prize: upstream said \"1st $25, 2nd $20, 3rd $15 (cash) per two-week round\" — official source says: Monthly 30-day championship; $2,000 pool for top 20 (1st $400)."
+     "text": "prize: upstream said \"1st $25, 2nd $20, 3rd $15 (cash) per two-week round\" — official source says: Monthly 30-day championship; $2,000 pool for top 20 (1st $500) on 2026-11-02."
     },
     {
      "code": "CONTRADICTED",
      "text": "format: upstream said \"two-week round\" — official source says: 30 days / 22 trading days, monthly"
+    },
+    {
+     "code": "CONTRADICTED",
+     "text": "page changed since prior check: upstream said \"Prior official-page read on 2026-11-01 recorded 1st $400, 11th–20th $60 and joining closes Mon 2026-11-09 21:00 UTC.\" — official source says: On 2026-11-02 the same operator page states 1st $500, 11th–20th $50 and joining closes Wed 2026-11-18 21:00 UTC. Recheck before joining."
     }
    ],
    "upstream": {
@@ -12497,7 +12502,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12537,7 +12542,7 @@
     "kind": "verified-page"
    },
    "quarantined": false,
-   "checkedOn": "2026-11-01",
+   "checkedOn": "2026-11-02",
    "freeEntry": "Yes — page says the Awards \"have championed inclusivity and access by being free to enter.\"",
    "prize": "Series competition: $25,000 + solo exhibition + Sony equipment. Single Image competition: $5,000 + Sony equipment. Student and Youth: first prize is Sony equipment (non-cash).",
    "eligibility": null,
@@ -12556,7 +12561,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     },
     {
      "code": "CONTRADICTED",
@@ -12621,7 +12626,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12682,7 +12687,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12743,7 +12748,7 @@
     },
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12800,7 +12805,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
@@ -12857,7 +12862,7 @@
    "flags": [
     {
      "code": "STALE",
-     "text": "Upstream last-checked date 2026-08-19 is 74 days before 2026-11-01; time-limited contests may have changed."
+     "text": "Upstream last-checked date 2026-08-19 is 75 days before 2026-11-02; time-limited contests may have changed."
     }
    ],
    "upstream": {
