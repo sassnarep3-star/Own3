@@ -326,3 +326,8 @@ This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it 
 ### 2026-11-02 — M1 complete
 
 **Status:** done. The mobile navigation now exposes a visible horizontal scroll indicator (rather than hiding it) and its links have 44px minimum touch height. Scope: CSS only; no listing data, operator facts, or source links changed. Verification: rebuilt all generated files with `node tools/build_data.js`, `node tools/build_log.js`, `node tools/build_site.js`; `node scripts/validate-catalog.mjs` passed (206 listings, 192 official-linked table rows, 14 quarantined, 16 pages, internal links/anchors resolve); `node scripts/validate-prize-scout-archive.mjs` passed. Existing official-source evidence and limits remain recorded in `VERIFICATION_LOG.md`. External reachability and 180 unchecked rows remain needs review. Initial `git pull --rebase origin arena/6a7094eb-own3` could not find a remote ref before its first push; rebased against `origin/main` instead, then pushed this branch; no conflict.
+### 2026-11-02 — session `arena/4cb43cb0-own3` claim
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| A1 | Research official AI-use rules for competition platforms | in progress | `arena/4cb43cb0-own3` | `COORDINATION.md`, `AI_POLICY_RESEARCH.md` | Independent evidence only; do not edit shared data or generated pages while C1 is active. Fixed Arena branch used instead of requested session branch. Request integration via this board. |
