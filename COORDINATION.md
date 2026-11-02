@@ -330,4 +330,12 @@ This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it 
 
 | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|
-| A1 | Research official AI-use rules for competition platforms | in progress | `arena/4cb43cb0-own3` | `COORDINATION.md`, `AI_POLICY_RESEARCH.md` | Independent evidence only; do not edit shared data or generated pages while C1 is active. Fixed Arena branch used instead of requested session branch. Request integration via this board. |
+| A1 | Research official AI-use rules for competition platforms | done | `arena/4cb43cb0-own3` | `COORDINATION.md`, `AI_POLICY_RESEARCH.md` | Independent evidence only; do not edit shared data or generated pages while C1 is active. Fixed Arena branch used instead of requested session branch. Request integration via this board. |
+
+### 2026-11-02 — A1 evidence and integration handoff
+
+**Sources read:** [Metaculus competition rules](https://www.metaculus.com/tournament-rules/), [ARC Prize 2026 overview](https://arcprize.org/competitions/2026), [ARC-AGI-2](https://arcprize.org/competitions/2026/arc-agi-2), [ARC-AGI-3](https://arcprize.org/competitions/2026/arc-agi-3), [DrivenData AIAI rules](https://www.drivendata.org/competitions/302/competition-uva-aiai-p1/rules/), and event-specific sources in `AI_POLICY_RESEARCH.md`. Read the pages directly on 2026-11-02; only text observed is reported. Metaculus generally allows human AI assistance with final human judgment but bars bots from prizes unless event rules permit; ARC evaluation has no internet and excludes API systems at evaluation, not necessarily development. The ARC overview lists a November 2 submission date and November 8 paper date. Exact time and entry status remain unverified.
+
+**Integration request to C1/shared-output owner:** incorporate the linked findings and deadlines, and correct the summary and Metaculus/ARC best-bet notes as appropriate; recheck track-specific terms. `AI_POLICY_RESEARCH.md` lists limits and historical examples. This session deliberately did not edit shared data/site or claim a blanket permission for AI coding agents. The requested site update is not yet published on Flagged for Review. No merge conflicts encountered.
+
+**Local checks:** `node scripts/validate-catalog.mjs` and `node scripts/validate-prize-scout-archive.mjs` passed; these check internal links and catalog invariants, not external reachability.
