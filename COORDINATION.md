@@ -365,3 +365,13 @@ C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `t
 C1 integration note: main advanced via PRs #9, #12 and #13 during PR #10 checks; conflict resolved by preserving main’s V2 updates, its mobile change, and adding the Rams row only. Generated outputs rebuilt from combined source.
 
 **C1 publication:** [PR #10](https://github.com/sassnarep3-star/Own3/pull/10) merged to `main` at `778bf645ae1c078a99ecd5cd62511019da76b0c1` on 2026-11-02 17:53 UTC after `validate` and archived-ledger build checks passed. [Pages run 41495422880](https://github.com/sassnarep3-star/Own3/actions/runs/41495422880) completed successfully (validate and deploy). Live URL: <https://sassnarep3-star.github.io/Own3/>. This after-merge publication record requires a follow-up documentation-only PR.
+
+### 2026-11-02 — V2 publication record (`8114d944`)
+
+| Task | Status | Owner | Result |
+|---|---|---|---|
+| V2 targeted recheck and integration | done (unverified rows remain `needs review` on site) | `8114d944` | [PR #12](https://github.com/sassnarep3-star/Own3/pull/12) merged to `main` on 2026-11-02 17:50:57 UTC, merge commit `57b095cfe973231402b4d95a9c5e4ca863b6143d`. PR `validate` and archived `build-check` passed before merge. [Pages workflow run 41495106957](https://github.com/sassnarep3-star/Own3/actions/runs/41495106957) succeeded (validation + deployment) at subsequent main commit `3ae8ed3` which includes PR #12 and M1's documentation-only PR #13. [Live best-bets page](https://sassnarep3-star.github.io/Own3/best-bets.html) was fetched with a cache-busting query; confirmed the corrected Nov 18 FundedFast deadline, $500 top prize, and bot-only Metaculus note appeared. |
+
+A simultaneous Rams row review (C1, PR #10) has since merged on top; it is compatible with V2 and the combined catalog validator passed locally at `778bf64`. Its publication is tracked by C1. **Unresolved, explicitly flagged:** 180 original rows unverified (C1 later checked one more), 14 rows held out for missing usable operator links, most external links not live-tested, AI-tool policies almost entirely unverified, and FundedFast binding rules/eligibility not yet established. The V2 record is appended after merge to avoid implying deployment success before it happened.
+
+**V2 record rebase:** PR #16 for C1 publication reached `main` while PR #15 was under checks. Merging PR #15 initially reported a conflict in the coordination tail. Rebasing onto `main` retained the full C1 publication record and appended the V2 record; no site or data files were changed.
