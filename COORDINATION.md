@@ -320,3 +320,5 @@ shared outputs (table data, site index/navigation) are changed only by the final
 | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|
 | C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | in progress | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
+
+C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `tools/build_site.js` to support per-row check dates; previous tasks are done and no active owner conflicts.
