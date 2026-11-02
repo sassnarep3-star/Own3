@@ -319,10 +319,24 @@ shared outputs (table data, site index/navigation) are changed only by the final
 
 | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|
-| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | in progress | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
+| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | done (prize discrepancy needs review) | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
 
 C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `tools/build_site.js` to support per-row check dates; previous tasks are done and no active owner conflicts.
 
 ### 2026-11-02 — C1 completed
 
 **Official source read:** [Rams 2026 Pick'em announcement](https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions), published July 30, 2026; checked November 2. Its itemized prizes are a resort stay, $250 resort credit and a balloon ride; weekly tickets, signed merchandise, and $75 resort credit. It does **not** state a withdrawable cash prize. The source ledger classified this as a "Free USD path"; that classification is contradicted. Free entry, eligibility and current status were not confirmed by this announcement and remain blank. Headline says "season tickets" but itemized prizes do not include season tickets: review the live rules before relying on either. The original November 1 verification baseline remains intact; per-row check dates show November 2 for this addition. Regenerated pages and log; catalog validator checks all 192 table rows, 16 pages and local anchors (PASS). External reachability of other URLs remains untested. C1 done; Rams prize discrepancy remains `needs review` on Flagged for Review and does not block publication.
+
+### 2026-11-02 — session `arena/6a7094eb-own3` claims mobile navigation audit
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| M1 | Mobile navigation discoverability and validation | done | `arena/6a7094eb-own3` | `assets/css/site.css`, `COORDINATION.md` | Prior site already published; improve horizontal navigation affordance and run existing validators. No competition claims changed. |
+
+This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it cannot create the separately named session branch requested in the general coordination protocol. Scope is limited to the two files above.
+
+### 2026-11-02 — M1 complete
+
+**Status:** done. The mobile navigation now exposes a visible horizontal scroll indicator (rather than hiding it) and its links have 44px minimum touch height. Scope: CSS only; no listing data, operator facts, or source links changed. Verification: rebuilt all generated files with `node tools/build_data.js`, `node tools/build_log.js`, `node tools/build_site.js`; `node scripts/validate-catalog.mjs` passed (206 listings, 192 official-linked table rows, 14 quarantined, 16 pages, internal links/anchors resolve); `node scripts/validate-prize-scout-archive.mjs` passed. Existing official-source evidence and limits remain recorded in `VERIFICATION_LOG.md`. External reachability and 180 unchecked rows remain needs review. Initial `git pull --rebase origin arena/6a7094eb-own3` could not find a remote ref before its first push; rebased against `origin/main` instead, then pushed this branch; no conflict.
+
+C1 integration note: `origin/main` advanced via PR #9 during PR #10 checks; merging main conflicted only in this append-only coordination log. Both sessions’ entries were retained, with no data or CSS conflicts.
