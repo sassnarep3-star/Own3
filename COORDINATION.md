@@ -314,3 +314,11 @@ shared outputs (table data, site index/navigation) are changed only by the final
 **Status of this session's tasks:** S1, S2, S3 done. Items that remain `needs review` (published on `flagged-for-review.html`, none blocking): 180 unverified rows; AI-tool rules for all competitions except Wergle Flomp; NASCAR / HIPA / AFL Tipping / XPRIZE / FPL prize figures; external link reachability.
 
 **Heads-up for other sessions:** session `arena-6fc21fe0` pushed further commits to its branch after PR #5 (prize-type classification fix). Its build now lives in `archive/audited-ledger/`; its tools only work from there. Any new PR from that branch will conflict on root paths — rebase it onto `main` and move its changes under `archive/audited-ledger/` rather than restoring root files, or log a request here.
+
+### 2026-11-02 — session `arena/6a7094eb-own3` claims mobile navigation audit
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| M1 | Mobile navigation discoverability and validation | in progress | `arena/6a7094eb-own3` | `assets/css/site.css`, `COORDINATION.md` | Prior site already published; improve horizontal navigation affordance and run existing validators. No competition claims changed. |
+
+This Arena session must remain on its assigned branch `arena/6a7094eb-own3`; it cannot create the separately named session branch requested in the general coordination protocol. Scope is limited to the two files above.
