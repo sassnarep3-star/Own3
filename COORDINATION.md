@@ -348,3 +348,18 @@ This session stays on the Arena-assigned `arena/8114d944-own3` branch rather tha
 **M1 publication:** [PR #9](https://github.com/sassnarep3-star/Own3/pull/9) merged into `main` at `2573ac768e62ed31aafb491bb08ddee8e6deedc0` on 2026-11-02 17:49 UTC. PR validation and archived ledger checks passed. [Pages run 41494755408](https://github.com/sassnarep3-star/Own3/actions/runs/41494755408) completed successfully (validate and deploy jobs). Live URL: <https://sassnarep3-star.github.io/Own3/>. This record is appended after merge so requires its own documentation-only PR.
 
 **2026-11-02 documentation conflict:** While recording the M1 deployment, `main` advanced with V2 PR #12. The append-only `COORDINATION.md` tail conflicted during rebase; both V2 and M1 records were retained without dropping either.
+
+### 2026-11-02 — session `arena/cfa352c6-own3` claim
+
+| Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|
+| C1 | Recheck Rams Pick'em against operator announcement; regenerate dashboard and review pages | done (prize discrepancy needs review) | `arena/cfa352c6-own3` | `COORDINATION.md`, `data/verification.json`, generated `data/competitions.json`, `data/stats.json`, `VERIFICATION_LOG.md`, root generated HTML, `EXECUTIVE_SUMMARY.md` | Prior tasks completed; this is a new row-specific follow-up. No other active claim in this checkout. Fixed Arena branch used instead of requested session branch. |
+
+C1 scope extension (2026-11-02): `tools/build_data.js`, `tools/build_log.js`, `tools/build_site.js` to support per-row check dates; previous tasks are done and no active owner conflicts.
+
+### 2026-11-02 — C1 completed
+
+**Official source read:** [Rams 2026 Pick'em announcement](https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions), published July 30, 2026; checked November 2. Its itemized prizes are a resort stay, $250 resort credit and a balloon ride; weekly tickets, signed merchandise, and $75 resort credit. It does **not** state a withdrawable cash prize. The source ledger classified this as a "Free USD path"; that classification is contradicted. Free entry, eligibility and current status were not confirmed by this announcement and remain blank. Headline says "season tickets" but itemized prizes do not include season tickets: review the live rules before relying on either. The original November 1 verification baseline remains intact; per-row check dates show November 2 for this addition. Regenerated pages and log; catalog validator checks all 192 table rows, 16 pages and local anchors (PASS). External reachability of other URLs remains untested. C1 done; Rams prize discrepancy remains `needs review` on Flagged for Review and does not block publication.
+
+
+C1 integration note: main advanced via PRs #9, #12 and #13 during PR #10 checks; conflict resolved by preserving main’s V2 updates, its mobile change, and adding the Rams row only. Generated outputs rebuilt from combined source.

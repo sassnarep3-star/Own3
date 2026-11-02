@@ -6,7 +6,7 @@ The initial 26 operator pages were fetched on 2026-11-01; rows with their own ch
 
 Levels: **verified** — Free-entry, prize and open/closed status were all read from the cited official page. **partial** — At least one field was read from the official page; one or more fields are still blank/unverified. **contradicted** — The official page contradicts the upstream ledger on a material point (entry fee, ended, wrong figure, dead link). See discrepancies.
 
-Unlisted rows (180) were not read and are blank / unverified.
+Unlisted rows (179) were not read and are blank / unverified.
 
 ## ESPN NFL Pick'em (`espn-pickem`) — verified
 
@@ -283,4 +283,15 @@ Unlisted rows (180) were not read and are blank / unverified.
 - Dates: _blank — not confirmed_
 - Status: unconfirmed
 - Note: The hub page only shows game tiles; no prizes, rules or dates are shown. Upstream's $25,000 figure was cited to an afl.com.au news article, not fetched.
+
+## LA Rams Pick'em (`rams-pickem`) — contradicted
+
+- Official page read (2026-11-02): [Los Angeles Rams 2026 Pick’em announcement](https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions)
+- Free entry: _blank — not confirmed_
+- Prize: Non-cash: season grand prize is a two-night Pechanga stay, $250 resort credit and a hot-air balloon ride for two; weekly prizes are tickets, signed merchandise and $75 resort credit.
+- Eligibility: _blank — not confirmed_
+- Dates: Season predictions available until August 31, 2026; weekly predictions begin Week 1 and can be edited until kickoff.
+- Status: _blank — not confirmed_
+- Note: The operator announcement does not explicitly say entry is free, establish eligibility, or confirm current availability. Resort credit is not verified as withdrawable cash. The article headline mentions season tickets but its prize list does not include them.
+- **Discrepancy (prize)** — ledger: Stamped Free USD path despite listing resort credit, stay, tickets and merchandise.; official: Operator lists only non-cash prizes and resort credit; no withdrawable cash prize stated.
 

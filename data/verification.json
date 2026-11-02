@@ -470,6 +470,27 @@
         "The hub page only shows game tiles; no prizes, rules or dates are shown. Upstream's $25,000 figure was cited to an afl.com.au news article, not fetched."
       ],
       "discrepancies": []
+    },
+    "rams-pickem": {
+      "level": "contradicted",
+      "checkedOn": "2026-11-02",
+      "sourceUrl": "https://www.therams.com/news/rams-pick-em-launching-2026-season-season-tickets-player-signed-merchandise-more-prizes-for-predictions",
+      "sourceLabel": "Los Angeles Rams 2026 Pick’em announcement",
+      "freeEntry": null,
+      "prize": "Non-cash: season grand prize is a two-night Pechanga stay, $250 resort credit and a hot-air balloon ride for two; weekly prizes are tickets, signed merchandise and $75 resort credit.",
+      "eligibility": null,
+      "dates": "Season predictions available until August 31, 2026; weekly predictions begin Week 1 and can be edited until kickoff.",
+      "status": null,
+      "notes": [
+        "The operator announcement does not explicitly say entry is free, establish eligibility, or confirm current availability. Resort credit is not verified as withdrawable cash. The article headline mentions season tickets but its prize list does not include them."
+      ],
+      "discrepancies": [
+        {
+          "field": "prize",
+          "upstream": "Stamped Free USD path despite listing resort credit, stay, tickets and merchandise.",
+          "official": "Operator lists only non-cash prizes and resort credit; no withdrawable cash prize stated."
+        }
+      ]
     }
   }
 }

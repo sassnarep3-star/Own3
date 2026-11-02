@@ -4,7 +4,7 @@
 
 ## The short version
 
-- The **Free Money & Contest Ledger** (source site) lists **206** free-entry cash competitions. It was re-checked against operators' own pages: **26** rows (13%) were read on an official page, **6** fully verified, **11** partially, **9** contradicted by the operator's own page. **180** rows remain unverified and are shown blank.
+- The **Free Money & Contest Ledger** (source site) lists **206** free-entry cash competitions. It was re-checked against operators' own pages: **27** rows (13%) were read on an official page, **6** fully verified, **11** partially, **10** contradicted by the operator's own page. **179** rows remain unverified and are shown blank.
 - **Do not trust the ledger's headline numbers.** Its "189 true free" count includes 26 ended and 10 cautioned rows, and at least one "free" contest (Tom Howard poetry) charges a $27 fee.
 - **14** rows have no usable official source and are held out of the tables (see [Flagged for Review](flagged-for-review.html#quarantined)). The other **192** rows each carry an official link.
 - The best verified opportunities for an AI-assisted entrant are in [Best bets](best-bets.html): **9** Tier A (free entry confirmed) and **4** Tier B (large prize, entry terms still to read).
@@ -20,7 +20,7 @@
 | Finding | Detail |
 |---|---|
 | Ledger is stale | All 206 rows carry a 2026-08-19 check date, 75 days before this review. |
-| Contradictions | 9 of 26 checked rows contradict their official page: a fee, an ended contest, a different prize or a dead link. [Details](flagged-for-review.html#contradicted). |
+| Contradictions | 10 of 27 checked rows contradict their official page: a fee, an ended contest, a different prize or a dead link. [Details](flagged-for-review.html#contradicted). |
 | "Free USD cash" overstated | 65 rows stamped free mention non-cash prizes and 30 use non-USD currency (keyword flags). |
 | Source quality | 20 rows tag a third-party site (news, press release, social, aggregator) as "official". These are not accepted as official links. |
 | Shared links | 19 rows share a signup URL with another row, so the link is a platform, not the specific contest. |
